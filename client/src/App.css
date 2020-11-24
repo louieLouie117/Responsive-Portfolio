@@ -125,11 +125,30 @@ body  ::-webkit-scrollbar{
 
 }
 
+
+.tools-container{
+  grid-row: 2/3;
+  grid-column: 1/2;
+  background: rgba(0, 0, 0, 0.549);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  z-index: 2;
+  height: auto;
+  font: 1em sans-serif;
+  color: white;
+}
+
 .cardItems ul li img{
+  grid-row: 2/3;
+  grid-column: 1/2;
+  filter: blur(2px);
   /* background-image: cover; */
   height: 300px;
   
 }
+
+
+
 
 
 .cardItems footer {
@@ -138,7 +157,10 @@ body  ::-webkit-scrollbar{
   align-self: center;
   box-shadow: 0px -7px 5px rgba(0, 0, 0, 0.137);
   padding: 10px;
+}
 
+.cardItems footer a {
+  cursor: pointer;
 }
 
 .cardItems footer button {
@@ -148,6 +170,7 @@ body  ::-webkit-scrollbar{
   width: 90px;
   border-radius: 10px;
   border: none;
+  
 }
 
 
