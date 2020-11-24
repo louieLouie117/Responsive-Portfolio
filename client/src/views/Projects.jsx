@@ -15,6 +15,9 @@ const Projects = props => {
     const [project4Details, setProject4Details] = useState(false)
     const [project4Img, setProject4Img] = useState(false)
 
+    const [project5Details, setProject5Details] = useState(false)
+    const [project5Img, setProject5Img] = useState(false)
+
 
 
     function project1State() {
@@ -27,6 +30,8 @@ const Projects = props => {
         setProject3Img(false);
         setProject4Details(false);
         setProject4Img(false);
+        setProject5Details(false);
+        setProject5Img(false);
     
     }
 
@@ -42,6 +47,8 @@ const Projects = props => {
         setProject3Img(false);
         setProject4Details(false);
         setProject4Img(false);
+        setProject5Details(false);
+        setProject5Img(false);
 
         
     }
@@ -57,6 +64,8 @@ const Projects = props => {
         setProject2Img(false);
         setProject4Details(false);
         setProject4Img(false);
+        setProject5Details(false);
+        setProject5Img(false);
     
     }
 
@@ -73,6 +82,22 @@ const Projects = props => {
         setProject2Img(false);
         setProject3Details(false);
         setProject3Img(false);
+        setProject5Details(false);
+        setProject5Img(false);
+    
+    }
+    function project5State() {
+        setProject5Details(!project5Details);
+        setProject5Img(!project5Img);
+        
+        setProject1Details(false);
+        setProject1Img(false);
+        setProject2Details(false);
+        setProject2Img(false);
+        setProject3Details(false);
+        setProject3Img(false);
+        setProject4Details(false);
+        setProject4Img(false);
     
     }
 
@@ -87,10 +112,9 @@ const Projects = props => {
             <header>      
                 <div className="slogan-container">  
                     <p>Dream it.</p>             
-                    <>Design it.</>
+                    <p>Design it.</p>
                     <p>Code it.</p>
                 </div>
-
            
                 <img src="/img/portfolioImg.png" alt=""/>
 
@@ -129,12 +153,15 @@ const Projects = props => {
                                 <p>Behavior</p>
                                 
                                 <div><img src="/img/Icons/iconDjango.png" alt=""/></div>
-                                <p>Date Base</p>     
+                                <p>Framework</p>     
                             </div>
 
                             </div>
                             <footer> 
-                                <a  onClick={project1State}>Details</a>
+                                <a  
+                                onClick={project1State}
+                                onMouseEnter={project1State} 
+                                onMouseLeave={project1State}>Details</a>
                                 <button id="projectOneBTN">Live Demo</button>
                             </footer>
                         </li>
@@ -166,7 +193,10 @@ const Projects = props => {
 
                                 </div>
                             <footer> 
-                                <a onClick={project2State}>Details</a>
+                                <a 
+                                onClick={project2State}
+                                onMouseEnter={project2State} 
+                                onMouseLeave={project2State}>Details</a>
                                 <button>Live Demo</button>
                             </footer>
                         </li>
@@ -198,7 +228,10 @@ const Projects = props => {
                             </div>
 
                             <footer> 
-                                <a onClick={project3State}>Details</a>
+                                <a 
+                                onClick={project3State}
+                                onMouseEnter={project3State} 
+                                onMouseLeave={project3State}>Details</a>
                                 <button>Live Demo</button>
                             </footer>
                         </li>
@@ -230,10 +263,43 @@ const Projects = props => {
                             </div>
 
                             <footer> 
-                                <a onClick={project4State}>Details</a>
+                                <a 
+                                onClick={project4State}
+                                onMouseEnter={project4State} 
+                                onMouseLeave={project4State}>Details</a>
                                 <a href="https://www.deltabarandgrill.com/"> <button>Visit it.</button></a>
                             </footer>
                         </li>
+
+                        <li className="project5-container">
+                            <h2>Landing Page</h2>
+                            <img 
+                            src="/img/projectImg5.png" 
+                            style={{ filter: project5Img ? "blur(4px)" : "blur(0px)" }}/>
+                            <div  
+                            style={{ display: project5Details ? "grid" : "none" }} 
+                            className="tools-container">
+                            <div id="icon-container">
+                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                <p>Prototype UI</p>
+
+                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                <p>Responsive Layout</p>
+                            </div>
+                            </div>
+
+                            <footer> 
+                                <a 
+                                onClick={project5State}
+                                onMouseEnter={project5State} 
+                                onMouseLeave={project5State}>Details</a>
+                                <a href="https://pacebuildershomeremodeling.com/"> <button>Visit it.</button></a>
+                            </footer>
+                        </li>
+
+
+
+                        
 
 
 
