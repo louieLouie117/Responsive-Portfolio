@@ -1,6 +1,7 @@
 import './App.css';
-import Projects from './views/Projects';
 
+
+import Projects from './views/Projects';
 import {Router} from "@reach/router";
 import MainNav from './components/MainNav';
 import AboutMe from './views/AboutMe';
@@ -9,8 +10,8 @@ import AboutMe from './views/AboutMe';
 
 
 
-
 function App() {
+
   return (
     <div className="App">
       

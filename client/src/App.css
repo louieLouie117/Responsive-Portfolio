@@ -19,11 +19,19 @@ body  ::-webkit-scrollbar{
 
 
 .mainNav-container nav {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  height: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   font: 1.7em sans-serif;
-  max-width: 250px;
+  width: 250px;
   margin: 0 auto;
+  white-space: nowrap;
+  /* background: red; */
+
 }
 
 
@@ -100,6 +108,9 @@ body  ::-webkit-scrollbar{
   margin: 0px;
 }
 
+
+
+
 .cardItems ul li {
   display: grid;
   grid-template-columns: 300px;
@@ -151,6 +162,8 @@ body  ::-webkit-scrollbar{
 .cardItems footer a {
   cursor: pointer;
   text-decoration: underline;
+  width: 60px;
+  padding: 5px;
 }
 
 .cardItems footer button {
@@ -212,6 +225,17 @@ body  ::-webkit-scrollbar{
   
 }
 
+.project5-container footer button {
+  background: #21523F;
+}
+
+.project5-container footer a {
+  color: #21523F;
+  padding-left: 5px;
+  align-self: center;
+  
+}
+
 
 .tools-container{
   grid-row: 2/3;
@@ -229,6 +253,8 @@ body  ::-webkit-scrollbar{
   grid-template-columns: 1fr 3fr;
   padding: 10px;
   align-items: center;
+  align-self: start;
+
 }
 
 
@@ -249,10 +275,10 @@ body  ::-webkit-scrollbar{
 
 }
 
-.mainNav-container :first-child :first-of-type {
-  border-bottom: solid 4px#0080BF;
+/* .mainNav-container :first-child :first-of-type {
+  border-bottom: solid 5px #007fbf;
 
-}
+} */
 
 .mainNav-container a {
   font: 1em sans-serif;
@@ -290,8 +316,12 @@ body  ::-webkit-scrollbar{
     height: auto;
   }
 
-
   
+.cardItems ul {
+  padding-left: 70px;
+}
+
+
 
 }
 
