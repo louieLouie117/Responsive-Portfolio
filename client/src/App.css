@@ -126,22 +126,11 @@ body  ::-webkit-scrollbar{
 }
 
 
-.tools-container{
-  grid-row: 2/3;
-  grid-column: 1/2;
-  background: rgba(0, 0, 0, 0.549);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  z-index: 2;
-  height: auto;
-  font: 1em sans-serif;
-  color: white;
-}
+
 
 .cardItems ul li img{
   grid-row: 2/3;
   grid-column: 1/2;
-  filter: blur(2px);
   /* background-image: cover; */
   height: 300px;
   
@@ -161,6 +150,7 @@ body  ::-webkit-scrollbar{
 
 .cardItems footer a {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .cardItems footer button {
@@ -170,6 +160,7 @@ body  ::-webkit-scrollbar{
   width: 90px;
   border-radius: 10px;
   border: none;
+  cursor: pointer;
   
 }
 
@@ -197,16 +188,56 @@ body  ::-webkit-scrollbar{
   
 }
 
+
+
 .project3-container footer button {
-  background: #002F61;
+  background:#B936D2;
 }
 
 .project3-container footer a {
+  color:#B936D2;
+  padding-left: 5px;
+  align-self: center;
+  
+}
+
+.project4-container footer button {
+  background: #002F61;
+}
+
+.project4-container footer a {
   color: #002F61;
   padding-left: 5px;
   align-self: center;
   
 }
+
+
+.tools-container{
+  grid-row: 2/3;
+  grid-column: 1/2;
+  background: rgba(0, 0, 0, 0.604);
+  display: grid;
+  z-index: 2;
+  height: auto;
+  font: 1.1em sans-serif;
+  color: white;
+}
+
+#icon-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 10px;
+  align-items: center;
+}
+
+
+
+#icon-container img {
+  height: 50px;
+  width: 50px;
+}
+
 
 
 .mainNav-container  nav{
