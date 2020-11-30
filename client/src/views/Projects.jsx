@@ -18,6 +18,9 @@ const Projects = props => {
     const [project5Details, setProject5Details] = useState(false)
     const [project5Img, setProject5Img] = useState(false)
 
+    const [project6Details, setProject6Details] = useState(false)
+    const [project6Img, setProject6Img] = useState(false)
+
 
 
     function project1State() {
@@ -35,8 +38,6 @@ const Projects = props => {
     
     }
 
-    
-
     function project2State() {
         setProject2Details(!project2Details);
         setProject2Img(!project2Img);
@@ -53,7 +54,6 @@ const Projects = props => {
         
     }
 
-    
     function project3State() {
         setProject3Details(!project3Details);
         setProject3Img(!project3Img);
@@ -69,9 +69,6 @@ const Projects = props => {
     
     }
 
-
-    
-    
     function project4State() {
         setProject4Details(!project4Details);
         setProject4Img(!project4Img);
@@ -86,6 +83,7 @@ const Projects = props => {
         setProject5Img(false);
     
     }
+
     function project5State() {
         setProject5Details(!project5Details);
         setProject5Img(!project5Img);
@@ -98,12 +96,28 @@ const Projects = props => {
         setProject3Img(false);
         setProject4Details(false);
         setProject4Img(false);
+        setProject6Details(false);
+        setProject6Img(false);
     
     }
 
 
- 
-
+    function project6State() {
+        setProject6Details(!project6Details);
+        setProject6Img(!project6Img);
+        
+        setProject1Details(false);
+        setProject1Img(false);
+        setProject2Details(false);
+        setProject2Img(false);
+        setProject3Details(false);
+        setProject3Img(false);
+        setProject4Details(false);
+        setProject4Img(false);
+        setProject5Details(false);
+        setProject5Img(false);
+    
+    }
 
 
     return (
@@ -267,7 +281,7 @@ const Projects = props => {
                                 onClick={project4State}
                                 onMouseEnter={project4State} 
                                 onMouseLeave={project4State}>Details</a>
-                                <a href="https://www.deltabarandgrill.com/"> <button>Visit it.</button></a>
+                                <a target="blank" href="https://www.deltabarandgrill.com/"> <button>Visit it.</button></a>
                             </footer>
                         </li>
 
@@ -285,6 +299,9 @@ const Projects = props => {
 
                                 <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
                                 <p>Responsive Layout</p>
+
+                                <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
+                                <p>Behavior</p>
                             </div>
                             </div>
 
@@ -293,9 +310,40 @@ const Projects = props => {
                                 onClick={project5State}
                                 onMouseEnter={project5State} 
                                 onMouseLeave={project5State}>Details</a>
-                                <a href="https://pacebuildershomeremodeling.com/"> <button>Visit it.</button></a>
+                                <a  target="blank" href="https://pacebuildershomeremodeling.com/"> <button>Visit it.</button></a>
                             </footer>
                         </li>
+
+
+                        <li className="project6-container">
+                            <h2>Landing Page</h2>
+                            <img 
+                            src="/img/projectImg6.png" 
+                            style={{ filter: project6Img ? "blur(4px)" : "blur(0px)" }}/>
+                            <div  
+                            style={{ display: project6Details ? "grid" : "none" }} 
+                            className="tools-container">
+                            <div id="icon-container">
+                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                <p>Prototype UI</p>
+
+                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                <p>Responsive Layout</p>
+
+                                <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
+                                <p>Behavior</p>
+                            </div>
+                            </div>
+
+                            <footer> 
+                                <a 
+                                onClick={project6State}
+                                onMouseEnter={project6State} 
+                                onMouseLeave={project6State}>Details</a>
+                                <a target="blank" href="https://jrprolandscaping.com/"  > <button>Visit it.</button></a>
+                            </footer>
+                        </li>
+                        <li></li>
 
 
 

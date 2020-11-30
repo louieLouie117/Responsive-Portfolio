@@ -1,0 +1,47 @@
+/* Basic Algorithms  */
+.basicAlgos-container{
+    padding: 10px;
+    max-width: 25em;
+    justify-self: center;
+  }
+  
+  .basicAlgos-container ul{
+    display: grid;
+    row-gap: 10px;
+  
+  }
+  .basicAlgos-container li{
+    display: grid;
+    background: white;
+    padding: 20px;
+    border-bottom: 2px dashed gold;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.193);
+  
+  }
+  
+  .basicAlgos-container li button{
+    font: 1em sans-serif;
+    font-weight: bold;
+    background: rgb(235, 201, 8);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+  
+  }
+  
+  
+  
+  /* desktop styles */
+  @media screen and (min-width: 700px) {
+    .basicAlgos-container{
+    max-width: none;}
+
+  .basicAlgos-container ul{
+        column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+  } 
+
+  
+  
+  }

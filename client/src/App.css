@@ -11,7 +11,10 @@ h1, p, h2{
 }
 
 
-
+ul{
+  list-style: none;
+  padding: 0;
+}
 
 body  ::-webkit-scrollbar{
   display: none;
@@ -107,6 +110,12 @@ body  ::-webkit-scrollbar{
   padding: 0px;
   margin: 0px;
 }
+
+.cardItems ul li:last-of-type:last-child{
+  background: none;
+  width: 10px;
+}
+
 
 
 
@@ -237,6 +246,21 @@ body  ::-webkit-scrollbar{
 }
 
 
+.project6-container footer button {
+  background: #469F67;
+}
+
+.project6-container footer a {
+  color: #469F67;
+  padding-left: 5px;
+  align-self: center;
+  
+}
+
+
+
+
+
 .tools-container{
   grid-row: 2/3;
   grid-column: 1/2;
@@ -317,20 +341,13 @@ body  ::-webkit-scrollbar{
   }
 
   
-.cardItems ul {
-  padding-left: 70px;
-}
 
 
 
 }
 
 
-/* desktop styles */
-@media screen and (min-width: 700px) {
 
-
-}
 
 
 
