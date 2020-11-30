@@ -38,8 +38,6 @@ const Projects = props => {
     
     }
 
-    
-
     function project2State() {
         setProject2Details(!project2Details);
         setProject2Img(!project2Img);
@@ -56,7 +54,6 @@ const Projects = props => {
         
     }
 
-    
     function project3State() {
         setProject3Details(!project3Details);
         setProject3Img(!project3Img);
@@ -72,9 +69,6 @@ const Projects = props => {
     
     }
 
-
-    
-    
     function project4State() {
         setProject4Details(!project4Details);
         setProject4Img(!project4Img);
@@ -124,10 +118,6 @@ const Projects = props => {
         setProject5Img(false);
     
     }
-
-
- 
-
 
 
     return (

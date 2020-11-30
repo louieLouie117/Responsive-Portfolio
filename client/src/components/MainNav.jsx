@@ -1,5 +1,6 @@
-import {Link} from "@reach/router";
+import {Link, Router} from "@reach/router";
 import React, {useState} from 'react'
+import BasicAlgos from "./BasicAlgos";
 
 
 
@@ -24,7 +25,6 @@ const [about, setAbout] = useState(false)
                 style={{ borderBottom: about ? " solid 9px #0080BF" : "none" }}
                 onClick={ ()=> {setAbout(!about); setProject(!project)}}>About me</Link>
             </nav>
-
             
             
         </div>

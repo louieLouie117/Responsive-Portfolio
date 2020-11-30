@@ -5,6 +5,7 @@ import Projects from './views/Projects';
 import {Router} from "@reach/router";
 import MainNav from './components/MainNav';
 import AboutMe from './views/AboutMe';
+import CodeChallenges from './views/CodeChallenges';
 
 
 
@@ -19,6 +20,7 @@ function App() {
       <Router>
         <Projects path="/"/>
         <AboutMe path="/about-me"/>
+        <CodeChallenges path="/code-challenges"/>
       </Router>
       <MainNav/>
 

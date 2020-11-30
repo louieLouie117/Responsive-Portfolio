@@ -11,7 +11,10 @@ h1, p, h2{
 }
 
 
-
+ul{
+  list-style: none;
+  padding: 0;
+}
 
 body  ::-webkit-scrollbar{
   display: none;
@@ -344,11 +347,7 @@ body  ::-webkit-scrollbar{
 }
 
 
-/* desktop styles */
-@media screen and (min-width: 700px) {
 
-
-}
 
 
 
