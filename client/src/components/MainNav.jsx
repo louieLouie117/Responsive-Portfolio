@@ -1,6 +1,5 @@
 import {Link, Router} from "@reach/router";
 import React, {useState} from 'react'
-import BasicAlgos from "./BasicAlgos";
 
 
 

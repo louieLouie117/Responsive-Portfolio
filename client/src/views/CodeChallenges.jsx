@@ -1,22 +1,56 @@
 import React, {useState} from 'react'
-import BasicAlgos from '../components/BasicAlgos'
+import AlgosBasic from '../components/AlgosBasic';
+import AlgosSorting from '../components/AlgosSorting';
+import AlgosData from '../components/AlgosData';
+
 
 const CodeChallenges = props => {
 
     const [basic, setBasic] = useState(true)
+    const [sorting, setSorting] = useState(false)
+    const [data, setData] = useState(false)
+
+
 
 
     function showBasicAlgos(){
-        console.log("button was click");
         setBasic(!basic)
+        setSorting(false)
+        setData(false)
+    }
+
+    function showSortingAlgos(){
+        setSorting(!sorting)
+        setBasic(false)
+        setData(false)
+    }
+
+    
+    function showDataAlgos(){
+        setData(!data)
+        setSorting(false)
+        setBasic(false)
+
     }
 
     return (
         <div>
             <h1>Coding Challenges</h1>
             <button onClick={showBasicAlgos}>Basic</button>
+            <button onClick={showSortingAlgos}>Sorting Algos</button>
+            <button onClick={showDataAlgos}>Sorting Algos</button>
+
+
             <div style={{ display:  basic? "grid" : "none" }} > 
-            <BasicAlgos/>
+            <AlgosBasic/>
+            </div>
+
+            <div style={{ display:  sorting? "grid" : "none" }} > 
+                <AlgosSorting/>
+            </div>
+
+            <div style={{ display:  data? "grid" : "none" }} > 
+                <AlgosData/>
             </div>
 
             
