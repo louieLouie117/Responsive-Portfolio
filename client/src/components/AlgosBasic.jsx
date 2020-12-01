@@ -101,10 +101,9 @@ function iteratingArray(){
     console.log("button was click");
     // const userArray = inputSting.split(',');
     // const userArray = inputSting.split`,`.map(i=>+i);
-    console.log(inputString);
+    // const userArray = inputSting.split('').map(i=>Number(i));
     const userArray = inputString.split(',', 10);
 
-    // const userArray = inputSting.split('').map(i=>Number(i));
 
     console.log("user array",userArray);
 
@@ -116,13 +115,37 @@ function iteratingArray(){
             setTimeout(function() { 
                 console.log("inside the time the timer",newArr);
                 setIteratingNumber(newArr) 
-
             }, 800* i); 
             
           }
     }
 
+}
 
+const [findMaxString, setFindMaxString] = useState()
+const [findMaxNumber, setFindMaxNumber] = useState(true)
+
+
+function changeStateFindMax(e){
+    console.log("input was selected");
+    setFindMaxNumber(false)
+     setFindMaxString(e.target.value)
+}
+
+function findMax(){
+    const userArray = findMaxString.split(',').map(Number);
+
+    console.log("user array",userArray);
+    let max = 0;
+    for (let i = 0; i < userArray.length; i++) {
+        console.log("loop", userArray[i]);
+        if (max < userArray[i]) {
+            max = userArray[i];
+            setFindMaxNumber(max)
+          }
+
+    
+    }
 
 }
 
@@ -184,6 +207,21 @@ function iteratingArray(){
                     >Start Iterating</button>
                 </li>
 
+
+                <li>
+                    <h2>find the max <b> {findMaxNumber}</b></h2>
+                    <input 
+                    type="text" 
+                    placeholder="create an array separate numbers by a , ex: 1,2,3 "
+                    onChange={changeStateFindMax}
+                    />
+
+                    <button 
+                    style={{ background:  findMaxNumber? "lightGray" : "rgb(235, 201, 8)" }}
+                    disabled={findMaxNumber}
+                    onClick={findMax}
+                    >Find Max</button>
+                </li>
 
                 
             </ul>

@@ -15,7 +15,7 @@
   }
   .basicAlgos-container li{
     display: grid;
-    height: 200px;
+    height: 250px;
     align-items: center;
     background: white;
     padding: 20px;
@@ -47,7 +47,7 @@
     max-width: none;}
 
   .basicAlgos-container ul{
-        column-gap: 20px;
+      column-gap: 20px;
       grid-template-columns: 1fr 1fr 1fr ;
   } 
 
@@ -60,7 +60,6 @@
   
 
   .basicAlgos-container ul{
-        column-gap: 20px;
       grid-template-columns: 1fr 1fr 1fr 1fr;
   } 
 
