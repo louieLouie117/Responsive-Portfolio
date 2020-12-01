@@ -10,6 +10,11 @@ h1, p, h2{
  margin: 0;
 }
 
+input{
+  height: 25px;
+  padding: 5px;
+  
+}
 
 ul{
   list-style: none;
@@ -20,22 +25,28 @@ body  ::-webkit-scrollbar{
   display: none;
 }
 
-
-.mainNav-container nav {
+.mainNav-container{
+  background: white;
+  width: 100vw;
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translate(-50%);
+}
+
+.mainNav-container nav {
+
   height: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   font: 1.7em sans-serif;
-  width: 250px;
   margin: 0 auto;
   white-space: nowrap;
   /* background: red; */
 
 }
+
+
 
 
 /* Projects page----------------------------------------- */
@@ -346,9 +357,19 @@ body  ::-webkit-scrollbar{
 
 }
 
+@media screen and (min-width: 700px) {
+
+
+.mainNav-container{
+  background: whitesmoke;
+  width: 400px;
+  position: absolute;
+  bottom: 10px;
+  left: 10%;
+}
 
 
 
 
 
-
+}
