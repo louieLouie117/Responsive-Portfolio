@@ -29,6 +29,10 @@
     border-radius: 10px;
   
   }
+
+  .basicAlgos-container li h2{
+        font: 1em sans-serif;
+  }
   
   
   
@@ -39,7 +43,7 @@
 
   .basicAlgos-container ul{
         column-gap: 20px;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr ;
   } 
 
   
