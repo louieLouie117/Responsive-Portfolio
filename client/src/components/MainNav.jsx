@@ -11,8 +11,7 @@ const [about, setAbout] = useState(false)
 
     return (
         <div className="mainNav-container">        
-            <nav>
-               
+            <nav> 
                 <Link to="/"
                 onClick={ ()=> setProject(!project)}
                 style={{ borderBottom: project ? " solid 9px #0080BF" : "none" }}

@@ -36,9 +36,9 @@ const CodeChallenges = props => {
     return (
         <div>
             <h1>Coding Challenges</h1>
-            <button onClick={showBasicAlgos}>Basic</button>
-            <button onClick={showSortingAlgos}>Sorting Algos</button>
-            <button onClick={showDataAlgos}>Sorting Algos</button>
+            <button onClick={showBasicAlgos} id="AlgosBasic">Basic</button>
+            <button onClick={showSortingAlgos} id="AlgosSorting">Sorting</button>
+            <button onClick={showDataAlgos} id="AlgosData">Data Structure</button>
 
 
             <div style={{ display:  basic? "grid" : "none" }} > 
