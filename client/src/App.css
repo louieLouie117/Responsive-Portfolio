@@ -35,7 +35,6 @@ body  ::-webkit-scrollbar{
 }
 
 .mainNav-container nav {
-
   height: 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -352,6 +351,13 @@ body  ::-webkit-scrollbar{
   }
 
   
+  .mainNav-container{
+    background: whitesmoke;
+    width: 400px;
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+  }
 
 
 
@@ -360,13 +366,7 @@ body  ::-webkit-scrollbar{
 @media screen and (min-width: 700px) {
 
 
-.mainNav-container{
-  background: whitesmoke;
-  width: 400px;
-  position: absolute;
-  bottom: 10px;
-  left: 10%;
-}
+
 
 
 
