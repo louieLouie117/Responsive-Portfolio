@@ -3,7 +3,7 @@ import modules from "../modules/Algos.modules.css"
 
 const AlgosBasic = props => {
 
-
+// print numbers 1-250
 const [print, setPrint] = useState(0)
 function printFunction() {
 for (let i=1; i<251; i++) { 
@@ -28,15 +28,12 @@ setTimeout(function() {
     
 }, 1000);
 
-
+// print odd numbers--------------------------------------
 const [odds, setOdds] = useState(0)
 function printOdds() {
-    var sum = 0;
     for (let i = 1; i <= 51; i++) { 
         if (i % 2 === 1) {
-            sum = sum + i;
             task(i); 
-
           }
         function task(i) { 
             setTimeout(function() { 
@@ -45,7 +42,6 @@ function printOdds() {
             }, 200* i); 
           } 
 
-          console.log(sum);
      } 
 }
 setTimeout(function() { 
@@ -56,7 +52,7 @@ setTimeout(function() {
     
 }, 1000);
 
-
+// sum the odd numbers-------------------------
 const [sumOdds, setSumOdds] = useState(0)
 function sumAllOdds() {
     console.log("sum button was click");
@@ -87,10 +83,9 @@ setTimeout(function() {
 }, 1000);
 
 
+// iterate an array-------------------------------------------
 const [inputString, setInputString] = useState()
 const [iteratingNumber, setIteratingNumber] = useState(true)
-
-
 function changeState(e){
     console.log("input was selected");
     setIteratingNumber(false)
@@ -103,7 +98,6 @@ function iteratingArray(){
     // const userArray = inputSting.split`,`.map(i=>+i);
     // const userArray = inputSting.split('').map(i=>Number(i));
     const userArray = inputString.split(',', 10);
-
 
     console.log("user array",userArray);
 
@@ -122,6 +116,8 @@ function iteratingArray(){
 
 }
 
+
+// find the max---------------------------------
 const [findMaxString, setFindMaxString] = useState()
 const [findMaxNumber, setFindMaxNumber] = useState(true)
 
@@ -142,14 +138,80 @@ function findMax(){
         if (max < userArray[i]) {
             max = userArray[i];
             setFindMaxNumber(max)
-          }
-
-    
+          }    
     }
 
 }
 
 
+
+
+
+// find the average---------------------------------
+const [findAverageString, setFindAverageString] = useState()
+const [findAverageNumber, setFindAverageNumber] = useState(true)
+
+
+function changeStateFindAverage(e){
+    console.log("input was selected");
+    setFindAverageNumber(false)
+     setFindAverageString(e.target.value)
+}
+
+function findAverage(){
+    const userArray = findAverageString.split(',').map(Number);
+    let sum = 0;
+    for (let i = 0; i < userArray.length; i++) {
+    sum = sum + userArray[i];
+    let avgNumber = sum / userArray.length;
+    setFindAverageNumber(avgNumber)
+        
+    }
+
+}
+
+
+
+// new array with odd numbers--------------------------------------
+const [oddsArray, setOddsArray] = useState(0)
+const [newArray, setNewArray] = useState(0)
+
+function arrayWithOdds() {
+    console.log("new array with odds was click");
+    let newArrayOdds = [];
+    for (let i = 1; i <= 31; i++) { 
+        task2(i)     
+
+        if (i % 2 === 1) {
+            task(i)   
+          }    
+          function task(i) { 
+            setTimeout(()=> {      
+                newArrayOdds.push(i)
+                newArrayOdds.push(",")  
+                setNewArray(0) 
+                setNewArray(newArrayOdds)
+            }, 300* i);  
+    
+          }
+          function task2(i) { 
+            setTimeout(function() { 
+                setOddsArray(i)
+                console.log(i);
+            }, 300* i); 
+          }
+     }
+
+}
+
+setTimeout(function() { 
+    if (oddsArray === 31) {
+        setOddsArray(!oddsArray)
+        setOddsArray(0)
+        setNewArray("task completed")
+
+    }
+}, 2000);
 
 
 
@@ -209,7 +271,7 @@ function findMax(){
 
 
                 <li>
-                    <h2>find the max <b> {findMaxNumber}</b></h2>
+                    <h2>find the max number <b> {findMaxNumber}</b></h2>
                     <input 
                     type="text" 
                     placeholder="create an array separate numbers by a , ex: 1,2,3 "
@@ -223,6 +285,34 @@ function findMax(){
                     >Find Max</button>
                 </li>
 
+                <li>
+                    <h2>find the average number<b> {findAverageNumber}</b></h2>
+                    <input 
+                    type="text" 
+                    placeholder="create an array separate numbers by a , ex: 1,2,3 "
+                    onChange={changeStateFindAverage}
+                    />
+
+                    <button 
+                    style={{ background:  findAverageNumber? "lightGray" : "rgb(235, 201, 8)" }}
+                    disabled={findAverageNumber}
+                    onClick={findAverage}
+                    >Find Average</button>
+                </li>
+
+
+                <li>
+                    <h2>New Array with odd numbers</h2>
+                    <div>
+                        <h4>[{newArray}]</h4>
+                        <h3>Loop: {oddsArray}</h3>
+                    </div>
+                    <button 
+                    style={{ background:  oddsArray? "lightGray" : "rgb(235, 201, 8)" }}
+                    disabled={oddsArray}
+                    onClick={arrayWithOdds}
+                    >Print Odd #</button>
+                </li>
                 
             </ul>
             
