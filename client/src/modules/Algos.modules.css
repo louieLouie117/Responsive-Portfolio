@@ -38,6 +38,11 @@
   .basicAlgos-container li h2{
         font: 1em sans-serif;
   }
+
+
+  .noBorders{
+    border: none;
+  }
   
   
   
