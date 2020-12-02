@@ -5,24 +5,28 @@ const AlgosBasic = props => {
 
 // print numbers 1-250
 const [print, setPrint] = useState(0)
+const [printMessage, setPrintMessage] = useState("")
+
 function printFunction() {
-for (let i=1; i<251; i++) { 
-    task(i); 
-    function task(i) { 
-        setTimeout(function() { 
-            setPrint(i)
-            console.log(i);
-        }, 20* i); 
-        
-      }
- }
+    setPrintMessage("")
+    for (let i=1; i<251; i++) { 
+        task(i); 
+        function task(i) { 
+            setTimeout(function() { 
+                setPrint(i)
+                console.log(i);
+            }, 20* i); 
+            
+        }
+    }
 
 }
 
 setTimeout(function() { 
     if (print === 250) {
         setPrint(!print)
-        setPrint(0)
+        setPrint("")
+        setPrintMessage("Task Completed")
 
     }
     
@@ -30,7 +34,9 @@ setTimeout(function() {
 
 // print odd numbers--------------------------------------
 const [odds, setOdds] = useState(0)
+const [oddsMessage, setOddsMessage] = useState("")
 function printOdds() {
+    setOddsMessage("")
     for (let i = 1; i <= 51; i++) { 
         if (i % 2 === 1) {
             task(i); 
@@ -47,15 +53,20 @@ function printOdds() {
 setTimeout(function() { 
     if (odds === 51) {
         setOdds(!odds)
-        setOdds(0)
+        setOdds("")
+        setOddsMessage("Task Completed")
+
     }
     
 }, 1000);
 
 // sum the odd numbers-------------------------
 const [sumOdds, setSumOdds] = useState(0)
+const [sumOddsMessage, setSumOddsMessage] = useState("")
+
 function sumAllOdds() {
     console.log("sum button was click");
+    setSumOddsMessage("")
     var sum = 0;
     for (let i = 1; i <= 51; i++) { 
         if (i % 2 === 1) {
@@ -78,7 +89,9 @@ function sumAllOdds() {
 setTimeout(function() { 
     if (sumOdds === 676) {
         setSumOdds(!sumOdds)
-        setSumOdds(0)
+        setSumOdds("")
+        setSumOddsMessage("Task Completed")
+
     }
 }, 1000);
 
@@ -88,8 +101,13 @@ const [inputString, setInputString] = useState()
 const [iteratingNumber, setIteratingNumber] = useState(true)
 function changeState(e){
     console.log("input was selected");
-    setIteratingNumber(false)
-     setInputString(e.target.value)
+    setInputString(e.target.value);
+    setFindMaxString(e.target.value);
+    setFindAverageString(e.target.value);
+    setIteratingNumber(false);
+    setFindAverageNumber(false);
+    setFindMaxNumber(false);
+
 }
 
 function iteratingArray(){
@@ -97,7 +115,7 @@ function iteratingArray(){
     // const userArray = inputSting.split(',');
     // const userArray = inputSting.split`,`.map(i=>+i);
     // const userArray = inputSting.split('').map(i=>Number(i));
-    const userArray = inputString.split(',', 10);
+    const userArray = inputString.split(',', 50);
 
     console.log("user array",userArray);
 
@@ -115,6 +133,7 @@ function iteratingArray(){
     }
 
 }
+
 
 
 // find the max---------------------------------
@@ -142,7 +161,6 @@ function findMax(){
     }
 
 }
-
 
 
 
@@ -181,7 +199,6 @@ function arrayWithOdds() {
     let newArrayOdds = [];
     for (let i = 1; i <= 31; i++) { 
         task2(i)     
-
         if (i % 2 === 1) {
             task(i)   
           }    
@@ -208,7 +225,7 @@ setTimeout(function() {
     if (oddsArray === 31) {
         setOddsArray(!oddsArray)
         setOddsArray(0)
-        setNewArray("task completed")
+        setNewArray("Task Completed")
 
     }
 }, 2000);
@@ -223,7 +240,7 @@ setTimeout(function() {
             <ul>
                 <li>
                     <h2>Print 1-250</h2>
-                    <h3>{print}</h3>
+                    <h3>{print} {printMessage}</h3>
                     <button 
                     style={{ background:  print? "lightGray" : "rgb(235, 201, 8)" }}
                     disabled={print}
@@ -233,23 +250,36 @@ setTimeout(function() {
 
                 <li>
                     <h2>Print all odd numbers from 1-51</h2>
-                    <h3>{odds}</h3>
+                    <h3>{odds} {oddsMessage} </h3>
                     <button 
                     style={{ background:  odds? "lightGray" : "rgb(235, 201, 8)" }}
                     disabled={odds}
                     onClick={printOdds}
-                    >Print Odd #</button>
+                    >Print Odd Numbers</button>
                 </li>
 
 
                 <li>
                     <h2>Print the <u>sum</u> of all the odd numbers from  1-51</h2>
-                    <h3>{sumOdds}</h3>
+                    <h3>{sumOdds} {sumOddsMessage}</h3>
                     <button 
                     style={{ background:  sumOdds? "lightGray" : "rgb(235, 201, 8)" }}
                     disabled={sumOdds}
                     onClick={sumAllOdds}
                     >Sum all odds </button>
+                </li>
+
+                <li>
+                    <h2>New Array with odd numbers 1-31</h2>
+                    <div>
+                        <h4>[{newArray}]</h4>
+                        <h3>Loop: {oddsArray}</h3>
+                    </div>
+                    <button 
+                    style={{ background:  oddsArray? "lightGray" : "rgb(235, 201, 8)" }}
+                    disabled={oddsArray}
+                    onClick={arrayWithOdds}
+                    >Create New Array</button>
                 </li>
 
 
@@ -259,7 +289,6 @@ setTimeout(function() {
                     type="text" 
                     placeholder="create an array separate numbers by a , ex: 1,2,3 "
                     onChange={changeState}
-            
                     />
 
                     <button 
@@ -269,12 +298,13 @@ setTimeout(function() {
                     >Start Iterating</button>
                 </li>
 
-
                 <li>
                     <h2>find the max number <b> {findMaxNumber}</b></h2>
                     <input 
-                    type="text" 
-                    placeholder="create an array separate numbers by a , ex: 1,2,3 "
+                    className="noBorders"
+                    type="text"
+                    value={inputString} 
+                    // placeholder="create an array separate numbers by a , ex: 1,2,3 "
                     onChange={changeStateFindMax}
                     />
 
@@ -287,9 +317,11 @@ setTimeout(function() {
 
                 <li>
                     <h2>find the average number<b> {findAverageNumber}</b></h2>
-                    <input 
+                    <input
+                    className="noBorders"
                     type="text" 
-                    placeholder="create an array separate numbers by a , ex: 1,2,3 "
+                    value={inputString}
+                    // placeholder="create an array separate numbers by a , ex: 1,2,3 "
                     onChange={changeStateFindAverage}
                     />
 
@@ -301,18 +333,7 @@ setTimeout(function() {
                 </li>
 
 
-                <li>
-                    <h2>New Array with odd numbers</h2>
-                    <div>
-                        <h4>[{newArray}]</h4>
-                        <h3>Loop: {oddsArray}</h3>
-                    </div>
-                    <button 
-                    style={{ background:  oddsArray? "lightGray" : "rgb(235, 201, 8)" }}
-                    disabled={oddsArray}
-                    onClick={arrayWithOdds}
-                    >Print Odd #</button>
-                </li>
+
                 
             </ul>
             
