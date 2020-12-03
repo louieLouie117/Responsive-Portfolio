@@ -144,7 +144,7 @@ const Projects = props => {
                 <div className="cardItems">
                     <ul>
                         <li className="project1-container">
-                            <h2>CRUD Web App</h2>
+                            <h2>Responsive Web App</h2>
                             <img 
                             src="/img/projectImg1.png" 
                             style={{ filter: project1Img ? "blur(5px)" : "blur(0px)" }} />
@@ -182,7 +182,7 @@ const Projects = props => {
 
 
                         <li className="project2-container">
-                            <h2>CRUD Web App</h2>
+                            <h2>Responsive Web App</h2>
                             <img src="/img/projectImg2.png" 
                             style={{ filter: project2Img ? "blur(4px)" : "blur(0px)" }}/>
                             <div  
@@ -216,7 +216,7 @@ const Projects = props => {
                         </li>
 
                         <li className="project3-container">
-                            <h2>CRUD Web App</h2>
+                            <h2>Responsive Web App</h2>
                             <img 
                             src="/img/projectImg3.png" 
                             style={{ filter: project3Img ? "blur(4px)" : "blur(0px)" }}/>
@@ -251,7 +251,7 @@ const Projects = props => {
                         </li>
 
                         <li className="project4-container">
-                            <h2>CRUD Web App</h2>
+                            <h2>Responsive Web App</h2>
                             <img 
                             src="/img/projectImg4.png" 
                             style={{ filter: project4Img ? "blur(4px)" : "blur(0px)" }}/>
@@ -286,7 +286,7 @@ const Projects = props => {
                         </li>
 
                         <li className="project5-container">
-                            <h2>Landing Page</h2>
+                            <h2>Responsive Landing Page</h2>
                             <img 
                             src="/img/projectImg5.png" 
                             style={{ filter: project5Img ? "blur(4px)" : "blur(0px)" }}/>
@@ -316,7 +316,37 @@ const Projects = props => {
 
 
                         <li className="project6-container">
-                            <h2>Landing Page</h2>
+                            <h2>Responsive Landing Page</h2>
+                            <img 
+                            src="/img/projectImg6.png" 
+                            style={{ filter: project6Img ? "blur(4px)" : "blur(0px)" }}/>
+                            <div  
+                            style={{ display: project6Details ? "grid" : "none" }} 
+                            className="tools-container">
+                            <div id="icon-container">
+                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                <p>Prototype UI</p>
+
+                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                <p>Responsive Layout</p>
+
+                                <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
+                                <p>Behavior</p>
+                            </div>
+                            </div>
+
+                            <footer> 
+                                <a 
+                                onClick={project6State}
+                                onMouseEnter={project6State} 
+                                onMouseLeave={project6State}>Details</a>
+                                <a target="blank" href="https://jrprolandscaping.com/"  > <button>Visit it.</button></a>
+                            </footer>
+                        </li>
+
+
+                        <li className="project7-container">
+                            <h2>Responsive Reg/Login</h2>
                             <img 
                             src="/img/projectImg6.png" 
                             style={{ filter: project6Img ? "blur(4px)" : "blur(0px)" }}/>
