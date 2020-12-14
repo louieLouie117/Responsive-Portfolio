@@ -14,13 +14,20 @@ const [about, setAbout] = useState(false)
             <nav> 
                 <Link to="/"
                 onClick={ ()=> setProject(!project)}
-                style={{ borderBottom: project ? " solid 9px #0080BF" : "none" }}
+                style={{ 
+                    background: project ? "#0080BF" : "whitesmoke", 
+                    color: about ? "black" : "white", 
+                    boxShadow:  about ? "none" : "0 0 5px  rgba(0, 0, 0, 0.508)"}}
                 onClick={ ()=> {setAbout(!about); setProject(!project)}}>Projects</Link>
 
 
                 <Link 
                 to="/about-me"
-                style={{ borderBottom: about ? " solid 9px #0080BF" : "none" }}
+                style={{ 
+                    background: about ? "#0080BF" : "whitesmoke",
+                    color: about ? "white" : "black",
+                    boxShadow:  about ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none"  }}
+      
                 onClick={ ()=> {setAbout(!about); setProject(!project)}}>About me</Link>
             </nav>
             
