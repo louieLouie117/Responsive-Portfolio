@@ -121,10 +121,12 @@ body  ::-webkit-scrollbar{
   margin: 0px;
 }
 
-.cardItems ul li:last-of-type:last-child{
+
+
+/* .cardItems ul li:last-of-type:last-child{
   background: none;
   width: 10px;
-}
+} */
 
 
 
@@ -140,7 +142,7 @@ body  ::-webkit-scrollbar{
   margin-top: 10px;
   margin-bottom: 20px;
   box-shadow: -5px 10px 13px rgba(0, 0, 0, 0.11);
-
+  
 }   
 
 
@@ -302,9 +304,7 @@ body  ::-webkit-scrollbar{
 
 .mainNav-container  nav{
   display: grid;
-  column-gap: 10px;
   align-self: flex-end;
-  padding-bottom: 10px;
   text-align: center;
 
 }
@@ -315,10 +315,12 @@ body  ::-webkit-scrollbar{
 } */
 
 .mainNav-container a {
-  font: 1em sans-serif;
+  font: .9em sans-serif;
   text-decoration: none;
-  color: rgb(88, 88, 88);
-  padding: 5px 0;
+  /* color: white; */
+  padding: 5px ;
+  border-radius: 10px 10px 0 0 ;
+  box-shadow: 0 0 5px;
 
 }
 

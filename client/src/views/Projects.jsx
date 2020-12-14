@@ -1,124 +1,79 @@
 
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import {Link} from "@reach/router"
 
 const Projects = props => {
-    const [project1Details, setProject1Details] = useState(false)
-    const [project1Img, setProject1Img] = useState(false)
 
-    const [project2Details, setProject2Details] = useState(false)
-    const [project2Img, setProject2Img] = useState(false)
+    // Effects
+    const [details, setDetail] = useState(false)
 
-    const [project3Details, setProject3Details] = useState(false)
-    const [project3Img, setProject3Img] = useState(false)
-
-    const [project4Details, setProject4Details] = useState(false)
-    const [project4Img, setProject4Img] = useState(false)
-
-    const [project5Details, setProject5Details] = useState(false)
-    const [project5Img, setProject5Img] = useState(false)
-
-    const [project6Details, setProject6Details] = useState(false)
-    const [project6Img, setProject6Img] = useState(false)
+  
 
 
 
-    function project1State() {
-        setProject1Details(!project1Details);
-        setProject1Img(!project1Img);
-
-        setProject2Details(false);
-        setProject2Img(false);
-        setProject3Details(false);
-        setProject3Img(false);
-        setProject4Details(false);
-        setProject4Img(false);
-        setProject5Details(false);
-        setProject5Img(false);
     
-    }
-
-    function project2State() {
-        setProject2Details(!project2Details);
-        setProject2Img(!project2Img);
-
-        setProject1Details(false);
-        setProject1Img(false);
-        setProject3Details(false);
-        setProject3Img(false);
-        setProject4Details(false);
-        setProject4Img(false);
-        setProject5Details(false);
-        setProject5Img(false);
-
-        
-    }
-
-    function project3State() {
-        setProject3Details(!project3Details);
-        setProject3Img(!project3Img);
-        
-        setProject1Details(false);
-        setProject1Img(false);
-        setProject2Details(false);
-        setProject2Img(false);
-        setProject4Details(false);
-        setProject4Img(false);
-        setProject5Details(false);
-        setProject5Img(false);
+    function showDetails(e) {
     
-    }
 
-    function project4State() {
-        setProject4Details(!project4Details);
-        setProject4Img(!project4Img);
-        
-        setProject1Details(false);
-        setProject1Img(false);
-        setProject2Details(false);
-        setProject2Img(false);
-        setProject3Details(false);
-        setProject3Img(false);
-        setProject5Details(false);
-        setProject5Img(false);
+        setDetail(!details);
+     
+        // if (e.target.name == e.target.name) {
+        //     console.log("success");
+        //     setDetail(!details);
+           
+        // }
     
-    }
+        console.log("I am here");
+        console.log(e.target.name);
+        // setDetail(e.target.name)
+        console.log("DETAIL:",details);
+    
 
-    function project5State() {
-        setProject5Details(!project5Details);
-        setProject5Img(!project5Img);
-        
-        setProject1Details(false);
-        setProject1Img(false);
-        setProject2Details(false);
-        setProject2Img(false);
-        setProject3Details(false);
-        setProject3Img(false);
-        setProject4Details(false);
-        setProject4Img(false);
-        setProject6Details(false);
-        setProject6Img(false);
+    
     
     }
 
 
-    function project6State() {
-        setProject6Details(!project6Details);
-        setProject6Img(!project6Img);
+const [project, setProject] = useState(null)
+
+    const apiGetAllProjects = 'http://localhost:8000/api/project'
+
+    useEffect(()=>{
+        axios
+        .get(apiGetAllProjects)
+        .then((res) =>{
+            setProject(res.data.Project)
+            // console.log(res.data.Project);
+        })
+        .catch((err)=> {
+            console.log(err);
+        })
+    }, [])
+
+
+
+    const deleteHandler = (deleteId)=> {
+        console.log("delete button was click");
+        axios.delete("http://localhost:8000/api/project/delete/" + deleteId)
+        .then((res)=>{
+            const filterProject = project.filter((project)=> {
+                return project._id !== deleteId
+            });
+
+            setProject(filterProject);
+        })
+  
         
-        setProject1Details(false);
-        setProject1Img(false);
-        setProject2Details(false);
-        setProject2Img(false);
-        setProject3Details(false);
-        setProject3Img(false);
-        setProject4Details(false);
-        setProject4Img(false);
-        setProject5Details(false);
-        setProject5Img(false);
-    
     }
 
+        
+
+
+ 
+    if(project === null){return(<h2>Loading...</h2>)}
+
+    
 
     return (
         <div className="projectsPage-container">
@@ -140,250 +95,104 @@ const Projects = props => {
                     <source media="(min-width: 725px)" srcset="/img/tabletImg.png" />
                     <img src="/img/mobileImgLarge.png" alt="" />
                 </picture>
-                
+        
                 <div className="cardItems">
+                            
                     <ul>
+                    {project.map((project)=>{
+                        return(
                         <li className="project1-container">
-                            <h2>Responsive Web App</h2>
+                            <h2>{project.title}</h2>
                             <img 
-                            src="/img/projectImg1.png" 
-                            style={{ filter: project1Img ? "blur(5px)" : "blur(0px)" }} />
+                            src={"/uploads/" + project.file}
+                            style={{ filter: details ? "blur(5px)" : "blur(0px)" }} />
 
                             <div  
-                            style={{ display: project1Details ? "grid" : "none" }} 
+                            style={{ display: details ? "grid" : "none" }} 
                             className="tools-container">
+                        
+                           
+
+                            {(() =>{
+                                    if (project.type === "cSharp") {
+                                        return(     
+                                    <div id="icon-container">
+
+                                        <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                        <p>Mockup UI</p>
+
+                                        <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                        <p>Responsive Layout</p>
+
+                                        <div><img src="/img/Icons/iconCSharp.png" alt=""/></div>
+                                        <p>Logic</p>
+
+                                        <div><img src="/img/Icons/iconNet.png" alt=""/></div>
+                                        <p>Framework</p>
+                                        
+                                        <div><img src="/img/Icons/iconMySql.png" alt=""/></div>
+                                        <p>Date Base</p>   
+                                    </div>
+                                        )}
+                                          
+
                                 
-                            <div id="icon-container">
-                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
-                                <p>Prototype UI</p>
+                                })()}
 
-                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
-                                <p>Responsive Layout</p>
+                                           
+                           
 
-                                <div><img src="/img/Icons/iconPython.png" alt=""/></div>
-                                <p>Logic</p>
+                            {(() =>{
+                                    if (project.type === "landingPage") {
+                                        return(     
+                                            <div id="icon-container">
+                                            <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                            <p>Mockup UI</p>
+            
+                                            <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                            <p>Responsive Layout</p>
+            
+                                            <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
+                                            <p>Behavior</p>
+                                        </div>
+                                        )}
+                                          
 
-                                <div><img src="/img/Icons/iconJquiry.png" alt=""/></div>
-                                <p>Behavior</p>
                                 
-                                <div><img src="/img/Icons/iconDjango.png" alt=""/></div>
-                                <p>Framework</p>     
-                            </div>
-
-                            </div>
-                            <footer> 
-                                <a  
-                                onClick={project1State}
-                                onMouseEnter={project1State} 
-                                onMouseLeave={project1State}>Details</a>
-                                <button id="projectOneBTN">Live Demo</button>
-                            </footer>
-                        </li>
-
-
-                        <li className="project2-container">
-                            <h2>Responsive Web App</h2>
-                            <img src="/img/projectImg2.png" 
-                            style={{ filter: project2Img ? "blur(4px)" : "blur(0px)" }}/>
-                            <div  
-                            style={{ display: project2Details ? "grid" : "none" }} 
-                            className="tools-container">
-                            <div id="icon-container">
-                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
-                                <p>Prototype UI</p>
-
-                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
-                                <p>Responsive Layout</p>
-
-                                <div><img src="/img/Icons/iconCSharp.png" alt=""/></div>
-                                <p>Logic</p>
-
-                                <div><img src="/img/Icons/iconNet.png" alt=""/></div>
-                                <p>Framework</p>
-                                
-                                <div><img src="/img/Icons/iconMySql.png" alt=""/></div>
-                                <p>Date Base</p>     
-                            </div>
-
-                                </div>
-                            <footer> 
-                                <a 
-                                onClick={project2State}
-                                onMouseEnter={project2State} 
-                                onMouseLeave={project2State}>Details</a>
-                                <button>Live Demo</button>
-                            </footer>
-                        </li>
-
-                        <li className="project3-container">
-                            <h2>Responsive Web App</h2>
-                            <img 
-                            src="/img/projectImg3.png" 
-                            style={{ filter: project3Img ? "blur(4px)" : "blur(0px)" }}/>
-                            <div  
-                            style={{ display: project3Details ? "grid" : "none" }} 
-                            className="tools-container">
-                            <div id="icon-container">
-                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
-                                <p>Prototype UI</p>
-
-                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
-                                <p>Responsive Layout</p>
-
-                                <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
-                                <p>Logic</p>
-
-                                <div><img src="/img/Icons/iconReact.png" alt=""/></div>
-                                <p>Framework</p>
-                                
-                                <div><img src="/img/Icons/iconMongodb.png" alt=""/></div>
-                                <p>Date Base</p>     
-                            </div>
-                            </div>
-
-                            <footer> 
-                                <a 
-                                onClick={project3State}
-                                onMouseEnter={project3State} 
-                                onMouseLeave={project3State}>Details</a>
-                                <button>Live Demo</button>
-                            </footer>
-                        </li>
-
-                        <li className="project4-container">
-                            <h2>Responsive Web App</h2>
-                            <img 
-                            src="/img/projectImg4.png" 
-                            style={{ filter: project4Img ? "blur(4px)" : "blur(0px)" }}/>
-                            <div  
-                            style={{ display: project4Details ? "grid" : "none" }} 
-                            className="tools-container">
-                            <div id="icon-container">
-                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
-                                <p>Prototype UI</p>
-
-                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
-                                <p>Responsive Layout</p>
-
-                                <div><img src="/img/Icons/iconCSharp.png" alt=""/></div>
-                                <p>Logic</p>
-
-                                <div><img src="/img/Icons/iconNet.png" alt=""/></div>
-                                <p>Framework</p>
-                                
-                                <div><img src="/img/Icons/iconMySql.png" alt=""/></div>
-                                <p>Date Base</p>     
-                            </div>
-                            </div>
-
-                            <footer> 
-                                <a 
-                                onClick={project4State}
-                                onMouseEnter={project4State} 
-                                onMouseLeave={project4State}>Details</a>
-                                <a target="blank" href="https://www.deltabarandgrill.com/"> <button>Visit it.</button></a>
-                            </footer>
-                        </li>
-
-                        <li className="project5-container">
-                            <h2>Responsive Landing Page</h2>
-                            <img 
-                            src="/img/projectImg5.png" 
-                            style={{ filter: project5Img ? "blur(4px)" : "blur(0px)" }}/>
-                            <div  
-                            style={{ display: project5Details ? "grid" : "none" }} 
-                            className="tools-container">
-                            <div id="icon-container">
-                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
-                                <p>Prototype UI</p>
-
-                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
-                                <p>Responsive Layout</p>
-
-                                <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
-                                <p>Behavior</p>
-                            </div>
-                            </div>
-
-                            <footer> 
-                                <a 
-                                onClick={project5State}
-                                onMouseEnter={project5State} 
-                                onMouseLeave={project5State}>Details</a>
-                                <a  target="blank" href="https://pacebuildershomeremodeling.com/"> <button>Visit it.</button></a>
-                            </footer>
-                        </li>
-
-
-                        <li className="project6-container">
-                            <h2>Responsive Landing Page</h2>
-                            <img 
-                            src="/img/projectImg6.png" 
-                            style={{ filter: project6Img ? "blur(4px)" : "blur(0px)" }}/>
-                            <div  
-                            style={{ display: project6Details ? "grid" : "none" }} 
-                            className="tools-container">
-                            <div id="icon-container">
-                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
-                                <p>Prototype UI</p>
-
-                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
-                                <p>Responsive Layout</p>
-
-                                <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
-                                <p>Behavior</p>
-                            </div>
-                            </div>
-
-                            <footer> 
-                                <a 
-                                onClick={project6State}
-                                onMouseEnter={project6State} 
-                                onMouseLeave={project6State}>Details</a>
-                                <a target="blank" href="https://jrprolandscaping.com/"  > <button>Visit it.</button></a>
-                            </footer>
-                        </li>
-
-
-                        <li className="project7-container">
-                            <h2>Responsive Reg/Login</h2>
-                            <img 
-                            src="/img/projectImg6.png" 
-                            style={{ filter: project6Img ? "blur(4px)" : "blur(0px)" }}/>
-                            <div  
-                            style={{ display: project6Details ? "grid" : "none" }} 
-                            className="tools-container">
-                            <div id="icon-container">
-                                <div><img src="/img/Icons/iconXD.png" alt=""/></div>
-                                <p>Prototype UI</p>
-
-                                <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
-                                <p>Responsive Layout</p>
-
-                                <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
-                                <p>Behavior</p>
-                            </div>
-                            </div>
-
-                            <footer> 
-                                <a 
-                                onClick={project6State}
-                                onMouseEnter={project6State} 
-                                onMouseLeave={project6State}>Details</a>
-                                <a target="blank" href="https://jrprolandscaping.com/"  > <button>Visit it.</button></a>
-                            </footer>
-                        </li>
-                        <li></li>
-
-
-
+                                })()}
                         
 
+                            </div>
+
+                            
+                            <footer> 
+                                
 
 
+                      
+                         
+                                <a  
+                                name={project._id}
+                                onClick={showDetails}
+                                // onMouseEnter={project1State} 
+                                style={{color: `#${project.color}` }  }
+                                >Details</a>
+
+
+                                <a href={project.urlLink}> 
+                                <button style={{background: `#${project.color}`} }>{project.linkType }</button> 
+                               </a>
+
+                            </footer>
+                        </li>
+
+
+                        );})}
+ 
                     </ul>
                  
                 </div>
+            
             </main>
 
 

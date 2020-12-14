@@ -10,7 +10,7 @@ const ProjectSchema = new mongoose.Schema(  {
 
     },
 
-    projectType:{
+    type:{
         type: String,
         required: [true, "{PATH} is required"],
         minlength: [3, "{PATH} must be at least {MINLENGTH}"]
