@@ -97,6 +97,26 @@ const [project, setProject] = useState(null)
                                 <p>{project.linkType}</p>
                                 <p>{project.color}</p>
 
+                                
+                            {(() =>{
+                                    if (project.details === false) {
+                                        return(
+                                            <div>
+                                                <p>false</p>
+                                            </div>
+                                        )}
+                                })()}
+                            
+
+                            {(() =>{
+                                    if (project.details === true) {
+                                        return(
+                                            <div>
+                                                <p>true</p>
+                                            </div>
+                                        )}
+                                })()}
+
                             </aside>
                             
                             <footer>

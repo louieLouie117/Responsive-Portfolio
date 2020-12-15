@@ -15,6 +15,8 @@ const CreateNewProject = props => {
     const [linkType, setLinkType] = useState();
     const [color, setColor] = useState();
     const [file, setFile] = useState();
+    const [details, setDetails] = useState(false);
+
     const [data, getFile] = useState({ name: "", path: "" });
 
     const onChange = e => {
@@ -30,6 +32,8 @@ const CreateNewProject = props => {
         console.log(urlLink);
         console.log(linkType);
         console.log(color);
+        console.log(false);
+
 
 
         const fd = new FormData();
@@ -38,7 +42,9 @@ const CreateNewProject = props => {
         fd.append('urlLink', urlLink);
         fd.append('linkType', linkType);
         fd.append('color', color);
+        fd.append('details', details);
         fd.append('file', file);
+
 
 
         // 
@@ -67,6 +73,7 @@ const CreateNewProject = props => {
         <div>
             <h2>Crate new Project</h2>
             <form encType="multipart/form-data" onSubmit= {e => {submitHandler(e)}}>
+
             <div className="columns2-container">
                 
             <select 
@@ -86,7 +93,7 @@ const CreateNewProject = props => {
                 onChange={e => {setUrlLink(e.target.value)}}
                 placeholder="url Link"/>
 
-                <div className="columns2-container">
+                <div className="columns3-container">
         
                 <input 
                 type="text"
@@ -97,12 +104,20 @@ const CreateNewProject = props => {
                 type="text"
                 onChange={e => {setColor(e.target.value)}}
                 placeholder="hex color"/>
+                      <select 
+                onChange={e => {setDetails(e.target.value)}}>
+                    <option value="false">false</option>
+                    <option value="true">true</option>
+
+                </select>
                 </div>
               
                 
                 <input 
                 type="file" 
                 onChange={onChange}/>
+                    
+              
 
     
 
