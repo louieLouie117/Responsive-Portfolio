@@ -114,7 +114,7 @@ const [project, setProject] = useState(null)
                            
 
                             {(() =>{
-                                    if (project.type === "cSharp") {
+                                    if (project.type === "c#Stack") {
                                         return(     
                                     <div id="icon-container">
 
@@ -160,7 +160,63 @@ const [project, setProject] = useState(null)
 
                                 
                                 })()}
+
+
+                            {(() =>{
+                                    if (project.type === "pythonStack") {
+                                        return(     
+                                            <div id="icon-container">
+                                            <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                            <p>Mockup UI</p>
+            
+                                            <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                            <p>Responsive Layout</p>
+            
+                                            <div><img src="/img/Icons/iconPython.png" alt=""/></div>
+                                            <p>Logic</p>
+
+                                              
+                                            <div><img src="/img/Icons/iconDjango.png" alt=""/></div>
+                                            <p>Framework</p>
+
+                                              
+                                            <div><img src="/img/Icons/iconJquiry.png" alt=""/></div>
+                                            <p>Behavior</p>
+
+                                        </div>
+                                        )}
+                                          
+
+                                })()}
                         
+
+
+                        {(() =>{
+                                    if (project.type === "mernStack") {
+                                        return(     
+                                            <div id="icon-container">
+                                            <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                            <p>Mockup UI</p>
+            
+                                            <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                            <p>Responsive Layout</p>
+            
+                                            <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
+                                            <p>Logic</p>
+
+                                              
+                                            <div><img src="/img/Icons/iconReact.png" alt=""/></div>
+                                            <p>Framework</p>
+
+                                              
+                                            <div><img src="/img/Icons/iconMongodb.png" alt=""/></div>
+                                            <p>Date Base</p>
+
+                                        </div>
+                                        )}
+                                          
+
+                                })()}
 
                             </div>
 
