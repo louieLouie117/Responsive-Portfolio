@@ -1,0 +1,58 @@
+
+
+
+.dashboard-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background: whitesmoke;
+    padding: 0 70px;
+
+}
+
+.dashboard-container ul {
+    display: grid;
+    row-gap: 20px;
+    background: whitesmoke;
+    /* width: 900px; */
+
+}
+
+.dashboard-container ul li {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background: white;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.296);
+    margin-right: 20px;
+}
+
+.dashboard-container ul li img {
+    width: 200px;
+
+}
+
+.dashboard-container button{
+    font: 1em sans-serif;
+    background: gray;
+    color: white;
+    
+}
+
+.dashboard-container form {
+    display: grid;
+    width: 400px;
+    row-gap: 10px;
+}
+
+.dashboard-container form select{
+    height: 40px;
+}
+
+.dashboard-container form input{
+    font: 1em sans-serif;}
+
+
+.columns2-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 10px;
+}

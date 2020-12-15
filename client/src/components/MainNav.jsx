@@ -15,7 +15,7 @@ const [about, setAbout] = useState(false)
                 <Link to="/"
                 onClick={ ()=> setProject(!project)}
                 style={{ 
-                    background: project ? "#0080BF" : "whitesmoke", 
+                    background: project ? "#A279A4" : "whitesmoke", 
                     color: about ? "black" : "white", 
                     boxShadow:  about ? "none" : "0 0 5px  rgba(0, 0, 0, 0.508)"}}
                 onClick={ ()=> {setAbout(!about); setProject(!project)}}>Projects</Link>
@@ -24,7 +24,7 @@ const [about, setAbout] = useState(false)
                 <Link 
                 to="/about-me"
                 style={{ 
-                    background: about ? "#0080BF" : "whitesmoke",
+                    background: about ? "#A279A4" : "whitesmoke",
                     color: about ? "white" : "black",
                     boxShadow:  about ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none"  }}
       
