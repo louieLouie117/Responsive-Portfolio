@@ -1,6 +1,4 @@
 
-
-
 .dashboard-container{
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -54,5 +52,14 @@
 .columns2-container{
     display: grid;
     grid-template-columns: 1fr 2fr;
+    column-gap: 10px;
+}
+
+
+
+
+.columns3-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 10px;
 }
