@@ -2,37 +2,13 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {Link} from "@reach/router"
+import { get } from 'mongoose'
 
 const Projects = props => {
 
     // Effects
-    const [details, setDetail] = useState(false)
 
-  
-
-
-
-    
-    function showDetails(e) {
-    
-
-        setDetail(!details);
-     
-        // if (e.target.name == e.target.name) {
-        //     console.log("success");
-        //     setDetail(!details);
-           
-        // }
-    
-        console.log("I am here");
-        console.log(e.target.name);
-        // setDetail(e.target.name)
-        console.log("DETAIL:",details);
-    
-
-    
-    
-    }
+    const [details, setDetails] = useState("")
 
 
 const [project, setProject] = useState(null)
@@ -49,21 +25,37 @@ const [project, setProject] = useState(null)
         .catch((err)=> {
             console.log(err);
         })
-    }, [])
+    })
 
 
+    
 
-    const deleteHandler = (deleteId)=> {
-        console.log("delete button was click");
-        axios.delete("http://localhost:8000/api/project/delete/" + deleteId)
-        .then((res)=>{
-            const filterProject = project.filter((project)=> {
-                return project._id !== deleteId
-            });
+    const showDetails = (data)=> {
+   
+        console.log(data._id);
+        console.log("before",data.details);
+        data.details = !data.details
+        console.log("after",data.details);
+        setDetails(" ")
+        setDetails("change")
+        // const updateBoolean = {
+        //     details: data.details    
+        // }
+        const fd = new FormData();
+        fd.append('details', data.details);
 
-            setProject(filterProject);
+        axios
+        .put("http://localhost:8000/api/project/update/" + data._id, fd)
+        .then((res) =>{
+            console.log("submitted");
+            console.log(res);
+            // console.log(updateBoolean);
+
         })
-  
+        .catch((err) =>{
+            console.log("something went wrong");
+            console.log(err);
+        })
         
     }
 
@@ -103,12 +95,17 @@ const [project, setProject] = useState(null)
                         return(
                         <li className="project1-container">
                             <h2>{project.title}</h2>
+                            
                             <img 
                             src={"/uploads/" + project.file}
-                            style={{ filter: details ? "blur(5px)" : "blur(0px)" }} />
+                            style={{ filter: project.details ? "blur(5px)" : "blur(0px)" }}
+                             />
 
+
+
+                                     
                             <div  
-                            style={{ display: details ? "grid" : "none" }} 
+                            style={ { display: project.details ? "grid" : "none" }} 
                             className="tools-container">
                         
                            
@@ -221,16 +218,11 @@ const [project, setProject] = useState(null)
                             </div>
 
                             
-                            <footer> 
-                                
-
-
-                      
-                         
+                            <footer>                       
                                 <a  
                                 name={project._id}
-                                onClick={showDetails}
-                                // onMouseEnter={project1State} 
+                                onClick={ () =>showDetails(project)}
+                                onMouseEnter={ () =>showDetails(project)} 
                                 style={{color: `#${project.color}` }  }
                                 >Details</a>
 

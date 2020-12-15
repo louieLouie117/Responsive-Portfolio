@@ -96,7 +96,7 @@ module.exports = {
 
     // update 
     update (req, res){
-        Project.findOneAndUpdate({_id: req.params.id},req.body, {new: true, runValidators})
+        Project.findOneAndUpdate({_id: req.params.id}, req.body)
         .then(result => res.json({Project: result}))
         .catch((err) => {res.status(400).json(err);})
     },
