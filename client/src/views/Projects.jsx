@@ -26,8 +26,6 @@ const [project, setProject] = useState(null)
             console.log(err);
         })
     })
-
-
     
 
     const showDetails = (data)=> {
@@ -100,10 +98,7 @@ const [project, setProject] = useState(null)
                             src={"/uploads/" + project.file}
                             style={{ filter: project.details ? "blur(5px)" : "blur(0px)" }}
                              />
-
-
-
-                                     
+      
                             <div  
                             style={ { display: project.details ? "grid" : "none" }} 
                             className="tools-container">
@@ -223,6 +218,7 @@ const [project, setProject] = useState(null)
                                 name={project._id}
                                 onClick={ () =>showDetails(project)}
                                 onMouseEnter={ () =>showDetails(project)} 
+                                onMouseLeave={ () =>showDetails(project)} 
                                 style={{color: `#${project.color}` }  }
                                 >Details</a>
 
