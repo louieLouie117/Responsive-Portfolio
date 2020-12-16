@@ -7,6 +7,7 @@ import MainNav from './components/MainNav';
 import AboutMe from './views/AboutMe';
 import CodeChallenges from './views/CodeChallenges';
 import Dashboard from './views/Dashboard';
+import UpdateProject from './components/UpdateProject';
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <AboutMe path="/about-me"/>
         <CodeChallenges path="/code-challenges"/>
         <Dashboard path="/dashboard"/>
+        <UpdateProject path="/update/:id/edit"/>
       </Router>
       <MainNav/>
 
