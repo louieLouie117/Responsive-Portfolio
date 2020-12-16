@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import {Link} from "@reach/router"
 import modules from "../modules/Dashboard.modules.css"
 
 
@@ -78,7 +79,7 @@ const [project, setProject] = useState(null)
 
 
     return (
-        <div>
+        <div className="allProjects-container">
             <h2>List of all projects</h2>
             {project.map((project)=>{
                         return(
@@ -120,8 +121,11 @@ const [project, setProject] = useState(null)
                             </aside>
                             
                             <footer>
-                                <button onClick={()=>{deleteHandler(project._id)}}>Delete</button>
-                                <button>Edit</button>
+                                
+                                <button
+                                style={{background: `#${project.color}` }  }
+                                 onClick={()=>{deleteHandler(project._id)}}>Delete</button>
+                                <Link to={`/update/${project._id}/edit`}>edit</Link>
                             </footer>
 
                            
