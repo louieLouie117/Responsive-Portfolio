@@ -8,11 +8,10 @@ import {navigate} from "@reach/router"
 const UpdateProject = props => {
 
 
-    console.log("props",props);
-    console.log("id",props.Id);
+    // console.log("props",props);
+    console.log("Props",props.id);
 
 
-    
     const [title, setTitle] = useState();
     const [type, setType] = useState("c#Stack");
     const [urlLink, setUrlLink] = useState();
@@ -25,20 +24,26 @@ const UpdateProject = props => {
 
 
     useEffect(() => {
-        console.log(props.Id);
-        console.log("here I am",props.Project);
+        // console.log("use effect",props);
+        console.log("UseEffect",props.id);
 
 
         axios
-        .get("http://localhost:8000/api/project/" + props.Id)
+        .get("http://localhost:8000/api/project/" + props.id )
         .then((res)=>{
             console.log("get project", res);
-            console.log(res.data.Project.title);
+            
             setTitle(res.data.Project.title)
             setType(res.data.Project.type)
             setUrlLink(res.data.Project.urlLink)
             setLinkType(res.data.Project.linkType)
             setColor(res.data.Project.color)
+
+            console.log("Axios id",res.data.Project.id);
+            console.log("Axios title",res.data.Project.title);
+            console.log("Axios type",res.data.Project.type);
+            console.log("Axios color",res.data.Project.color);
+
         })
         .catch((err) =>{
             console.log(err);
@@ -52,10 +57,16 @@ const UpdateProject = props => {
 
 
         const fd = new FormData();
+        fd.append('type', type );
         fd.append('title', title );
+        fd.append('urlLink', urlLink );
+        fd.append('linkType', linkType );
+        fd.append('details', details );
+        fd.append('color', color );
+
 
         axios
-        .put("http://localhost:8000/api/project/update/" + props.Id, fd)
+        .put("http://localhost:8000/api/project/update/" + props.id, fd)
         .then((res) =>{
             console.log("submitted");
             console.log(res);
@@ -72,6 +83,7 @@ const UpdateProject = props => {
 
 
     }
+
 
 
     const onChange = (e)=>{}
@@ -95,13 +107,13 @@ const UpdateProject = props => {
                 <input 
                 type="text"
                 value={title}
-                // onChange={e => {setTitle(e.target.value)}}
+                onChange={e => {setTitle(e.target.value)}}
                 placeholder="title"/>
             </div>
                 <input 
                 type="text"
                 value={urlLink}
-                // onChange={e => {setUrlLink(e.target.value)}}
+                onChange={e => {setUrlLink(e.target.value)}}
                 placeholder="url Link"/>
 
                 <div className="columns3-container">
@@ -109,16 +121,17 @@ const UpdateProject = props => {
                 <input 
                 type="text"
                 value={linkType}
-                // onChange={e => {setLinkType(e.target.value)}}
+                onChange={e => {setLinkType(e.target.value)}}
                 placeholder="button text"/>
 
                 <input 
                 type="text"
                 value={color}
-                // onChange={e => {setColor(e.target.value)}}
+                onChange={e => {setColor(e.target.value)}}
                 placeholder="hex color"/>
                       <select 
-                onChange={e => {setDetails(e.target.value)}}>
+                onChange={e => {setDetails(e.target.value)}}
+                >
                     <option value="false">false</option>
                     <option value="true">true</option>
 

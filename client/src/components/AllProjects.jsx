@@ -125,7 +125,7 @@ const [project, setProject] = useState(null)
                                 <button
                                 style={{background: `#${project.color}` }  }
                                  onClick={()=>{deleteHandler(project._id)}}>Delete</button>
-                                <Link to={`/update/${project._id}`}>edit</Link>
+                                <Link to={`/update/${project._id}/edit`}>edit</Link>
                             </footer>
 
                            

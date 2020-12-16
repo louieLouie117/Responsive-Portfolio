@@ -24,7 +24,7 @@ function App() {
         <AboutMe path="/about-me"/>
         <CodeChallenges path="/code-challenges"/>
         <Dashboard path="/dashboard"/>
-        <UpdateProject path="/update/:Id"/>
+        <UpdateProject path="/update/:id/edit"/>
       </Router>
       <MainNav/>
 

@@ -88,7 +88,7 @@ module.exports = {
         
     // find one 
     findSingleProject (req, res){
-        Project.findOne(req.body)
+        Project.findOne(({_id: req.params.id}))
         .then(oneSingleProject => res.json({Project: oneSingleProject}))
         .catch((err) => {res.status(400).json(err);})
     },
