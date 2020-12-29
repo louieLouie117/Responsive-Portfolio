@@ -92,7 +92,25 @@ const [project, setProject] = useState(null)
                     {project.map((project)=>{
                         return(
                         <li className="project1-container">
-                            <h2>{project.title}</h2>
+                            {/* <h2>{project.title}</h2> */}
+                            {(() =>{
+                                    if (project.details === false) {
+                                        return(
+                                            <div>
+                                                <h2>{project.title}</h2>
+                                            </div>
+                                        )}
+                                })()}
+                            
+
+                            {(() =>{
+                                    if (project.details === true) {
+                                        return(
+                                            <div>
+                                                <h2>Web technology implemented</h2>
+                                            </div>
+                                        )}
+                                })()}
                             
                             <img 
                             src={"/uploads/" + project.file}
