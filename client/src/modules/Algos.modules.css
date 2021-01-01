@@ -47,13 +47,13 @@
   
   
   /* desktop styles */
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 800px) {
     .basicAlgos-container{
     max-width: none;}
 
   .basicAlgos-container ul{
       column-gap: 20px;
-      grid-template-columns: 1fr 1fr 1fr ;
+      grid-template-columns:  1fr 1fr ;
   } 
 
   
@@ -61,13 +61,26 @@
   }
 
 
-  @media screen and (min-width: 1500px) {
+  @media screen and (min-width: 1100px) {
   
 
   .basicAlgos-container ul{
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns:  1fr 1fr 1fr;
   } 
 
   
   
   }
+
+
+  
+  @media screen and (min-width: 1500px) {
+  
+
+    .basicAlgos-container ul{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    } 
+  
+    
+    
+    }

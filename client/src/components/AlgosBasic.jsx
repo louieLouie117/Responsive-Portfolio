@@ -102,11 +102,16 @@ const [iteratingNumber, setIteratingNumber] = useState(true)
 function changeState(e){
     console.log("input was selected");
     setInputString(e.target.value);
+    // set min/max/average
     setFindMaxString(e.target.value);
+    setFindMinString(e.target.value);
     setFindAverageString(e.target.value);
+
     setIteratingNumber(false);
     setFindAverageNumber(false);
     setFindMaxNumber(false);
+    setFindMinNumber(false);
+
 
 }
 
@@ -151,14 +156,54 @@ function findMax(){
     const userArray = findMaxString.split(',').map(Number);
 
     console.log("user array",userArray);
-    let max = 0;
+    let max = userArray[0];
     for (let i = 0; i < userArray.length; i++) {
         console.log("loop", userArray[i]);
         if (max < userArray[i]) {
             max = userArray[i];
-            setFindMaxNumber(max)
+            console.log("max in if statement",max);
+
           }    
+          setFindMaxNumber(max)
+
     }
+
+}
+
+
+
+// find the min---------------------------------
+const [findMinString, setFindMinString] = useState()
+const [findMinNumber, setFindMinNumber] = useState(true)
+
+
+function changeStateFindMin(e){
+    console.log("input was selected");
+    setFindMinNumber(false)
+    setFindMinString(e.target.value)
+}
+
+function findMin(){
+    const userArray = findMinString.split(',').map(Number);
+
+    console.log("user array",userArray);
+    let min = userArray[0];
+    for (let i = 0; i < userArray.length; i++) {
+        console.log("loop for min", userArray[i]);
+
+        if ( userArray[i] < min) {
+            min = userArray[i];
+            console.log("min in if statement",min);
+
+          }    
+          setFindMinNumber(min)
+
+
+
+    }
+
+    console.log("min after if statement",min);
+
 
 }
 
@@ -178,7 +223,7 @@ function changeStateFindAverage(e){
 
 function findAverage(){
     const userArray = findAverageString.split(',').map(Number);
-    let sum = 0;
+    let sum = userArray[0];
     for (let i = 0; i < userArray.length; i++) {
     sum = sum + userArray[i];
     let avgNumber = sum / userArray.length;
@@ -299,6 +344,23 @@ setTimeout(function() {
                 </li>
 
                 <li>
+                    <h2>find the min number <b> {findMinNumber}</b></h2>
+                    <input 
+                    className="noBorders"
+                    type="text"
+                    value={inputString} 
+                    // placeholder="create an array separate numbers by a , ex: 1,2,3 "
+                    onChange={changeStateFindMin}
+                    />
+
+                    <button 
+                    style={{ background:  findMinNumber? "lightGray" : "rgb(235, 201, 8)" }}
+                    disabled={findMinNumber}
+                    onClick={findMin}
+                    >Find Min</button>
+                </li>
+                
+                <li>
                     <h2>find the max number <b> {findMaxNumber}</b></h2>
                     <input 
                     className="noBorders"
@@ -314,6 +376,9 @@ setTimeout(function() {
                     onClick={findMax}
                     >Find Max</button>
                 </li>
+
+
+ 
 
                 <li>
                     <h2>find the average number<b> {findAverageNumber}</b></h2>

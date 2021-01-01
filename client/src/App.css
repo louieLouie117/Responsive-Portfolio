@@ -28,10 +28,11 @@ body  ::-webkit-scrollbar{
 .mainNav-container{
   /* background: white; */
   width: 100vw;
-  position: absolute;
+  position: fixed;
   bottom: 10px;
-  left: 50%;
-  transform: translate(-50%);
+  margin: 0;
+  /* left: 50%; */
+  /* transform: translate(-50%); */
 }
 
 .mainNav-container nav {
@@ -359,9 +360,7 @@ body  ::-webkit-scrollbar{
   .mainNav-container{
     background: whitesmoke;
     width: 400px;
-    position: absolute;
-    bottom: 10px;
-    left: 10%;
+    right: 0px;
     margin: 0 15px;
 
   }
@@ -373,10 +372,7 @@ body  ::-webkit-scrollbar{
 @media screen and (min-width: 1100px) {
 
 
-  .mainNav-container{
-    background: blue;
-  }
-
+ 
 
 
 
