@@ -1,0 +1,275 @@
+
+.aboutMe-container{
+    display: grid;
+    height: 100vh;
+    margin: 0 auto;
+    justify-items: center;
+  
+
+}
+
+.aboutMe-container header{
+    background: #0080BF;
+    display: grid;
+    grid-template-rows: 50px 400px 50px 1frs;
+    width: 100%
+
+}
+
+
+@media screen and (min-width: 320px) {
+    .aboutMe-container header{
+        grid-template-rows: 50px 370px 50px;
+    
+    
+        }
+    
+    }
+
+@media screen and (min-width: 340px) {
+.aboutMe-container header{
+    grid-template-rows: 50px 440px 50px;
+
+
+    }
+
+}
+
+@media screen and (min-width: 375px) {
+    .aboutMe-container header{
+        grid-template-rows: 50px 440px 50px;
+    
+    
+        }
+    
+    }
+
+    @media screen and (min-width: 414px) {
+        .aboutMe-container header{
+            grid-template-rows: 50px 480px 50px;
+        
+        
+            }
+        
+        }
+        
+
+    @media screen and (min-width: 540px) {
+        .aboutMe-container header{
+            grid-template-rows: 50px 430px 50px;
+        
+        
+            }
+        
+        }
+
+        @media screen and (min-width: 600px) {
+            .aboutMe-container header{
+                grid-template-rows: 50px 480px 50px;
+            
+            
+                }
+            
+            }
+        
+    
+
+.aboutMe-container header h1{
+    font: 1.3em sans-serif;
+    padding: 20px 0;
+    color: white;
+    justify-self: center;
+
+
+}
+
+
+.aboutMe-container header picture{
+    display: grid;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    justify-content: center;
+    align-self: center;
+
+}
+
+.aboutMe-container header picture img{
+    max-width: 100%;
+    height: auto;
+    justify-self: center;
+
+}
+
+
+.aboutMe-container header aside{
+    display: grid;
+    background: none;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    padding-left: 10px;
+    min-height: 330px;
+    align-self: center;
+    padding-top: 0px;
+    justify-items: start;
+    padding-left: 20px;
+    
+    /* background: red; */
+
+}
+
+.aboutMe-container header aside img{
+    width: 45px;
+    height: auto;
+    border: solid 2px white;
+    border-radius: 90px;
+    align-self: center;
+    /* padding-left: 20px; */
+    /* background: #0080BF; */
+    margin-left: 15px;
+    cursor: pointer;
+
+    
+    
+}
+
+.socialIcon-container{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-content: center;
+    width: 100%;
+    z-index: 10;
+    
+
+}
+
+.socialIcon-container p{
+    align-self: center; 
+    color: white;  
+    text-shadow:  -1px 1px 1px black; 
+    font: 1.4em sans-serif;
+    background: #0080BF;
+    padding: 10px;
+    width: auto;
+    border-radius: 10px 0 0 10px;
+
+    
+}
+
+.aboutMe-container header footer{
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    width: auto;
+    /* background: #0080BF; */
+    height: 50px;
+    z-index: 13;
+    border-bottom: 2px white solid;
+    
+}
+
+.aboutMe-container header footer h2{
+    font: 1.5em sans-serif;
+    align-self: center;
+    color: white;
+    padding: 0;
+    margin: 0;
+    justify-self: center;
+}
+
+.menuIcon-container{
+    display: grid;
+    row-gap: 5px;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.menuIcon{
+    width: 47px;
+    height: 5px;
+    background: white;
+    border-radius: 10px;
+}
+
+
+
+.aboutMe-container header nav{
+    background: whitesmoke;
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
+
+.aboutMe-container header nav ul{
+    display: flex;
+    float: left;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+
+.aboutMe-container header nav li{
+    display: grid;
+    grid-template-columns: 200px;
+    height: 50px;
+    background: white;
+    margin-left: 20px;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.226);
+    justify-items: center;
+    align-items: center;
+
+}
+
+
+
+
+@media screen and (min-width: 700px) {
+
+    .aboutMe-container{
+        display: grid;
+        grid-template-columns: 410px 1fr;
+
+    }
+
+
+    
+    .aboutMe-container header nav {
+        background: #0080BF;
+
+    }
+
+   
+
+    .aboutMe-container header nav ul{
+        display: grid;
+        height: 300px;
+        padding-top: 20px;
+        padding-left: 20px;
+
+
+
+
+    }
+
+    .aboutMe-container header nav li{
+        border-radius: 25px 0 0 25px;
+        margin: 0;
+        background: #0080BF;
+        box-shadow: none;
+        color: white;
+        font: 1.3em sans-serif;
+        justify-items: flex-start;
+        padding-left: 30px;
+        cursor: pointer;
+
+    }
+
+
+
+}
