@@ -35,10 +35,12 @@ const CodeChallenges = props => {
 
     return (
         <div>
+            {/* <nav>
             <h1>Coding Challenges</h1>
             <button onClick={showBasicAlgos} id="AlgosBasic">Basic</button>
             <button onClick={showSortingAlgos} id="AlgosSorting">Sorting</button>
             <button onClick={showDataAlgos} id="AlgosData">Data Structure</button>
+            </nav> */}
 
 
             <div style={{ display:  basic? "grid" : "none" }} > 

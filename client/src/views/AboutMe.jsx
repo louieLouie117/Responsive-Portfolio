@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import AlgosBasic from '../components/AlgosBasic'
 import modules from "../modules/AboutMe.modules.css"
 
 
@@ -11,6 +12,7 @@ const AboutMe = props => {
     const [githubTitle, setGithubTitle] = useState(false)
     const [LinkedInTitle, setLinkedInTitle] = useState(false)
     const [blurImg, setBlurImg] = useState(false)
+    const [rotateMenu, setRotateMenu] = useState(false)
 
 
     const facebookIcon = (e) =>{
@@ -42,6 +44,7 @@ const AboutMe = props => {
     setGithubTitle(!githubTitle)
     setLinkedInTitle(!LinkedInTitle)
     setBlurImg(!blurImg)
+    setRotateMenu(!rotateMenu)
     
 
 
@@ -54,6 +57,9 @@ const AboutMe = props => {
     const [projectsTab, setProjectTab] = useState(false)
     const [apprenticeshipTab, setApprenticeshipTab] = useState(false)
 
+    // hide and show sections/components
+    const [AlgosComponent, setAlsogsComponent] = useState(false)
+
 
     const myStoryHandler=()=>{
         console.log("my story tab was click");
@@ -61,6 +67,8 @@ const AboutMe = props => {
         setCodingTab(false)
         setProjectTab(false)
         setApprenticeshipTab(false)
+        setAlsogsComponent(false)
+
     }
 
 
@@ -72,6 +80,7 @@ const AboutMe = props => {
         setCodingTab(true)
         setProjectTab(false)
         setApprenticeshipTab(false)
+        setAlsogsComponent(true)
     }
 
     
@@ -81,6 +90,8 @@ const AboutMe = props => {
         setCodingTab(false)
         setProjectTab(true)
         setApprenticeshipTab(false)
+        setAlsogsComponent(false)
+
     }
     
     const apprenticeshipTabHandler=()=>{
@@ -89,7 +100,11 @@ const AboutMe = props => {
         setCodingTab(false)
         setProjectTab(false)
         setApprenticeshipTab(true)
+        setAlsogsComponent(false)
+
     }
+
+
 
 
     
@@ -101,7 +116,9 @@ const AboutMe = props => {
                 style={{ 
                 filter: blurImg ? "blur(100px)" : "blur(0px)",
                 marginLeft: blurImg ? "-300px" : "0",
-                marginBottom: blurImg ? "0px" : "0"
+                marginBottom: blurImg ? "0px" : "0",
+                transition: "1500ms"
+
 
             }} 
                 >
@@ -121,7 +138,11 @@ const AboutMe = props => {
                         src="/img/Icons/IconFacebook.png" alt=""/>
 
 
-                        <p style={{ display: faceBookTitle ? "block" : "none" }} >Personal Story</p>
+                        <p style={{
+                             display: faceBookTitle ? "block" : "none",
+                            transition: "1500ms"
+
+                             }} >Personal Story</p>
                     </div>
 
                     <div className="socialIcon-container">
@@ -168,71 +189,136 @@ const AboutMe = props => {
                 <footer>
                     <h2>Full Stack Developer</h2>
                     <div 
+                    style={{ 
+                        transform: rotateMenu ? ` rotate(0deg)` : `rotate(180deg)`,
+                        transition: "1500ms"
+
+                    }}
                     onClick={showAllTitles}
                     className="menuIcon-container">
-                        <div className="menuIcon"></div>
-                        <div className="menuIcon"></div>
-                        <div className="menuIcon"></div>
+                        <div 
+                        className="menuIcon"
+                        style={{ 
+                            transform: rotateMenu ? ` rotate(0deg)` : `rotate(180deg)`,
+                            transition: "2500ms"
+    
+                        }}
+                        
+                        ></div>
+                        <div 
+                        className="menuIcon"
+                        style={{ 
+                            transform: rotateMenu ? ` rotate(0deg)` : `rotate(180deg)`,
+                            transition: "2000ms"
+    
+                        }}
+                        ></div>
+                        <div 
+                        className="menuIcon"
+                        style={{ 
+                            transform: rotateMenu ? ` rotate(0deg)` : `rotate(180deg)`,
+                            transition: "1500ms"
+    
+                        }}
+                        
+                        ></div>
                     </div>
                 </footer>
 
                 <nav>
-                    <ul>
 
                     {(() =>{
-                        if (window.innerWidth > "700") {
+                        if (window.innerWidth > "900") {
                             return(
-                                <div>
-                                    <li
-                                    onClick={myStoryHandler}
-                                    style={{ 
-                                        background: myStoryTab ? "white" : "#0080BF",
-                                        color: myStoryTab ? "#0080BF" : "white" 
-                                    }} >My Story</li>
-                                </div>
+                                        <ul>
+
+                                        <li
+                                        onClick={myStoryHandler}
+                                            style={{ 
+                                                background: myStoryTab ? "white" : "#0080BF",
+                                                color: myStoryTab ? "#0080BF" : "white" 
+                                            }} >My Story</li>
+
+                                        <li
+                                        onClick={codingTabHandler}
+                                        style={{ 
+                                            background: codingTab ? "white" : "#0080BF",
+                                            color: codingTab ? "#0080BF" : "white" 
+                                        }} >Coding Challenges</li>
+
+                                        <li
+                                        onClick={projectsTabHandler}
+                                        style={{ 
+                                            background: projectsTab ? "white" : "#0080BF",
+                                            color: projectsTab ? "#0080BF" : "white" 
+                                        }} >Backstory for Projects</li>
+
+                                        <li
+                                        onClick={apprenticeshipTabHandler}
+                                        style={{ 
+                                            background: apprenticeshipTab ? "white" : "#0080BF",
+                                            color: apprenticeshipTab ? "#0080BF" : "white" 
+                                        }} >Apprenticeship</li>
+                                        </ul>
+                        
                                         )}
                                 })()}
                     
                     {(() =>{
-                        if (window.innerWidth < "700") {
+                        if (window.innerWidth < "900") {
                             return(
-                                <div>
-                                    <li
-                                    onClick={myStoryHandler}
+                                <ul>
+
+                                <li
+                                onClick={myStoryHandler}
                                     style={{ 
-                                        background: myStoryTab ? "#0080BF" : "",
-                                        color: myStoryTab ? "white" : "#0080BF" 
+                                        background: "white",
+                                        color:  "#0080BF" 
                                     }} >My Story</li>
-                                </div>
+
+                                <li
+                                onClick={codingTabHandler}
+                                style={{ 
+                                    background: "white",
+                                    color:  "#0080BF" 
+                                }} 
+                                >Coding Challenges</li>
+
+                                <li
+                                onClick={projectsTabHandler}
+                                style={{ 
+                                    background: "white",
+                                    color:  "#0080BF"  
+                                }} >Backstory for Projects</li>
+
+                                <li
+                                onClick={apprenticeshipTabHandler}
+                                style={{ 
+                                    background: "white",
+                                    color:  "#0080BF" 
+                                }} >Apprenticeship</li>
+                                </ul>
+                                
                                         )}
                                 })()}
 
-                        <li
-                        onClick={codingTabHandler}
-                         style={{ 
-                            background: codingTab ? "white" : "#0080BF",
-                            color: codingTab ? "#0080BF" : "white" 
-                        }} >Coding Challenges</li>
-
-                        <li
-                        onClick={projectsTabHandler}
-                         style={{ 
-                            background: projectsTab ? "white" : "#0080BF",
-                            color: projectsTab ? "#0080BF" : "white" 
-                        }} >Projects Backstory</li>
-                        
-                        <li
-                        onClick={apprenticeshipTabHandler}
-                         style={{ 
-                            background: apprenticeshipTab ? "white" : "#0080BF",
-                            color: apprenticeshipTab ? "#0080BF" : "white" 
-                        }} >Apprenticeship</li>
-                    </ul>
+                    
                 </nav>
             </header>
 
             <main>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore possimus reiciendis deserunt quos voluptatum. Iure provident animi eaque atque in delectus fugiat et est, voluptate ad, beatae a rem iste!</p>
+                <section style={{ display: AlgosComponent ? "grid" : "none"}}>
+                    <nav>
+                        <button >Basic</button>
+                        <button >Sorting</button>
+                        <button >Data Structure</button>
+                        <button
+                        
+                        >close</button>
+                    </nav>
+                    <AlgosBasic></AlgosBasic>
+
+                </section>
             </main>
             
         </div>
