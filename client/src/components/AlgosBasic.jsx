@@ -3,6 +3,34 @@ import modules from "../modules/Algos.modules.css"
 
 const AlgosBasic = props => {
 
+    const [basic, setBasic] = useState(true)
+    const [sorting, setSorting] = useState(false)
+    const [data, setData] = useState(false)
+
+
+
+
+    function showBasicAlgos(){
+        setBasic(!basic)
+        setSorting(false)
+        setData(false)
+    }
+
+    function showSortingAlgos(){
+        setSorting(!sorting)
+        setBasic(false)
+        setData(false)
+    }
+
+    
+    function showDataAlgos(){
+        setData(!data)
+        setSorting(false)
+        setBasic(false)
+
+    }
+
+
 // print numbers 1-250
 const [print, setPrint] = useState(0)
 const [printMessage, setPrintMessage] = useState("")
@@ -282,6 +310,9 @@ setTimeout(function() {
 
     return (
         <div  className="basicAlgos-container">
+            
+         
+
             <ul>
                 <li>
                     <h2>Print 1-250</h2>

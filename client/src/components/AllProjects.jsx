@@ -88,7 +88,8 @@ const [project, setProject] = useState(null)
                         <li className="project1-container">
                             <img 
                             src={"/uploads/" + project.file}
-                            style={{ filter: details ? "blur(5px)" : "blur(0px)" }} />
+                            style={{ filter: details ? "blur(5px)" : "blur(0px)" }}
+                             />
 
                             <aside>
                                 <h2>{project.title}</h2>

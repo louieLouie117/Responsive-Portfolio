@@ -33,6 +33,7 @@ body  ::-webkit-scrollbar{
   margin: 0;
   /* left: 50%; */
   /* transform: translate(-50%); */
+  z-index: 20;
 }
 
 .mainNav-container nav {
@@ -358,7 +359,6 @@ body  ::-webkit-scrollbar{
 
   
   .mainNav-container{
-    background: whitesmoke;
     width: 400px;
     right: 0px;
     margin: 0 15px;
