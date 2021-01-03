@@ -1,0 +1,117 @@
+    
+.myStory-container{
+    display: grid;
+    position: absolute;
+    height: 100%;
+    background: whitesmoke;
+    overflow: scroll;
+    /* padding: 10PX; */
+    z-index: 80;
+    justify-self: center;
+
+}
+
+.myStory-container aside{
+    display: grid;
+    padding: 20px;
+}
+
+
+.myStory-container aside ul {
+    /* background: red; */
+    display: grid;
+    row-gap: 20px;
+    /* z-index: 140; */
+    height: 70vh;
+}
+
+
+.myStory-container aside ul li{
+    background: white;
+    display: grid;
+    row-gap: 10px;
+    /* grid-template-rows: 30px 112px 1fr; */
+    padding: 30px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.275);
+    width: 300px;
+    height: 300px;
+    justify-self: center;
+    align-self: center;
+    align-content: flex-start;
+    border-radius: 20px;
+}
+
+.myStory-container aside ul li img{
+    width: 100%;
+    height: 112px;
+}
+
+.myStory-container aside ul li h2{
+    font: 1.3em sans-serif;
+    margin: 0;
+}
+
+
+
+.myStory-container aside ul li p{
+    /* height: 50px; */
+    overflow: hidden;
+    justify-self: flex-end;
+}
+
+
+.myStory-container aside ul li h3{
+    font: 1.5em sans-serif;
+    color: #0080BF;
+    padding: 0;
+    margin: 0;
+}
+
+.showBox{
+    display: grid;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.275);
+
+
+
+}
+
+
+
+
+@media screen and (min-width: 900px) {
+    .myStory-container{
+    position: relative;
+    column-gap: 30PX;
+    width: 95%;
+    padding: 30PX;
+    z-index: 0;
+
+
+
+    }
+
+
+ 
+}
+
+
+@media screen and (min-width: 1500px) {
+
+    .myStory-container{
+        position: relative;
+        grid-template-columns: 1fr 2.5fr;
+    }
+
+.myStory-container aside  ul {
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.myStory-container aside:last-of-type>h2{
+    padding-left: 60px;
+}
+
+
+}
