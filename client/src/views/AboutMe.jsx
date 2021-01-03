@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import AlgosBasic from '../components/AlgosBasic'
+import MyStory from '../components/MyStory'
 import modules from "../modules/AboutMe.modules.css"
 
 
@@ -59,15 +60,26 @@ const AboutMe = props => {
 
     // hide and show sections/components
     const [AlgosComponent, setAlsogsComponent] = useState(false)
+    const [MyStoryComponentDesktop, setMyStoryComponentDesktop] = useState(true)
+    const [MyStoryComponentMobile, setMyStoryComponentMobile] =  useState(false)
+
+
+  
+
 
 
     const myStoryHandler=()=>{
         console.log("my story tab was click");
         setMyStoryTab(true)
+
         setCodingTab(false)
         setProjectTab(false)
         setApprenticeshipTab(false)
+
         setAlsogsComponent(false)
+        setMyStoryComponentDesktop(true)
+        setMyStoryComponentMobile(true)
+
 
     }
 
@@ -80,7 +92,10 @@ const AboutMe = props => {
         setCodingTab(true)
         setProjectTab(false)
         setApprenticeshipTab(false)
+
         setAlsogsComponent(true)
+        setMyStoryComponentDesktop(false)
+        setMyStoryComponentMobile(false)
     }
 
     
@@ -92,6 +107,10 @@ const AboutMe = props => {
         setApprenticeshipTab(false)
         setAlsogsComponent(false)
 
+
+        setMyStoryComponentDesktop(false)
+        setMyStoryComponentMobile(false)
+
     }
     
     const apprenticeshipTabHandler=()=>{
@@ -101,6 +120,10 @@ const AboutMe = props => {
         setProjectTab(false)
         setApprenticeshipTab(true)
         setAlsogsComponent(false)
+
+
+        setMyStoryComponentDesktop(false)
+        setMyStoryComponentMobile(false)
 
     }
 
@@ -268,37 +291,34 @@ const AboutMe = props => {
                         if (window.innerWidth < "900") {
                             return(
                                 <ul>
+                                    <li
+                                    onClick={myStoryHandler}
+                                        style={{ background: "white", color:  "#0080BF" }} 
+                                        >My Story</li>
 
-                                <li
-                                onClick={myStoryHandler}
+                                    <li
+                                    onClick={codingTabHandler}
                                     style={{ 
                                         background: "white",
                                         color:  "#0080BF" 
-                                    }} >My Story</li>
+                                    }} 
+                                    >Coding Challenges</li>
 
-                                <li
-                                onClick={codingTabHandler}
-                                style={{ 
-                                    background: "white",
-                                    color:  "#0080BF" 
-                                }} 
-                                >Coding Challenges</li>
+                                    <li
+                                    onClick={projectsTabHandler}
+                                    style={{ 
+                                        background: "white",
+                                        color:  "#0080BF"  
+                                    }} >Backstory for Projects</li>
 
-                                <li
-                                onClick={projectsTabHandler}
-                                style={{ 
-                                    background: "white",
-                                    color:  "#0080BF"  
-                                }} >Backstory for Projects</li>
-
-                                <li
-                                onClick={apprenticeshipTabHandler}
-                                style={{ 
-                                    background: "white",
-                                    color:  "#0080BF" 
-                                }} >Apprenticeship</li>
+                                    <li
+                                    onClick={apprenticeshipTabHandler}
+                                    style={{ 
+                                        background: "white",
+                                        color:  "#0080BF" 
+                                    }} >Apprenticeship</li>
                                 </ul>
-                                
+                        
                                         )}
                                 })()}
 
@@ -307,7 +327,36 @@ const AboutMe = props => {
             </header>
 
             <main>
-                <section style={{ display: AlgosComponent ? "grid" : "none"}}>
+
+
+
+            {(() =>{if (window.innerWidth < "900") {
+                    return(
+                        <section style={ { 
+                            display: MyStoryComponentMobile ? "grid" : "none", 
+                            // zIndex: MyStoryComponentMobile ? "40": "0"
+                        }}> 
+                            <MyStory></MyStory>
+                        </section>
+                )}
+            })()}
+
+            {(() =>{if (window.innerWidth > "900") {
+                    return(
+                        <section style={{ display: MyStoryComponentDesktop ? "grid" : "none",
+                        // zIndex: MyStoryComponentMobile ? "40": "0"
+                    }}> 
+                            <MyStory></MyStory>
+                        </section>
+                )}
+            })()}
+
+
+
+                <section
+                
+                
+                style={{ display: AlgosComponent ? "grid" : "none"}}>
                     <nav>
                         <button >Basic</button>
                         <button >Sorting</button>
