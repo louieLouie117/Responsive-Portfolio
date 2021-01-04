@@ -24,7 +24,7 @@ const DesignBoxHandler = (e)=>{
 
 
     if (designBox === false) {
-    e.target.innerText = "Close"
+    e.target.innerText = "Done"
         
     }
 
@@ -41,7 +41,7 @@ const uiBoxHandler = (e)=>{
     setDbBox(false)
     setServerBox(false)
     if (uiDevelopmentBox === false) {
-        e.target.innerText = "Close"
+        e.target.innerText = "Done"
             
         }
     
@@ -58,7 +58,7 @@ const ServerBoxHandler = (e)=>{
     setDbBox(false)
    
     if (serverBox === false) {
-        e.target.innerText = "Close"
+        e.target.innerText = "Done"
             
         }
     
@@ -75,7 +75,7 @@ const DbBoxHandler = (e)=>{
     setUiDevelopmentBox(false)
     setServerBox(false)
     if (dbBox === false) {
-        e.target.innerText = "Close"
+        e.target.innerText = "Done"
             
         }
     
@@ -116,6 +116,8 @@ const DbBoxHandler = (e)=>{
             <aside>
             <h2>My Process</h2>
                 <ul>
+                    <li></li>
+
                     <li 
                     className="stage1"                    
                     style={{
@@ -332,6 +334,9 @@ const DbBoxHandler = (e)=>{
                             onClick={ServerBoxHandler}
                             href="#"> Read more</a>
                     </li>
+
+                    <li></li>
+
 
            
                 </ul>
