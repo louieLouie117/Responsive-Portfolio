@@ -12,16 +12,10 @@ const Projects = props => {
 
 const [details, setDetails] = useState("")
 const [projectsPage, setProjectsPage] = useState(true)
-const [aboutMePage, setAboutMePage] = useState(false)
 
 
 
 
-const mainNavHandler =(e) =>{
-    setProjectsPage(!projectsPage)
-    setAboutMePage(!aboutMePage)
-    
-}
 
 
 
@@ -280,50 +274,9 @@ const [project, setProject] = useState(null)
 
             </div>  
             
-            <div 
-            style={ { 
-            display: aboutMePage ? "grid" : "none",
-            marginLeft: aboutMePage ? "0" : "-1000%",
-
-            transition: "1s"
-                }}
-           
-            className="aboutMePage-container">
-                        <AboutMe></AboutMe>
-                </div>
-           
+          
             
-        <div className="mainNav-container">        
-            <nav> 
-                <a 
-                onClick={mainNavHandler}
-                style={{ 
-                    background: projectsPage ? "#A279A4" : "none", 
-                    color: projectsPage ? "white" : "black",
-                    height: projectsPage ? "90%" : "0",
-                    boxShadow:  projectsPage ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none",
-                    transition: ".3s"
-
-                }}
-                >Projects</a>
-
-
-                <a 
-                onClick={mainNavHandler}
-                style={{ 
-                    background: aboutMePage ? "#A279A4" : "none",
-                    color: aboutMePage ? "white" : "black",
-                    height: aboutMePage ? "90%" : "0",
-                    boxShadow:  aboutMePage ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none",
-                    transition: ".3s"
-
-                  }}
-      
-                >About me</a>
-            </nav>
-            
-            
-        </div>
+       
            
         </div>
     )
