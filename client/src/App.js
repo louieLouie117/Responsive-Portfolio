@@ -19,8 +19,13 @@ function App() {
     <div className="App">
       
 
-      <Router>
+
+        <div className="homePage">
         <Projects path="/"/>
+        </div>
+
+        
+      <Router>
         <AboutMe path="/about-me"/>
         <CodeChallenges path="/code-challenges"/>
         <Dashboard path="/dashboard"/>
