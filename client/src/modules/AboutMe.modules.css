@@ -116,8 +116,8 @@
     padding-top: 0px;
     justify-items: start;
     padding-left: 20px;
-    
     /* background: red; */
+    
 
 }
 
@@ -142,6 +142,7 @@
     align-content: center;
     width: 100%;
     z-index: 5;
+    align-self: start;
     
 
 }
@@ -150,7 +151,7 @@
     align-self: center; 
     color: white;  
     /* text-shadow:  -1px 1px 1px black;  */
-    font: 1.4em sans-serif;
+    font: 1.5em sans-serif;
     background: #0080BF;
     padding: 10px;
     width: auto;
@@ -246,7 +247,7 @@
     left: 0;
     width: 100vw;
     height: 100%;
-    background: rgba(0, 0, 0, 0.515);
+    background: rgba(0, 0, 0, 0.775);
     
     
 }
@@ -336,7 +337,14 @@
         padding-left: 10px;
 
 
+
     }
+
+
+    
+.socialIcon-container p{
+font: 1.6em sans-serif;
+}
 
 
 

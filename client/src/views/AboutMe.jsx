@@ -198,7 +198,7 @@ const AboutMe = props => {
                         onMouseEnter={tiktokIcon}
                         onMouseLeave={tiktokIcon}
                         src="/img/Icons/IconTikTok.png" alt=""/>
-                        <p style={{ display: tiktokTitle ? "block" : "none" }}>Just for fun</p>
+                        <p style={{ display: tiktokTitle ? "block" : "none" }}>Just for Fun</p>
                     </div>
                     <div className="socialIcon-container">
 
@@ -229,7 +229,7 @@ const AboutMe = props => {
                     onMouseLeave={linkedinIcon} 
                     src="/img/Icons/IconLinkedin.png" alt=""/>
 
-                    <p style={{ display: LinkedInTitle ? "block" : "none" }}>Programming Story</p>
+                    <p style={{ display: LinkedInTitle ? "block" : "none" }}>Let's  Connect and Program Together</p>
 
                     </div>
                 </aside>
@@ -395,7 +395,8 @@ const AboutMe = props => {
                                               
                         style={ { 
                             display: MyStoryComponentMobile ? "grid" : "none", 
-                            // zIndex: MyStoryComponentMobile ? "40": "0"
+                            
+
                         }}> 
                         
                         <button
@@ -409,7 +410,8 @@ const AboutMe = props => {
 
             {(() =>{if (window.innerWidth > "900") {
                     return(
-                        <section style={{ display: MyStoryComponentDesktop ? "grid" : "none",
+                        <section style={{ 
+                        display: MyStoryComponentDesktop ? "grid" : "none",
                         // zIndex: MyStoryComponentMobile ? "40": "0"
                     }}> 
                             <MyStory></MyStory>
@@ -422,9 +424,12 @@ const AboutMe = props => {
                 <section
             
                 style={{ 
-                    display: AlgosComponent ? "grid" : "none"
+                    display: AlgosComponent ? "grid" : "none",
+
                     
                     }}>
+
+
             {(() =>{if (window.innerWidth < "900") {
                     return(
 
