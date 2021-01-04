@@ -14,6 +14,7 @@ const AboutMe = props => {
     const [LinkedInTitle, setLinkedInTitle] = useState(false)
     const [blurImg, setBlurImg] = useState(false)
     const [rotateMenu, setRotateMenu] = useState(false)
+    const [devTitle, setDevTitle] = useState(true)
 
 
     const facebookIcon = (e) =>{
@@ -37,7 +38,7 @@ const AboutMe = props => {
         setLinkedInTitle(!LinkedInTitle)
     }
 
-    const showAllTitles =()=>{
+    const showAllTitles =(e)=>{
     console.log("div element was click"); 
     setFaceBookTitle(!faceBookTitle)
     setTiktokTitle(!tiktokTitle)
@@ -46,6 +47,13 @@ const AboutMe = props => {
     setLinkedInTitle(!LinkedInTitle)
     setBlurImg(!blurImg)
     setRotateMenu(!rotateMenu)
+    setDevTitle(!devTitle)
+
+
+   
+
+
+   
     
 
 
@@ -130,6 +138,8 @@ const AboutMe = props => {
 
 
 
+
+
     
     return (
         <div className="aboutMe-container">
@@ -210,7 +220,42 @@ const AboutMe = props => {
                     </div>
                 </aside>
                 <footer>
-                    <h2>Full Stack Developer</h2>
+                    <h2
+                    style={{ 
+                        display: devTitle ? "block" : "none",
+
+                    }}
+
+                    >Full Stack Developer</h2>
+
+                    <div
+                    style={{ 
+                        display: devTitle ? "none" : "block",
+                        // marginLeft: devTitle ? "-400px" : "0"
+                        transition: "1500ms"
+
+                    }}>
+                    <h2
+                    style={{ 
+                        fontSize: devTitle ? "0" : "1em",
+                        paddingLeft: devTitle ?  "0" : "20px",
+
+
+                    }}
+
+                    >Specialization in React full-rSPA </h2>
+
+                    
+                    <h2
+                    style={{ 
+                        fontSize: devTitle ? "0" : "1em",
+                        paddingLeft: devTitle ?  "0" : "20px",
+
+                    }}
+
+                    > Front-end Design and Development</h2>
+
+                    </div>
                     <div 
                     style={{ 
                         transform: rotateMenu ? ` rotate(0deg)` : `rotate(180deg)`,
@@ -356,7 +401,10 @@ const AboutMe = props => {
                 <section
                 
                 
-                style={{ display: AlgosComponent ? "grid" : "none"}}>
+                style={{ 
+                    display: AlgosComponent ? "grid" : "none"
+                    
+                    }}>
                     <nav>
                         <button >Basic</button>
                         <button >Sorting</button>
