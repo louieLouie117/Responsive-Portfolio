@@ -2,6 +2,7 @@ import './App.css';
 
 
 import Projects from './views/Projects';
+import React, {useState} from 'react'
 import {Router} from "@reach/router";
 import MainNav from './components/MainNav';
 import AboutMe from './views/AboutMe';
@@ -15,14 +16,18 @@ import UpdateProject from './components/UpdateProject';
 
 function App() {
 
+const [homePage, setHomePage] = useState(true)
+
   return (
     <div className="App">
       
 
-
-        <div className="homePage">
-        <Projects path="/"/>
+        <div 
+          style={{ display: homePage ? "gird" : "none"}}
+          className="homePage">
+          <Projects path="/"/>
         </div>
+
 
         
       <Router>
