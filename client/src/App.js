@@ -17,27 +17,91 @@ import UpdateProject from './components/UpdateProject';
 function App() {
 
 const [homePage, setHomePage] = useState(true)
+const [aboutMePage, setAboutMePage] = useState(false)
+
+
+const mainNavHandler =(e) =>{
+  console.log("button was click");
+  setHomePage(!homePage)
+  setAboutMePage(!aboutMePage)
+}
+
+
+
 
   return (
     <div className="App">
       
 
         <div 
-          style={{ display: homePage ? "gird" : "none"}}
-          className="homePage">
+
+          className="homePage-container">
           <Projects path="/"/>
+        </div>
+
+
+        <div className="aboutMePage-container"
+        style={{ 
+          marginLeft: aboutMePage ? "0" : "-300%",
+          zIndex: aboutMePage ? "10" : "-1",
+          transition: "1s"
+
+      
+      }}
+        className="homePage-container"
+        >
+
+          <AboutMe></AboutMe>
         </div>
 
 
         
       <Router>
-        <AboutMe path="/about-me"/>
-        <CodeChallenges path="/code-challenges"/>
-        <Dashboard path="/dashboard"/>
+        {/* <AboutMe path="/about-me"/> */}
+        {/* <CodeChallenges path="/code-challenges"/> */}
+        {/* <Dashboard path="/dashboard"/> */}
         <UpdateProject path="/update/:id/edit"/>
       </Router>
 
-  
+      <div className="mainNav-container">    
+          
+            <nav> 
+            <div className="tabIcon"
+             style={{ 
+              color: homePage ? "white" : "black",
+              boxShadow:  homePage ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none",
+              marginLeft: homePage ? "0" : "205%",
+              transition: "1s"
+
+          }}></div>
+
+                <a 
+                style={{ 
+                  color: homePage ? "white" : "black",
+                  transition: "1s"
+    
+              }}
+                id="projectsTab"
+                onClick={mainNavHandler}
+                
+               
+                >Projects</a>
+
+
+                <a 
+                style={{ 
+                  color: homePage ? "black" : "white",
+                  transition: ".5s"
+    
+              }}
+                id="aboutMeTab"
+                onClick={mainNavHandler}
+    
+                >About me</a>
+            </nav>
+            
+            
+        </div>
 
 
 
