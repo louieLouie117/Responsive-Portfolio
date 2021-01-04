@@ -119,7 +119,7 @@ const [project, setProject] = useState(null)
                                     if (project.details === true) {
                                         return(
                                             <div>
-                                                <h2>Web technology implemented</h2>
+                                                <h2>Technology Implemented</h2>
                                             </div>
                                         )}
                                 })()}

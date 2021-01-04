@@ -1,8 +1,7 @@
 /* Basic Algorithms  */
 .basicAlgos-container{
-    padding: 10px;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     justify-self: center;
     background: whitesmoke;
     z-index: 20;
@@ -72,6 +71,7 @@
 
     .basicAlgos-container{
     width: 90%;
+    height: 99vh;
 
     }
   

@@ -3,17 +3,35 @@
     display: grid;
     position: absolute;
     height: 100%;
+    width: 100%;
     background: whitesmoke;
     overflow: scroll;
-    /* padding: 10PX; */
     z-index: 80;
+    justify-items: center;
     justify-self: center;
+    margin-top: 70px;
+
 
 }
 
 .myStory-container aside{
     display: grid;
-    padding: 20px;
+    z-index: 90;
+    padding-top: 20px;
+    row-gap: 20px;
+
+}
+
+.myStory-container aside p{
+    padding: 0 10px;
+}
+
+.myStory-container aside h2{
+    padding: 0 10px;
+}
+
+.myStory-container aside h3{
+    padding: 0 10px;
 }
 
 
@@ -21,8 +39,10 @@
     /* background: red; */
     display: grid;
     row-gap: 20px;
+    column-gap: 20px;
     /* z-index: 140; */
     height: 70vh;
+   
 }
 
 
@@ -32,7 +52,7 @@
     row-gap: 10px;
     /* grid-template-rows: 30px 112px 1fr; */
     padding: 30px;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.275);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.275);
     width: 300px;
     height: 300px;
     justify-self: center;
@@ -40,6 +60,12 @@
     align-content: flex-start;
     border-radius: 20px;
 }
+
+/* review  */
+/* .myStory-container aside ul li:last-child {
+    background: red;
+    margin-bottom: 300px;
+} */
 
 .myStory-container aside ul li img{
     width: 100%;
@@ -61,10 +87,12 @@
 
 
 .myStory-container aside ul li h3{
-    font: 1.5em sans-serif;
+    font: 1.3em sans-serif;
     color: #0080BF;
     padding: 0;
     margin: 0;
+    font-weight: bold;
+
 }
 
 .showBox{
@@ -78,6 +106,19 @@
 }
 
 
+.skills-container h3{
+    font-weight: bold;
+    font: sans-serif;
+    color: #0080BF;
+
+}
+
+.skills-container i{
+    font: .9em sans-serif;
+    color: black;
+}
+
+
 
 
 @media screen and (min-width: 900px) {
@@ -87,10 +128,39 @@
     width: 95%;
     padding: 30PX;
     z-index: 0;
+    margin-top: 0px;
+
 
 
 
     }
+
+    .stage1{
+        background: white;
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+    
+    
+    .stage2{
+        background: white;
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+    
+    
+    .stage3{
+        background: white;
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+    
+    .stage4{
+        background: white;
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+    
 
 
  
@@ -104,13 +174,44 @@
         grid-template-columns: 1fr 2.5fr;
     }
 
+
+    .myStory-container aside {
+    row-gap: 0;
+
+    }
 .myStory-container aside  ul {
     grid-template-columns: 1fr 1fr;
+    background: #007fbf19;
+    padding: 20px;
+    border-radius: 500px;
+    justify-self: center;
+    border: solid 5px white;
+    width: 700px;
+    height: 700px;
+
 
 }
 
+
+
 .myStory-container aside:last-of-type>h2{
-    padding-left: 60px;
+    padding-left: 0px;
+}
+
+
+
+.myStory-container aside p{
+    padding: 0;
+}
+
+
+.myStory-container aside h2{
+    padding: 0;
+}
+
+
+.myStory-container aside h3{
+    padding: 0;
 }
 
 

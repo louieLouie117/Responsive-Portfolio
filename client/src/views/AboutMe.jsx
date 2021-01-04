@@ -135,21 +135,35 @@ const AboutMe = props => {
 
     }
 
+    const hideSectionHandler = ()=>{
+        console.log("section button was click");
+        setMyStoryComponentMobile(false)
+        setAlsogsComponent(false)
 
-
-
+        
+    }
 
 
     
     return (
         <div className="aboutMe-container">
             <header>
-                <h1>Hello, my name is Luis Cardona</h1>
+                <h1
+                style={{ 
+                    display: devTitle ? "block" : "none",
+
+                }}
+                >Hello, my name is Luis</h1>
+                <h1
+                    style={{ 
+                        display: devTitle ? "none" : "block",
+                    }}>I translate designs into code.</h1>
+                
                 <picture 
                 style={{ 
                 filter: blurImg ? "blur(100px)" : "blur(0px)",
                 marginLeft: blurImg ? "-300px" : "0",
-                marginBottom: blurImg ? "0px" : "0",
+                marginBottom: blurImg ? "0" : "0",
                 transition: "1500ms"
 
 
@@ -243,7 +257,7 @@ const AboutMe = props => {
 
                     }}
 
-                    >Specialization in React full-rSPA </h2>
+                    >Specialization in React SPA </h2>
 
                     
                     <h2
@@ -377,10 +391,17 @@ const AboutMe = props => {
 
             {(() =>{if (window.innerWidth < "900") {
                     return(
-                        <section style={ { 
+                        <section 
+                                              
+                        style={ { 
                             display: MyStoryComponentMobile ? "grid" : "none", 
                             // zIndex: MyStoryComponentMobile ? "40": "0"
                         }}> 
+                        
+                        <button
+                        onClick={hideSectionHandler}                        
+
+                        >X</button>
                             <MyStory></MyStory>
                         </section>
                 )}
@@ -399,20 +420,28 @@ const AboutMe = props => {
 
 
                 <section
-                
-                
+            
                 style={{ 
                     display: AlgosComponent ? "grid" : "none"
                     
                     }}>
-                    <nav>
+            {(() =>{if (window.innerWidth < "900") {
+                    return(
+
+
+                        <button
+                        onClick={hideSectionHandler}                        
+
+                        >X</button>
+
+                        )}
+                    })()}
+                    {/* <nav>
                         <button >Basic</button>
                         <button >Sorting</button>
                         <button >Data Structure</button>
-                        <button
-                        
-                        >close</button>
-                    </nav>
+                
+                    </nav> */}
                     <AlgosBasic></AlgosBasic>
 
                 </section>

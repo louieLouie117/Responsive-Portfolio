@@ -42,7 +42,7 @@ const mainNavHandler =(e) =>{
 
         <div className="aboutMePage-container"
         style={{ 
-          marginLeft: aboutMePage ? "0" : "-200%",
+          marginLeft: aboutMePage ? "0" : "-300%",
           zIndex: aboutMePage ? "10" : "-1",
           transition: "1s"
 
@@ -63,32 +63,40 @@ const mainNavHandler =(e) =>{
         <UpdateProject path="/update/:id/edit"/>
       </Router>
 
-      <div className="mainNav-container">        
+      <div className="mainNav-container">    
+          
             <nav> 
-                <a 
-                onClick={mainNavHandler}
-                style={{ 
-                    background: homePage ? "#A279A4" : "none", 
-                    color: homePage ? "white" : "black",
-                    height: homePage ? "90%" : "0",
-                    boxShadow:  homePage ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none",
-                    transition: ".3s"
+            <div className="tabIcon"
+             style={{ 
+              color: homePage ? "white" : "black",
+              boxShadow:  homePage ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none",
+              marginLeft: homePage ? "0" : "205%",
+              transition: "1s"
 
-                }}
+          }}></div>
+
+                <a 
+                style={{ 
+                  color: homePage ? "white" : "black",
+                  transition: "1s"
+    
+              }}
+                id="projectsTab"
+                onClick={mainNavHandler}
+                
+               
                 >Projects</a>
 
 
                 <a 
-                onClick={mainNavHandler}
                 style={{ 
-                    background: aboutMePage ? "#A279A4" : "none",
-                    color: aboutMePage ? "white" : "black",
-                    height: aboutMePage ? "90%" : "0",
-                    boxShadow:  aboutMePage ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none",
-                    transition: ".3s"
-
-                  }}
-      
+                  color: homePage ? "black" : "white",
+                  transition: ".5s"
+    
+              }}
+                id="aboutMeTab"
+                onClick={mainNavHandler}
+    
                 >About me</a>
             </nav>
             
