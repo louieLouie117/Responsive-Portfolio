@@ -26,9 +26,8 @@ function App() {
         <Dashboard path="/dashboard"/>
         <UpdateProject path="/update/:id/edit"/>
       </Router>
-      <MainNav/>
 
-
+  
 
 
 
