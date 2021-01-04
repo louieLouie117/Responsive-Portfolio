@@ -359,9 +359,9 @@ const DbBoxHandler = (e)=>{
                     className="stage1"                    
                     style={{
                          position: designBox ? "absolute " : "relative",
-                         width: designBox ? "85%" : "300px",
+                         width: designBox ? "97%" : "300px",
                          height: designBox ? "90%" : "300px",
-                         padding: designBox ? "40px": "30px",
+                         padding: designBox ? "30px": "30px",
                          zIndex: designBox ? "120" : "0",
                          gridRow: designBox ? "1/2" : "1/2",
                          gridColumn: designBox ? "1/2" : "1/2",
@@ -411,9 +411,9 @@ const DbBoxHandler = (e)=>{
                     className="stage2"                    
                      style={{
                          position: uiDevelopmentBox ? "absolute " : "relative",
-                         width: uiDevelopmentBox ? "85%" : "300px",
+                         width: uiDevelopmentBox ? "97%" : "300px",
                          height: uiDevelopmentBox ? "90%" : "300px",
-                         padding: uiDevelopmentBox ? "40px": "30px",
+                         padding: uiDevelopmentBox ? "30px": "30px",
                          zIndex: uiDevelopmentBox ? "120" : "0",
                          gridRow: uiDevelopmentBox ? "1/2" : "1/2",
                          gridColumn: uiDevelopmentBox ? "1/2" : "2/3",
@@ -468,9 +468,9 @@ const DbBoxHandler = (e)=>{
                     className="stage3"                    
                     style={{
                          position: dbBox ? "absolute " : "relative",
-                         width: dbBox ? "85%" : "300px",
+                         width: dbBox ? "97%" : "300px",
                          height: dbBox ? "90%" : "300px",
-                         padding: dbBox ? "40px": "30px",
+                         padding: dbBox ? "30px": "30px",
                          zIndex: dbBox ? "120" : "0",
                          gridRow: dbBox ? "1/2" : "2/3",
                          gridColumn: dbBox ? "1/2" : "1/2",
@@ -524,9 +524,9 @@ const DbBoxHandler = (e)=>{
                     className="stage4"                    
                     style={{
                          position: serverBox ? "absolute " : "relative",
-                         width: serverBox ? "85%" : "300px",
+                         width: serverBox ? "97%" : "300px",
                          height: serverBox ? "90%" : "300px",
-                         padding: serverBox ? "40px": "30px",
+                         padding: serverBox ? "30px": "30px",
                          zIndex: serverBox ? "120" : "0",
                          gridRow: serverBox ? "1/2" : "2/3",
                          gridColumn: serverBox ? "1/2" : "2/3",
