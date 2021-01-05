@@ -154,7 +154,7 @@ const AboutMe = props => {
                 <h1
                     style={{ 
                         display: devTitle ? "none" : "block",
-                    }}>I convert designs into code.</h1>
+                    }}>I translate design into code.</h1>
                 
                 <picture 
                 style={{ 
@@ -339,6 +339,13 @@ const AboutMe = props => {
                                             background: apprenticeshipTab ? "white" : "#0080BF",
                                             color: apprenticeshipTab ? "#0080BF" : "white" 
                                         }} >Apprenticeship</li>
+
+<li
+                                        onClick={apprenticeshipTabHandler}
+                                        style={{ 
+                                            background: apprenticeshipTab ? "white" : "#0080BF",
+                                            color: apprenticeshipTab ? "#0080BF" : "white" 
+                                        }} >Status/Updates</li>
                                         </ul>
                         
                                         )}

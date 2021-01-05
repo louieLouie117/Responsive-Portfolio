@@ -19,14 +19,14 @@
     width: auto;
   }
 
-
-
   .basicAlgos-container ul li:last-child{
     background: none;
     border: none;
     box-shadow: none;
     height: 100px;
   }
+
+  
   @media screen and (min-width: 1100px){
   .basicAlgos-container ul li:last-child{
     display: none;

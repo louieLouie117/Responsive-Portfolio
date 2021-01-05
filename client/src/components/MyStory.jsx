@@ -289,7 +289,6 @@ const DbBoxHandler = (e)=>{
                          padding: serverBox ? "10px": "30px",
                          zIndex: serverBox ? "120" : "0",
                          marginTop: serverBox ? "-200px" : "0",
-
                          transition: ".3s"}}>
                         <h3>Server Development</h3>
                         <img 
