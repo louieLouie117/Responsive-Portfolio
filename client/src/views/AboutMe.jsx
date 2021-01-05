@@ -149,31 +149,28 @@ const AboutMe = props => {
         <div className="aboutMe-container">
             <header>
                 <h1
-                style={{ 
-                    display: devTitle ? "block" : "none",
-
-                }}
+                style={{ display: devTitle ? "block" : "none",}}
                 >Hello, my name is Luis</h1>
                 <h1
                     style={{ 
                         display: devTitle ? "none" : "block",
-                    }}>I translate designs into code.</h1>
+                    }}>I convert designs into code.</h1>
                 
                 <picture 
                 style={{ 
                 filter: blurImg ? "blur(100px)" : "blur(0px)",
                 marginLeft: blurImg ? "-300px" : "0",
-                marginBottom: blurImg ? "0" : "0",
+                transition: "smooth",
                 transition: "1500ms"
-
-
-            }} 
+                }} 
                 >
-                    <source media="(min-width: 600px)" srcSet="/img/selffy.png"/>
-
+                    <source media="(min-width: 1100px)" srcSet="/img/selffy.png"/>
+                    <source media="(min-width: 1000px)" srcSet="/img/ipad12.png"/>
+                    <source media="(min-width: 600px)" srcSet="/img/ipad10.png"/>
+                    <source media="(min-width: 600px)" srcSet="/img/ipad10.png"/>
+                    <source media="(min-width: 5390px)" srcSet="/img/selffy.png"/>
                     <source media="(min-width: 420px)" srcSet="/img/surfaceDuoSelfy.png"/>
-                    <img 
-                     src="/img/selffy.png" alt=""/>
+                    <img src="/img/selffy.png" alt=""/>
 
                 </picture>
                 <aside>
@@ -310,7 +307,7 @@ const AboutMe = props => {
                 <nav>
 
                     {(() =>{
-                        if (window.innerWidth > "900") {
+                        if (window.innerWidth > "1100") {
                             return(
                                         <ul>
 
@@ -318,7 +315,8 @@ const AboutMe = props => {
                                         onClick={myStoryHandler}
                                             style={{ 
                                                 background: myStoryTab ? "white" : "#0080BF",
-                                                color: myStoryTab ? "#0080BF" : "white" 
+                                                color: myStoryTab ? "#0080BF" : "white",
+                                               
                                             }} >My Story</li>
 
                                         <li
@@ -347,7 +345,7 @@ const AboutMe = props => {
                                 })()}
                     
                     {(() =>{
-                        if (window.innerWidth < "900") {
+                        if (window.innerWidth < "1100") {
                             return(
                                 <ul>
                                     <li
@@ -389,7 +387,7 @@ const AboutMe = props => {
 
 
 
-            {(() =>{if (window.innerWidth < "900") {
+            {(() =>{if (window.innerWidth < "1100") {
                     return(
                         <section 
                                               
@@ -408,7 +406,7 @@ const AboutMe = props => {
                 )}
             })()}
 
-            {(() =>{if (window.innerWidth > "900") {
+            {(() =>{if (window.innerWidth > "1100") {
                     return(
                         <section style={{ 
                         display: MyStoryComponentDesktop ? "grid" : "none",
@@ -430,7 +428,7 @@ const AboutMe = props => {
                     }}>
 
 
-            {(() =>{if (window.innerWidth < "900") {
+            {(() =>{if (window.innerWidth < "1100") {
                     return(
 
 

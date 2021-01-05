@@ -34,19 +34,20 @@ body  ::-webkit-scrollbar{
   margin: 0;
   /* left: 50%; */
   /* transform: translate(-50%); */
-  z-index: 10;
+  z-index: 0;
   background: whitesmoke;
   height: 40px;
 }
 
 .mainNav-container nav {
-  height: 30px;
+  height: 20px;
   display: grid;
   grid-template-columns: 1fr 1fr ;
-  font: 1.7em sans-serif;
+  font: 1.4em sans-serif;
   margin: 0 auto;
   white-space: nowrap;
   /* background: red; */
+  align-items: center;
 
 }
 
@@ -59,7 +60,7 @@ body  ::-webkit-scrollbar{
 
 .tabIcon{
   width: 90%;
-  height: 50px;
+  height: 40px;
   background: #A279A4;
   grid-row: 1/2;
   grid-column: 1/2;
@@ -105,6 +106,10 @@ body  ::-webkit-scrollbar{
 
 
 /* Projects page----------------------------------------- */
+
+.projectsPage-container{
+  height: 80vh;
+}
 
 
 .projectsPage-container>header{
@@ -201,6 +206,12 @@ body  ::-webkit-scrollbar{
   box-shadow: -5px 10px 13px rgba(0, 0, 0, 0.11);
   
 }   
+
+.cardItems ul li:last-child {
+  background: none;
+  box-shadow: none;
+  width: 7px;
+}
 
 
 
@@ -374,18 +385,6 @@ body  ::-webkit-scrollbar{
   border-bottom: solid 5px #007fbf;
 
 } */
-
-.mainNav-container nav a {
- 
-
-
-}
-
-
-
-
-
-
 
 
 

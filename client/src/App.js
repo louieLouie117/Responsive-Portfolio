@@ -31,19 +31,24 @@ const mainNavHandler =(e) =>{
 
   return (
     <div className="App">
+   
       
+    
+        <div  className="homePage-container">
+          <Router>
+            <Projects path="/"/>
+            <Dashboard path="/dashboardPP1234567890"/>
+            <UpdateProject path="/update/:id/edit"/>
+          </Router>
 
-        <div 
-
-          className="homePage-container">
-          <Projects path="/"/>
         </div>
 
 
         <div className="aboutMePage-container"
         style={{ 
           marginLeft: aboutMePage ? "0" : "-300%",
-          zIndex: aboutMePage ? "10" : "-1",
+          zIndex: aboutMePage ? "0" : "-1",
+          transition: "smooth",
           transition: "1s"
 
       
@@ -55,14 +60,7 @@ const mainNavHandler =(e) =>{
         </div>
 
 
-        
-      <Router>
-        {/* <AboutMe path="/about-me"/> */}
-        {/* <CodeChallenges path="/code-challenges"/> */}
-        {/* <Dashboard path="/dashboard"/> */}
-        <UpdateProject path="/update/:id/edit"/>
-      </Router>
-
+  
       <div className="mainNav-container">    
           
             <nav> 
