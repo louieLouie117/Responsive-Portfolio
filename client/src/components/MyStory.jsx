@@ -113,7 +113,7 @@ const DbBoxHandler = (e)=>{
 
 {/* Mobile */}
 {(() =>{
-                        if (window.innerWidth < "900") {
+                        if (window.innerWidth < "1100") {
                             return(
             <aside>
             <h2>My Process</h2>
@@ -335,6 +335,7 @@ const DbBoxHandler = (e)=>{
                     </li>
 
 
+                    <li></li>
 
            
                 </ul>
@@ -346,14 +347,12 @@ const DbBoxHandler = (e)=>{
 
 {/* Desktop */}
             {(() =>{
-                        if (window.innerWidth > "900") {
+                        if (window.innerWidth > "1100") {
                             return(
             <aside>
             <h2>My Process</h2>
                 <ul>
-                    <li></li>
-                    <div className="leftPillar"></div>
-                    <div className="rightPillar"></div>
+                    
 
                     <li 
                     className="stage1"                    
@@ -573,8 +572,6 @@ const DbBoxHandler = (e)=>{
                             onClick={ServerBoxHandler}
                             href="#"> Read more</a>
                     </li>
-
-                    <li></li>
 
 
            

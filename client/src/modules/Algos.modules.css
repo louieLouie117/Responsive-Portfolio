@@ -18,9 +18,32 @@
     padding: 10px;
     width: auto;
   }
+
+
+
+  .basicAlgos-container ul li:last-child{
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: 100px;
+  }
+  @media screen and (min-width: 1100px){
+  .basicAlgos-container ul li:last-child{
+    display: none;
+    background: none;
+    border: none;
+    box-shadow: none;
+    height: 100px;
+  }
+
+
+ 
+
+  }
+
   .basicAlgos-container li{
     display: grid;
-    height: 75%;
+    height: 200px;
     align-items: center;
     background: white;
     padding: 20px;
@@ -62,6 +85,10 @@
    
   } 
 
+  .basicAlgos-container li{
+    height: 350px;
+  }
+
   
   
   }
@@ -81,6 +108,7 @@
   } 
 
   
+ 
   
   }
 
