@@ -143,6 +143,7 @@
     width: 100%;
     z-index: 5;
     align-self: start;
+    align-items: center;
     
 
 }
