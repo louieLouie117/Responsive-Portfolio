@@ -1,37 +1,58 @@
 const mongoose = require("mongoose");
 
 
-const ProjectSchema = new mongoose.Schema(  { 
+const MyInfoSchema = new mongoose.Schema(  { 
 
-    title:{
+    name:{
         type: String,
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
     },
 
-    type:{
+    slogan:{
         type: String,
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
     },
 
-    urlLink:{
+    specification:{
         type: String,
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
     },
 
-    linkType:{
+    myStory:{
         type: String,
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
     },
 
-    color:{
+    languages:{
+        type: String,
+        // required: [true, "{PATH} is required"],
+        // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
+
+    },
+
+    frameworksLibraries:{
+        type: String,
+        // required: [true, "{PATH} is required"],
+        // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
+
+    },
+
+    database:{
+        type: String,
+        // required: [true, "{PATH} is required"],
+        // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
+
+    },
+
+    versionControl:{
         type: String,
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
@@ -43,20 +64,17 @@ const ProjectSchema = new mongoose.Schema(  {
         default: "no-photo.jpg"
     },
 
-    details:{
-        type: Boolean,
 
-    },
-
-    likeCount:{
+    likeCount: {
+        default: 0,
         type:Number,
-        default: 0
-    }
+        }
+    
 
 
 
  }, {timestamps: true } );
 
-const Project = mongoose.model("Project", ProjectSchema);
+const MyInfo = mongoose.model("MyInfo", MyInfoSchema);
 
-module.exports = Project;
+module.exports = MyInfo;

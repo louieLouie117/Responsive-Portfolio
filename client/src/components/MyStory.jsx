@@ -220,9 +220,7 @@ const DbBoxHandler = (e)=>{
                             onClick={uiBoxHandler}
                             href="#"> Read more</a>
                     </li>
-                   
-                            
-                   
+                                  
 
                     <li 
                     className="stage3"                    
@@ -278,8 +276,7 @@ const DbBoxHandler = (e)=>{
                             href="#"> Read more</a>
                     </li>
 
-                             
-                   
+                                           
                     <li 
                     className="stage4"                    
                     style={{
@@ -379,7 +376,7 @@ const DbBoxHandler = (e)=>{
                             height: designBox ? "auto" : "60px",
                             }}
                         
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? </p>
+                        >test ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? </p>
 
                         <h2 style={{
                             display: designBox ? "block" : "none",
@@ -462,9 +459,6 @@ const DbBoxHandler = (e)=>{
                             href="#"> Read more</a>
                     </li>
                    
-                            
-                   
-
                     <li 
                     className="stage3"                    
                     style={{
@@ -518,9 +512,7 @@ const DbBoxHandler = (e)=>{
                             onClick={DbBoxHandler}
                             href="#"> Read more</a>
                     </li>
-
-                             
-                   
+              
                     <li 
                     className="stage4"                    
                     style={{
