@@ -371,6 +371,9 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/designImg.png" alt=""/>
 
+                        <h2 style={{
+                            display: designBox ? "block" : "none",
+                            transition: "1.5s "}}>Section</h2>
                         <p 
                         style={{
                             height: designBox ? "auto" : "60px",

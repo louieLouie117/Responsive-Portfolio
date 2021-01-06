@@ -175,13 +175,12 @@ const AboutMe = props => {
                 </picture>
                 <aside>
                     <div className="socialIcon-container">
+                        <a href="https://www.facebook.com/luie.cardona" target="blank">
                         <img 
-                        onClick={facebookIcon}
-                        onMouseEnter={facebookIcon}
-                        onMouseLeave={facebookIcon}
-                        src="/img/Icons/IconFacebook.png" alt=""/>
-
-
+                            onMouseEnter={facebookIcon}
+                            onMouseLeave={facebookIcon}
+                            src="/img/Icons/IconFacebook.png" alt=""/>
+                        </a>
                         <p style={{
                              display: faceBookTitle ? "block" : "none",
                             transition: "1500ms"
@@ -190,41 +189,44 @@ const AboutMe = props => {
                     </div>
 
                     <div className="socialIcon-container">
+                        <a href="https://www.tiktok.com/@luiedesign?lang=en" target="blank">
                         <img 
-                        onClick={tiktokIcon}
                         onMouseEnter={tiktokIcon}
                         onMouseLeave={tiktokIcon}
                         src="/img/Icons/IconTikTok.png" alt=""/>
+                        </a>
                         <p style={{ display: tiktokTitle ? "block" : "none" }}>Just for Fun</p>
                     </div>
                     <div className="socialIcon-container">
 
-                    <img 
-                    onClick={instagramIcon}
-                    onMouseEnter={instagramIcon}
-                    onMouseLeave={instagramIcon}
-                    src="/img/Icons/IconInstagram.png" alt=""/>
-
+                    <a href="https://www.instagram.com/luiedesign/" target="blank">
+                        <img 
+                        onMouseEnter={instagramIcon}
+                        onMouseLeave={instagramIcon}
+                        src="/img/Icons/IconInstagram.png" alt=""/>
+                    </a>
                     <p style={{ display: instagramTitle ? "block" : "none" }}>Design Art Work</p>
                     
                     </div>
                     <div className="socialIcon-container">
 
-                    <img 
-                    onClick={githubIcon}
-                    onMouseEnter={githubIcon}
-                    onMouseLeave={githubIcon}
-                    src="/img/Icons/IconGithub.png" alt=""/>
-                    <p style={{ display: githubTitle ? "block" : "none" }}>Code Repository</p>
+                    <a href="https://github.com/louieLouie117" target="blank">
+                        <img 
+                        onMouseEnter={githubIcon}
+                        onMouseLeave={githubIcon}
+                        src="/img/Icons/IconGithub.png" alt=""/>
+                    </a>
 
+                        <p style={{ display: githubTitle ? "block" : "none" }}>Code Repository</p>
                     
                     </div>
                     <div className="socialIcon-container">
-                    <img
-                    onClick={linkedinIcon}
-                    onMouseEnter={linkedinIcon}
-                    onMouseLeave={linkedinIcon} 
-                    src="/img/Icons/IconLinkedin.png" alt=""/>
+                    <a href="https://www.linkedin.com/in/luis-cardona-3a51b2162/" target="blank">
+                        <img
+                        onMouseEnter={linkedinIcon}
+                        onMouseLeave={linkedinIcon} 
+                        src="/img/Icons/IconLinkedin.png" alt=""/>
+                    </a>
 
                     <p style={{ display: LinkedInTitle ? "block" : "none" }}>Let's  Connect and Program Together</p>
 
