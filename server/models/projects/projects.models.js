@@ -46,6 +46,11 @@ const ProjectSchema = new mongoose.Schema(  {
     details:{
         type: Boolean,
 
+    },
+
+    likeCount:{
+        type:Number,
+        default: 0
     }
 
 
