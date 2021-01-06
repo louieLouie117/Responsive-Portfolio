@@ -20,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 require("./router/projects/projects.routes")(app);
 require("./router/myProcess/myProcess.rotes")(app);
+require("./router/myInfo/myInfo.routes")(app);
+
 
 
 
