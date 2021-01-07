@@ -96,17 +96,38 @@ const [project, setProject] = useState(null)
                                 <p>{project._id}</p>
                                 <p>{project.type}</p>
                                 <p>{project.urlLink}</p>
+                                <p>{project.file}</p>
                                 <p>{project.linkType}</p>
                                 <p>{project.color}</p>
                                 <p>Likes: {project.likeCount}</p>
 
+
+
+                                {(() =>{
+                                    if (project.like === false) {
+                                        return(
+                                            <div>
+                                                <p>like: false</p>
+                                            </div>
+                                        )}
+                                })()}
+                            
+
+                            {(() =>{
+                                    if (project.like === true) {
+                                        return(
+                                            <div>
+                                                <p>like: true</p>
+                                            </div>
+                                        )}
+                                })()}
 
                                 
                             {(() =>{
                                     if (project.details === false) {
                                         return(
                                             <div>
-                                                <p>false</p>
+                                                <p>details: false</p>
                                             </div>
                                         )}
                                 })()}
@@ -116,10 +137,15 @@ const [project, setProject] = useState(null)
                                     if (project.details === true) {
                                         return(
                                             <div>
-                                                <p>true</p>
+                                                <p>details: true</p>
                                             </div>
                                         )}
                                 })()}
+
+                        <p>EasterEggCount: {project.easterEgg}</p>
+                        <p>EasterEgg Msg: {project.easterEggMsg}</p>
+
+
 
                             </aside>
                             

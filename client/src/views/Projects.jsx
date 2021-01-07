@@ -38,9 +38,30 @@ const [project, setProject] = useState(null)
     
 
     const showDetails = (data)=> {
+    // reset like to false
    
+            data.like = false
+            const fdLike = new FormData();
+            fdLike.append('like', data.like)
+    
+            axios
+            .put("http://localhost:8000/api/project/update/" + data._id, fdLike)
+            .then((res) =>{
+                console.log("submitted");
+                console.log(res);
+                // console.log(updateBoolean);
+    
+            })
+            .catch((err) =>{
+                console.log("something went wrong");
+                console.log(err);
+            })
+            
+            
+
         console.log(data._id);
         console.log("before",data.details);
+        // change between true or false 
         data.details = !data.details
         console.log("after",data.details);
         setDetails(" ")
@@ -66,15 +87,80 @@ const [project, setProject] = useState(null)
         
     }
 
+    const [like, setLike] = useState(false)
+
+
     const projectLikeHandler =(data)=>{
-        console.log(data.likeCount);
-        console.log(data._id);
-        let addToCount
+
+// reset details to false in db
+data.details = !data.details
+
+        const fdDetails = new FormData();
+        fdDetails.append('details', data.details);
+
+
+        axios
+        .put("http://localhost:8000/api/project/update/" + data._id, fdDetails)
+        .then((res) =>{
+            console.log("submitted");
+            console.log(res);
+            // console.log(updateBoolean);
+
+        })
+        .catch((err) =>{
+            console.log("something went wrong");
+            console.log(err);
+        })
+   
+       
+
+        data.like = !data.like
         data.likeCount = data.likeCount + 1
-        console.log(addToCount);
         
         const fd = new FormData();
         fd.append('likeCount', data.likeCount);
+        fd.append('like', data.like)
+
+        axios
+        .put("http://localhost:8000/api/project/update/" + data._id, fd)
+        .then((res) =>{
+            console.log("submitted");
+            console.log(res);
+            // console.log(updateBoolean);
+
+        })
+        .catch((err) =>{
+            console.log("something went wrong");
+            console.log(err);
+        })
+
+
+        if (data.likeCount === data.easterEgg) {
+            
+        alert(data.easterEggMsg)
+
+        }
+        else{
+        alert(`Thank you for bringing, ${data.name} to ${data.likeCount} likes 😊😁.`)
+
+        }
+            
+
+    }
+
+
+    const projectUndoHandler =(data)=>{
+        setLike(false)
+        console.log(data.likeCount);
+        console.log(data._id);
+        
+        data.like = !data.like
+        data.likeCount = data.likeCount - 1
+
+        
+        const fd = new FormData();
+        fd.append('likeCount', data.likeCount);
+        fd.append('like', data.like)
 
         axios
         .put("http://localhost:8000/api/project/update/" + data._id, fd)
@@ -144,7 +230,7 @@ const [project, setProject] = useState(null)
                                     if (project.details === true) {
                                         return(
                                             <div className="likeProjects-container">
-                                                <h2>{project.title}</h2>
+                                                <h2>{project.type}</h2>
                                                 <aside
                                                 style={{background: `#${project.color}` }  }
                                                 >
@@ -152,11 +238,29 @@ const [project, setProject] = useState(null)
                                                     <h4>{project.likeCount}</h4>
 
                                                 </aside>
+                                {(() =>{
+                                    if (project.like === false) {
+                                        return(
                                                 <a
                                                 style={{color: `#${project.color}` }  }
                                                 onClick={ () => projectLikeHandler(project)}
                                                >like</a>
 
+                                               )}
+                                            })()}
+                                {(() =>{
+                                    if (project.like === true) {
+                                        return(
+
+                                                <a
+                                                style={{color: `#${project.color}` }  }
+                                                onClick={ () => projectUndoHandler(project)}
+                                               >undo</a>
+
+                                               )}
+                                            })()}
+
+                                            
                                             </div>
                                         )}
                                 })()}
@@ -173,7 +277,7 @@ const [project, setProject] = useState(null)
                            
 
                             {(() =>{
-                                    if (project.type === "c#Stack") {
+                                    if (project.type === "C#") {
                                         return(     
                                     <div id="icon-container">
 
@@ -202,7 +306,7 @@ const [project, setProject] = useState(null)
                            
 
                             {(() =>{
-                                    if (project.type === "landingPage") {
+                                    if (project.type === "Website") {
                                         return(     
                                             <div id="icon-container">
                                             <div><img src="/img/Icons/iconXD.png" alt=""/></div>
@@ -222,7 +326,7 @@ const [project, setProject] = useState(null)
 
 
                             {(() =>{
-                                    if (project.type === "pythonStack") {
+                                    if (project.type === "Python") {
                                         return(     
                                             <div id="icon-container">
                                             <div><img src="/img/Icons/iconXD.png" alt=""/></div>
@@ -251,7 +355,7 @@ const [project, setProject] = useState(null)
 
 
                         {(() =>{
-                                    if (project.type === "mernStack") {
+                                    if (project.type === "MEARN") {
                                         return(     
                                             <div id="icon-container">
                                             <div><img src="/img/Icons/iconXD.png" alt=""/></div>

@@ -13,12 +13,14 @@ const UpdateProject = props => {
 
 
     const [title, setTitle] = useState();
-    const [type, setType] = useState("c#Stack");
+    const [type, setType] = useState();
     const [urlLink, setUrlLink] = useState();
     const [linkType, setLinkType] = useState();
     const [color, setColor] = useState();
     const [file, setFile] = useState("no image");
     const [details, setDetails] = useState(false);
+    const [easterEgg, setEasterEgg] = useState();
+    const [easterEggMsg, setEasterEggMsg] = useState()
 
     const [data, getFile] = useState({ name: "", path: "" });
 
@@ -38,6 +40,9 @@ const UpdateProject = props => {
             setUrlLink(res.data.Project.urlLink)
             setLinkType(res.data.Project.linkType)
             setColor(res.data.Project.color)
+            setEasterEgg(res.data.Project.easterEgg)
+            setEasterEggMsg(res.data.Project.easterEggMsg)
+
 
             console.log("Axios id",res.data.Project.id);
             console.log("Axios title",res.data.Project.title);
@@ -63,6 +68,8 @@ const UpdateProject = props => {
         fd.append('linkType', linkType );
         fd.append('details', details );
         fd.append('color', color );
+        fd.append('easterEgg', easterEgg);
+        fd.append('easterEggMsg', easterEggMsg);
 
 
         axios
@@ -99,10 +106,10 @@ const UpdateProject = props => {
                 
             <select 
                 onChange={e => {setType(e.target.value)}}>
-                    <option value="c#Stack">C# Project</option>
-                    <option value="mernStack">MERN Project</option>
-                    <option value="pythonStack">Python Project</option>
-                    <option value="landingPage">Landing Page</option>
+                    <option value="C#">C# Project</option>
+                    <option value="MEARN">MERN Project</option>
+                    <option value="Python">Python Project</option>
+                    <option value="Website">Landing Page</option>
                 </select>
                 <input 
                 type="text"
@@ -138,7 +145,19 @@ const UpdateProject = props => {
                 </select>
                 </div>
               
+                <input 
+                type="esterEgg#"
+                value={easterEgg}
+                onChange={e => {setEasterEgg(e.target.value)}}
+                placeholder="ester egg count"/>
+
                 
+            <textarea 
+            value={easterEggMsg}
+            placeholder="Ester egg message"
+            onChange={e => {setEasterEggMsg(e.target.value)}}
+            cols="30" rows="10"></textarea>
+
                 <input 
                 type="file" 
                 onChange={onChange}/>
@@ -147,7 +166,7 @@ const UpdateProject = props => {
 
     
 
-               <button>update Project</button>
+               <button>Save Changes</button>
             </form>
         </div>
     )

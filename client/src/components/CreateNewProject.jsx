@@ -8,12 +8,16 @@ import modules from "../modules/Dashboard.modules.css"
 const CreateNewProject = props => {
 
     const [title, setTitle] = useState();
-    const [type, setType] = useState("c#Stack");
+    const [name, setName] = useState();
+    const [type, setType] = useState("C#");
     const [urlLink, setUrlLink] = useState();
     const [linkType, setLinkType] = useState();
     const [color, setColor] = useState();
     const [file, setFile] = useState();
     const [details, setDetails] = useState(false);
+    const [easterEgg, setEasterEgg] = useState();
+    const [easterEggMsg, setEasterEggMsg] = useState()
+
 
     const [data, getFile] = useState({ name: "", path: "" });
 
@@ -36,12 +40,16 @@ const CreateNewProject = props => {
 
         const fd = new FormData();
         fd.append('title', title);
+        fd.append('name', name);
         fd.append('type', type);
         fd.append('urlLink', urlLink);
         fd.append('linkType', linkType);
         fd.append('color', color);
         fd.append('details', details);
         fd.append('file', file);
+        fd.append('easterEgg', easterEgg);
+        fd.append('easterEggMsg', easterEggMsg);
+
 
 
 
@@ -71,19 +79,23 @@ const CreateNewProject = props => {
             <h2>Crate new Project</h2>
             <form encType="multipart/form-data" onSubmit= {e => {submitHandler(e)}}>
 
-            <div className="columns2-container">
+            <div className="columns3-container">
                 
             <select 
                 onChange={e => {setType(e.target.value)}}>
-                    <option value="c#Stack">C# Project</option>
-                    <option value="mernStack">MERN Project</option>
-                    <option value="pythonStack">Python Project</option>
-                    <option value="landingPage">Landing Page</option>
+                    <option value="C#">C# Project</option>
+                    <option value="MEARN">MERN Project</option>
+                    <option value="Python">Python Project</option>
+                    <option value="Website">Landing Page</option>
                 </select>
                 <input 
                 type="text"
                 onChange={e => {setTitle(e.target.value)}}
                 placeholder="title"/>
+                 <input 
+                type="text"
+                onChange={e => {setName(e.target.value)}}
+                placeholder="Name"/>
             </div>
                 <input 
                 type="text"
@@ -101,13 +113,17 @@ const CreateNewProject = props => {
                 type="text"
                 onChange={e => {setColor(e.target.value)}}
                 placeholder="hex color"/>
-                      <select 
-                onChange={e => {setDetails(e.target.value)}}>
-                    <option value="false">false</option>
-                    <option value="true">true</option>
+                <input 
+                type="esterEgg#"
+                onChange={e => {setEasterEgg(e.target.value)}}
+                placeholder="ester egg count"/>
+                     
+        </div>
 
-                </select>
-                </div>
+            <textarea 
+            placeholder="Ester egg message"
+            onChange={e => {setEasterEggMsg(e.target.value)}}
+            cols="30" rows="10"></textarea>
               
                 
                 <input 
