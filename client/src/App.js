@@ -37,7 +37,7 @@ const mainNavHandler =(e) =>{
         <div  className="homePage-container">
           <Router>
             <Projects path="/"/>
-            <Dashboard path="/dashboardPP1234567890"/>
+            <Dashboard path="/dashboardPP123456789"/>
             <UpdateProject path="/update/:id/edit"/>
           </Router>
 
@@ -46,10 +46,12 @@ const mainNavHandler =(e) =>{
 
         <div className="aboutMePage-container"
         style={{ 
-          marginLeft: aboutMePage ? "0" : "-300%",
+          marginLeft: aboutMePage ? "0" : "-700%",
           zIndex: aboutMePage ? "2" : "-1",
+          transitionTimingFunction: "ease",
           transition: "smooth",
-          transition: "1s"
+          transition: ".3s"
+
 
       
       }}
@@ -69,14 +71,14 @@ const mainNavHandler =(e) =>{
               color: homePage ? "white" : "black",
               boxShadow:  homePage ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none",
               marginLeft: homePage ? "0" : "205%",
-              transition: "1s"
+              transition: ".3s"
 
           }}></div>
 
                 <a 
                 style={{ 
                   color: homePage ? "white" : "black",
-                  transition: "1s"
+                  transition: ".3s"
     
               }}
                 id="projectsTab"

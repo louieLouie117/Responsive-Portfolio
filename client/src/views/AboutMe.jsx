@@ -244,7 +244,8 @@ const AboutMe = props => {
                     <div
                     style={{ 
                         display: devTitle ? "none" : "block",
-                        // marginLeft: devTitle ? "-400px" : "0"
+                        transitionTimingFunction: "ease",
+                        transition: "smooth",
                         transition: "1500ms"
 
                     }}>

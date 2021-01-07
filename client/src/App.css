@@ -427,7 +427,6 @@ body  ::-webkit-scrollbar{
 }
 
 
-
 /* tablet displays */
 @media screen and (min-width: 700px) {
   .App {
