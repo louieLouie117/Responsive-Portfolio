@@ -3,6 +3,13 @@ const mongoose = require("mongoose");
 
 const ProjectSchema = new mongoose.Schema(  { 
 
+    name:{
+        type: String,
+        // required: [true, "{PATH} is required"],
+        // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
+
+    },
+
     title:{
         type: String,
         // required: [true, "{PATH} is required"],
@@ -45,13 +52,28 @@ const ProjectSchema = new mongoose.Schema(  {
 
     details:{
         type: Boolean,
-
+        default: false
     },
 
     likeCount:{
         type:Number,
         default: 0
+    },
+
+    like:{
+        type: Boolean,
+        default: false
+    },
+
+    easterEgg: {
+        type: Number
+    },
+
+    easterEggMsg: {
+        type:String
     }
+
+
 
 
 

@@ -27,8 +27,13 @@ const MyProcessSchema = new mongoose.Schema(  {
     likeCount: {
         default: 0,
         type:Number,
-        }
+        },
+
+    like:{
+        type: Boolean
+    }
     
+
 
 
 
