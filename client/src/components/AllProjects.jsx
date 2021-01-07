@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {Link} from "@reach/router"
-import modules from "../modules/Dashboard.modules.css"
+import modules from "../modules/AllProjects.modules.css"
+import CreateNewProject from './CreateNewProject'
 
 
 
@@ -80,6 +81,10 @@ const [project, setProject] = useState(null)
 
     return (
         <div className="allProjects-container">
+
+            <div>
+                <CreateNewProject></CreateNewProject>
+            </div>
             <h2>List of all projects</h2>
             {project.map((project)=>{
                         return(

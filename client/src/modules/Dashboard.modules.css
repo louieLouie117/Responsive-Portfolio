@@ -1,27 +1,25 @@
 
 .dashboard-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 300px 1fr;
     background: whitesmoke;
-    padding: 0 70px;
+    width: 97vw;
+    height: 97vh;
 
 }
 
-.dashboard-container ul {
-    display: grid;
-    row-gap: 20px;
-    background: whitesmoke;
-    /* width: 900px; */
+
+.dashboard-container header nav{
+    padding: 50px;
 
 }
 
-.dashboard-container ul li {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    background: white;
-    box-shadow: 0 0 9px rgba(0, 0, 0, 0.296);
-    margin-right: 20px;
+
+.dashboard-container main{
+    padding: 50px;
+
 }
+
 
 .dashboard-container ul li img {
     width: 200px;
@@ -78,4 +76,11 @@
     padding: 20px;
     row-gap: 10px;
 
+}
+
+
+.dashboard-container nav {
+    background: gold;
+    height: 100vh;
+    padding: 0;
 }

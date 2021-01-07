@@ -91,14 +91,10 @@ const [project, setProject] = useState(null)
 
 
     const projectLikeHandler =(data)=>{
-
-// reset details to false in db
-data.details = !data.details
-
+        // reset details to false in db
+        data.details = !data.details
         const fdDetails = new FormData();
         fdDetails.append('details', data.details);
-
-
         axios
         .put("http://localhost:8000/api/project/update/" + data._id, fdDetails)
         .then((res) =>{
@@ -112,8 +108,8 @@ data.details = !data.details
             console.log(err);
         })
    
-       
 
+        // increases the likes
         data.like = !data.like
         data.likeCount = data.likeCount + 1
         
@@ -135,13 +131,12 @@ data.details = !data.details
         })
 
 
+        // easterEgg
         if (data.likeCount === data.easterEgg) {
-            
-        alert(data.easterEggMsg)
-
+            alert(data.easterEggMsg)
         }
         else{
-        alert(`Thank you for bringing, ${data.name} to ${data.likeCount} likes 😊😁.`)
+            alert(`Thank you for bringing, ${data.name} to ${data.likeCount} likes 😊😁.`)
 
         }
             
@@ -192,10 +187,14 @@ data.details = !data.details
         className="projectsPage-container"  
         style={ { display: projectsPage ? "grid" : "none" }}  > 
             <header>      
-                <div className="slogan-container">  
-                    <p>Dream it.</p>             
+                <div className="slogan-container"> 
+                    <p>Dream it.</p>
                     <p>Design it.</p>
                     <p>Code it.</p>
+
+                                 
+                  
+                    
                 </div>
            
                 <img src="/img/portfolioImg.png" alt=""/>
