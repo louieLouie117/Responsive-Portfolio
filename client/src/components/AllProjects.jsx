@@ -98,6 +98,8 @@ const [project, setProject] = useState(null)
                                 <p>{project.urlLink}</p>
                                 <p>{project.linkType}</p>
                                 <p>{project.color}</p>
+                                <p>Likes: {project.likeCount}</p>
+
 
                                 
                             {(() =>{

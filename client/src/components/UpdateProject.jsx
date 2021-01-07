@@ -71,7 +71,7 @@ const UpdateProject = props => {
             console.log("submitted");
             console.log(res);
             // console.log(updateBoolean);
-            navigate("/dashboard")
+            navigate("/dashboardPP1234567890")
 
         })
         .catch((err) =>{

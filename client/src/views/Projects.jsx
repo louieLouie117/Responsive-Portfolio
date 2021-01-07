@@ -66,6 +66,31 @@ const [project, setProject] = useState(null)
         
     }
 
+    const projectLikeHandler =(data)=>{
+        console.log(data.likeCount);
+        console.log(data._id);
+        let addToCount
+        data.likeCount = data.likeCount + 1
+        console.log(addToCount);
+        
+        const fd = new FormData();
+        fd.append('likeCount', data.likeCount);
+
+        axios
+        .put("http://localhost:8000/api/project/update/" + data._id, fd)
+        .then((res) =>{
+            console.log("submitted");
+            console.log(res);
+            // console.log(updateBoolean);
+
+        })
+        .catch((err) =>{
+            console.log("something went wrong");
+            console.log(err);
+        })
+
+    }
+
         
 
 
@@ -118,8 +143,20 @@ const [project, setProject] = useState(null)
                             {(() =>{
                                     if (project.details === true) {
                                         return(
-                                            <div>
-                                                <h2>Technology Implemented</h2>
+                                            <div className="likeProjects-container">
+                                                <h2>{project.title}</h2>
+                                                <aside
+                                                style={{background: `#${project.color}` }  }
+                                                >
+                                                    <img id="heartIcon"src="/img/Icons/heart.png" alt=""/>
+                                                    <h4>{project.likeCount}</h4>
+
+                                                </aside>
+                                                <a
+                                                style={{color: `#${project.color}` }  }
+                                                onClick={ () => projectLikeHandler(project)}
+                                               >like</a>
+
                                             </div>
                                         )}
                                 })()}
@@ -248,7 +285,7 @@ const [project, setProject] = useState(null)
                                 name={project._id}
                                 onClick={ () =>showDetails(project)}
                                 onMouseEnter={ () =>showDetails(project)} 
-                                onMouseLeave={ () =>showDetails(project)} 
+                                // onMouseLeave={ () =>showDetails(project)} 
                                 style={{color: `#${project.color}` }  }
                                 >Details</a>
 
