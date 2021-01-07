@@ -47,7 +47,7 @@ const mainNavHandler =(e) =>{
         <div className="aboutMePage-container"
         style={{ 
           marginLeft: aboutMePage ? "0" : "-300%",
-          zIndex: aboutMePage ? "0" : "-1",
+          zIndex: aboutMePage ? "2" : "-1",
           transition: "smooth",
           transition: "1s"
 

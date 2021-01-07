@@ -34,7 +34,7 @@ body  ::-webkit-scrollbar{
   margin: 0;
   /* left: 50%; */
   /* transform: translate(-50%); */
-  z-index: 0;
+  z-index: 3;
   background: whitesmoke;
   height: 40px;
 }
@@ -125,7 +125,7 @@ body  ::-webkit-scrollbar{
 
 
 
-.projectsPage-container>header>picture>img {
+.projectsPage-container header picture img {
   width: 100px;
   justify-self: left;
   border: 4px solid white;
@@ -219,7 +219,6 @@ body  ::-webkit-scrollbar{
   font: 1.3em sans-serif;
   text-align: center;
   align-self: center;
-  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
   padding: 10px;
   z-index: 1;
 
@@ -228,7 +227,7 @@ body  ::-webkit-scrollbar{
 
 
 
-.cardItems ul li img{
+.cardItems>ul>li>img{
   grid-row: 2/3;
   grid-column: 1/2;
   /* background-image: cover; */
@@ -358,6 +357,7 @@ body  ::-webkit-scrollbar{
   padding: 10px;
   align-items: center;
   align-self: start;
+  z-index: 0;
 
 }
 
@@ -386,6 +386,45 @@ body  ::-webkit-scrollbar{
 
 } */
 
+
+/* like count */
+
+.likeProjects-container{
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.2);
+  justify-items: center;
+  align-items: center;
+
+}
+
+#heartIcon {
+  height: 15px;
+  width: 15px;
+}
+.likeProjects-container aside{
+  display: grid;
+  grid-template-columns: 1fr 2fr ;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  height: 20px;
+  width: 50px;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+
+}
+
+.likeProjects-container a{
+  border: none;
+  background: none;
+  font: 1.1em sans-serif;
+  text-decoration: underline;
+  cursor: pointer;
+  
+}
 
 
 
