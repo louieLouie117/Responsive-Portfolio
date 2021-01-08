@@ -59,6 +59,10 @@ const MyInfoSchema = new mongoose.Schema(  {
 
     },
 
+    design: {
+        type: String
+    },
+
     file:{
         type: String,
         default: "no-photo.jpg"

@@ -267,25 +267,17 @@ const AboutMe = props => {
                         transition: "1500ms"
 
                     }}>
-                    <h2
-                    style={{ 
-                        fontSize: devTitle ? "0" : "1em",
-                        paddingLeft: devTitle ?  "0" : "20px",
-
-
-                    }}
-
-                    >Specialization in React SPA </h2>
+                
 
                     
                     <h2
                     style={{ 
-                        fontSize: devTitle ? "0" : "1em",
+                        fontSize: devTitle ? "0" : "1.2em",
                         paddingLeft: devTitle ?  "0" : "20px",
 
                     }}
 
-                    > Front-end Design and Development</h2>
+                    > {myInfo.specification}</h2>
 
                     </div>
                     <div 
