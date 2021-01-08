@@ -156,11 +156,10 @@ const MyInfoCP = props => {
                     <h4>{myInfo.specification}</h4>
                     <p>{myInfo.myStory}</p>
                     <h4>{myInfo.languages}</h4>
-                    <h4>{myInfo.specification}</h4>
+                    <h4>{myInfo.frameworksLibraries}</h4>
                     <h4>{myInfo.database}</h4>
                     <h4>{myInfo.versionControl}</h4>
-
-
+                    <h4>{myInfo.design}</h4>
                 </main>
 
         );})}

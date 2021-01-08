@@ -111,26 +111,29 @@ const DbBoxHandler = (e)=>{
         <div className="myStory-container">
            
 
-
+        {myInfo.map((myInfo)=>{
+        return(
 
             <aside>
                 <div>
                     <h2>My story</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, ipsa id non officiis veniam possimus facilis molestiae debitis totam, quidem minima magni doloremque assumenda hic saepe. Minima amet minus in!</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi, adipisci facere? Voluptatibus facilis ratione impedit velit labore, accusantium suscipit corporis in minus aperiam cumque repellat nesciunt, doloribus non ab eveniet?</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla autem, rem delectus ipsa recusandae adipisci harum necessitatibus perferendis quod, facilis tenetur doloremque quis? Quis illum autem iusto sequi magni nobis!</p>
+                    <p>{ myInfo.myStory }</p>
                 </div>
+
 
                 <div className="skills-container">
                     <h2>Skills and Technologies</h2>
                    <asie>
-                       <h3>Languages[<i>JavaScript, C#, Python, Html5, CSS, Markdown</i>] </h3>
-                        <h3>Frameworks/Libraries[<i>React, Express, Node, Express-fileupload, ASP.NET, Entity Framework, jQuery, SASS</i>]</h3>
-                        <h3>Database[<i>MySQL, MongoDB</i>]</h3>
-                        <h3>Version Control[<i>Git, GitHub</i>] </h3>
+                       <h3>Languages[<i>{myInfo.languages}</i>] </h3>
+                        <h3>Frameworks/Libraries[<i>{myInfo.frameworksLibraries}</i>]</h3>
+                        <h3>Database[<i>{myInfo.database}</i>]</h3>
+                        <h3>Version Control[<i>{myInfo.versionControl}</i>] </h3>
+                        <h3>Design[<i>{myInfo.design}</i>] </h3>
+
                    </asie>
                 </div>
             </aside>
+        );})}
 
 
 
