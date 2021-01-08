@@ -130,13 +130,12 @@ const [project, setProject] = useState(null)
             console.log(err);
         })
 
-
         // easterEgg
         if (data.likeCount === data.easterEgg) {
             alert(data.easterEggMsg)
         }
         else{
-            alert(`Thank you for bringing, ${data.name} to ${data.likeCount} likes 😊😁.`)
+            alert(`Thank you for liking, this ${data.type} project "${data.name}" and bringing it to ${data.likeCount} likes😊😁.`)
 
         }
             

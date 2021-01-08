@@ -73,6 +73,7 @@ const MyInfoSchema = new mongoose.Schema(  {
 
     like:{
         type: Boolean
+        
     }    
 
 

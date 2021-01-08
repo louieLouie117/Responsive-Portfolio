@@ -11,15 +11,8 @@ const AllProjects = props => {
 
     const [details, setDetail] = useState(false)
 
-  
-
-
-
-    
     function showDetails(e) {
-    
-
-        setDetail(!details);
+            setDetail(!details);
      
         // if (e.target.name == e.target.name) {
         //     console.log("success");
@@ -147,12 +140,16 @@ const [project, setProject] = useState(null)
                                         )}
                                 })()}
 
-                        <p>EasterEggCount: {project.easterEgg}</p>
-                        <p>EasterEgg Msg: {project.easterEggMsg}</p>
+                
 
 
 
                             </aside>
+
+                            <div>        
+                                <p>EasterEggCount: {project.easterEgg}</p>
+                                <p>EasterEgg Msg: {project.easterEggMsg}</p>
+                            </div>
                             
                             <footer>
                                 

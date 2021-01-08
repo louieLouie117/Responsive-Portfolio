@@ -4,10 +4,16 @@
     grid-template-columns: 300px 1fr;
     background: whitesmoke;
     width: 97vw;
-    height: 97vh;
+    height: 100vh;
+    position: absolute;
+    top: 0;
 
 }
 
+li{
+    cursor: pointer;
+
+}
 
 .dashboard-container header nav{
     padding: 50px;
@@ -20,6 +26,18 @@
 
 }
 
+
+.dashboard-container ul {
+    display: grid;
+    row-gap: 20px;
+}
+
+.dashboard-container ul li{
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+
+}
 
 .dashboard-container ul li img {
     width: 200px;
@@ -81,6 +99,7 @@
 
 .dashboard-container nav {
     background: gold;
-    height: 100vh;
+    height: 90%;
     padding: 0;
 }
+
