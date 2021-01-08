@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import AlgosBasic from '../components/AlgosBasic'
 import MyStory from '../components/MyStory'
 import modules from "../modules/AboutMe.modules.css"
+import axios from 'axios'
 
 
 const AboutMe = props => {
@@ -39,23 +40,15 @@ const AboutMe = props => {
     }
 
     const showAllTitles =(e)=>{
-    console.log("div element was click"); 
-    setFaceBookTitle(!faceBookTitle)
-    setTiktokTitle(!tiktokTitle)
-    setInstagramTitle(!instagramTitle)
-    setGithubTitle(!githubTitle)
-    setLinkedInTitle(!LinkedInTitle)
-    setBlurImg(!blurImg)
-    setRotateMenu(!rotateMenu)
-    setDevTitle(!devTitle)
-
-
-   
-
-
-   
-    
-
+        console.log("div element was click"); 
+        setFaceBookTitle(!faceBookTitle)
+        setTiktokTitle(!tiktokTitle)
+        setInstagramTitle(!instagramTitle)
+        setGithubTitle(!githubTitle)
+        setLinkedInTitle(!LinkedInTitle)
+        setBlurImg(!blurImg)
+        setRotateMenu(!rotateMenu)
+        setDevTitle(!devTitle)
 
     }
 
@@ -145,16 +138,41 @@ const AboutMe = props => {
 
 
     
+      // get all data for My Info db
+      const [myInfo, setMyInfo] = useState(null)
+      const apiGetAllMyInfo = 'http://localhost:8000/api/myInfo'
+  
+      useEffect(()=>{
+          axios
+          .get(apiGetAllMyInfo)
+          .then((res) =>{
+              setMyInfo(res.data.MyInfo)
+              // console.log(res.data.Project);
+          })
+          .catch((err)=> {
+              console.log(err);
+          })
+      }, [])
+  
+  
+      if(myInfo === null){return(<h2>Loading...</h2>)}
+
+    
     return (
+
+        
         <div className="aboutMe-container">
+            {myInfo.map((myInfo)=>{
+        return(
+
             <header>
                 <h1
                 style={{ display: devTitle ? "block" : "none",}}
-                >Hello, my name is Luis</h1>
+                >Hello, my name is {myInfo.name}</h1>
                 <h1
                     style={{ 
                         display: devTitle ? "none" : "block",
-                    }}>I translate design into code.</h1>
+                    }}>{myInfo.slogan}</h1>
                 
                 <picture 
                 style={{ 
@@ -392,7 +410,10 @@ const AboutMe = props => {
                     
                 </nav>
             </header>
+        );})}
 
+{myInfo.map((myInfo)=>{
+        return(
             <main>
 
 
@@ -459,6 +480,8 @@ const AboutMe = props => {
 
                 </section>
             </main>
+        );})}
+            
             
         </div>
     )

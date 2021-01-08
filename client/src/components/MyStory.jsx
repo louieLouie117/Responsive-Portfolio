@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
 import modules from "../modules/MyStory.modules.css"
 
 
@@ -83,6 +84,28 @@ const DbBoxHandler = (e)=>{
             e.target.innerText = "Reread."
             }
 }
+
+
+
+
+    // get all data for My Info db
+    const [myInfo, setMyInfo] = useState(null)
+    const apiGetAllMyInfo = 'http://localhost:8000/api/myInfo'
+
+    useEffect(()=>{
+        axios
+        .get(apiGetAllMyInfo)
+        .then((res) =>{
+            setMyInfo(res.data.MyInfo)
+            // console.log(res.data.Project);
+        })
+        .catch((err)=> {
+            console.log(err);
+        })
+    }, [])
+
+
+    if(myInfo === null){return(<h2>Loading...</h2>)}
 
     return (
         <div className="myStory-container">

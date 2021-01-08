@@ -1,0 +1,29 @@
+.myInfo-container{
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.myInfo-container header{
+    display: grid;
+}
+
+.myInfo-container header form{
+    display: grid;
+    width: auto;
+    background: white;
+    row-gap: 20px;
+    padding: 40px;
+
+}
+
+
+.myInfo-container main{
+    display: grid;
+    width: auto;
+    background: white;
+    padding: 40px;
+
+}
+
