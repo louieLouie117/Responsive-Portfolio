@@ -290,7 +290,7 @@
 
     .aboutMe-container{
         display: grid;
-        grid-template-columns: 410px 1fr;
+        grid-template-columns: 20vw 1fr;
 
     }
 
@@ -351,3 +351,10 @@
 
 
 }
+/* 
+@media screen and (min-width: 900){
+    .aboutMe-container{
+    background: red;
+    grid-template-columns: 330px 1fr;
+    }
+} */

@@ -10,6 +10,11 @@ const MyInfoSchema = new mongoose.Schema(  {
 
     },
 
+
+    title: {
+        type: String
+
+    },
     slogan:{
         type: String,
         // required: [true, "{PATH} is required"],
@@ -61,6 +66,16 @@ const MyInfoSchema = new mongoose.Schema(  {
 
     design: {
         type: String
+    },
+
+    education:{
+        type: String,
+       
+    },
+
+    educationLikes:{
+        type: Number,
+        default: 0
     },
 
     file:{

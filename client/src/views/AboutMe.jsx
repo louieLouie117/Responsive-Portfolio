@@ -257,7 +257,7 @@ const AboutMe = props => {
 
                     }}
 
-                    >Full Stack Developer</h2>
+                    >{myInfo.title}</h2>
 
                     <div
                     style={{ 
