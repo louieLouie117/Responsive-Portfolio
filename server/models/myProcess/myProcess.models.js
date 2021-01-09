@@ -34,9 +34,6 @@ const MyProcessSchema = new mongoose.Schema(  {
     }
     
 
-
-
-
  }, {timestamps: true } );
 
 const MyProcess = mongoose.model("MyProcess", MyProcessSchema);

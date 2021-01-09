@@ -142,16 +142,17 @@ const DbBoxHandler = (e)=>{
 
                 <div className="skills-container">
                     <h2>Skills, Technologies, and Education</h2>
-                   <section>
+                   <div>
                        <h3>Languages[<i>{myInfo.languages}</i>] </h3>
                         <h3>Frameworks/Libraries[<i>{myInfo.frameworksLibraries}</i>]</h3>
                         <h3>Database[<i>{myInfo.database}</i>]</h3>
                         <h3>Version Control[<i>{myInfo.versionControl}</i>] </h3>
                         <h3>Design[<i>{myInfo.design}</i>] </h3>
-                        {/* <h3>Education[<i>Coding Dojo</i>] </h3> */}
+                        <h3>Education[<i>{myInfo.education}</i>] </h3>
 
 
-                   </section>
+
+                   </div>
                 </div>
             </aside>
         );})}
@@ -167,9 +168,7 @@ const DbBoxHandler = (e)=>{
         
 
                 <ul>
-
-                {myProcess.map((myProcess)=>{
-            return(
+    
                     <li 
                     className="stage1"                    
                     style={{
@@ -186,31 +185,37 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/designImg.png" alt=""/>
 
-                        <p 
-                        style={{
-                            height: designBox ? "auto" : "60px",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? </p>
+                       {/* ul for loop */}
+                       <ul
+                        className="loop-container"
+                        style={{height: designBox ? "97%" : "60px",}}
+                        >
+                        {myProcess.map((myProcess)=>{
+                        return(
+                            <div>
+                            {(() =>{
+                                if (myProcess.category === "Design") {
+                                    return(     
+                                <li>  
+                                    <h2 style={{
+                                    display: designBox ? "block" : "none",
+                                    transition: "1.5s "}}>{myProcess.title}</h2>
+                                    <p
+                                    style={{display: designBox ? "block" : "none",}}
+                                    >{myProcess.summary}</p>
+                                </li>
+                            )}})()} 
+                            </div>
 
-                        <h2 style={{
-                            display: designBox ? "block" : "none",
-                            transition: "1.5s "}}>{myProcess.title}</h2>
-                        <p 
-                        style={{
-                            display: designBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
+                        );})}
+                        </ul>
 
-                    
                         <a 
                             onClick={DesignBoxHandler}
-                            href="#"> Read more</a>
+                            href="#"> Read.</a>
                     </li>
 
-                    );})}
+              
 
                     <li
                     className="stage2"                    
@@ -228,40 +233,35 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/uiDevelopmentImg.png" alt=""/>
 
-                        <p 
-                        style={{
-                            height: uiDevelopmentBox ? "auto" : "60px",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? </p>
+                       {/* ul for loop */}
+                       <ul
+                        className="loop-container"
+                        style={{height: uiDevelopmentBox ? "97%" : "60px",}}
+                        >
+                        {myProcess.map((myProcess)=>{
+                        return(
+                            <div>
+                            {(() =>{
+                                if (myProcess.category === "UIDevelopment") {
+                                    return(     
+                                <li>  
+                                    <h2 style={{
+                                    display: uiDevelopmentBox ? "block" : "none",
+                                    transition: "1.5s "}}>{myProcess.title}</h2>
+                                    <p
+                                    style={{display: uiDevelopmentBox ? "block" : "none",}}
+                                    >{myProcess.summary}</p>
+                                </li>
+                            )}})()} 
+                            </div>
 
-                        <h2 style={{
-                            display: uiDevelopmentBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: uiDevelopmentBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
-
-                        <h2 style={{
-                            display: uiDevelopmentBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: uiDevelopmentBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
-
+                        );})}
+                        </ul>
                         
                         
                         <a 
                             onClick={uiBoxHandler}
-                            href="#"> Read more</a>
+                            href="#"> Read.</a>
                     </li>
                                   
 
@@ -283,40 +283,33 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/relationshipDdImg.png" alt=""/>
 
-                        <p 
-                        style={{
-                            height: dbBox ? "auto" : "60px",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? </p>
+                       {/* ul for loop */}
+                       <ul
+                        className="loop-container"
+                        style={{height: dbBox ? "97%" : "60px",}}
+                        >
+                        {myProcess.map((myProcess)=>{
+                        return(
+                            <div>
+                            {(() =>{
+                                if (myProcess.category === "DataBase") {
+                                    return(     
+                                <li>  
+                                    <h2 style={{
+                                    display: dbBox ? "block" : "none",
+                                    transition: "1.5s "}}>{myProcess.title}</h2>
+                                    <p
+                                    style={{display: dbBox ? "block" : "none",}}
+                                    >{myProcess.summary}</p>
+                                </li>
+                            )}})()} 
+                            </div>
 
-                        <h2 style={{
-                            display: dbBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: dbBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
-
-                        <h2 style={{
-                            display: dbBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: dbBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
-
+                        );})}
+                        </ul>
                         
                         
-                        <a 
-                            onClick={DbBoxHandler}
-                            href="#"> Read more</a>
+                        <a onClick={DbBoxHandler}href="#"> Read.</a>
                     </li>
 
                                            
@@ -328,7 +321,6 @@ const DbBoxHandler = (e)=>{
                          height: serverBox ? "90%" : "300px",
                          padding: serverBox ? "10px": "30px",
                          zIndex: serverBox ? "120" : "0",
-                         marginTop: serverBox ? "-200px" : "0",
                          transition: ".3s"}}>
                         <h3>Server Development</h3>
                         <img 
@@ -337,40 +329,33 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/serverDBDevelopmentImg.png" alt=""/>
 
-                        <p 
-                        style={{
-                            height: serverBox ? "auto" : "60px",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? </p>
+                        {/* ul for loop */}
+                        <ul
+                        className="loop-container"
+                        style={{height: serverBox ? "97%" : "60px",}}
+                        >
+                        {myProcess.map((myProcess)=>{
+                        return(
+                            <div>
+                            {(() =>{
+                                if (myProcess.category === "Server") {
+                                    return(     
+                                <li>  
+                                    <h2 style={{
+                                    display: serverBox ? "block" : "none",
+                                    transition: "1.5s "}}>{myProcess.title}</h2>
+                                    <p
+                                    style={{display: serverBox ? "block" : "none",}}
+                                    >{myProcess.summary}</p>
+                                </li>
+                            )}})()} 
+                            </div>
 
-                        <h2 style={{
-                            display: serverBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: serverBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
-
-                        <h2 style={{
-                            display: serverBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: serverBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
-
+                        );})}
+                        </ul>
                         
                         
-                        <a 
-                            onClick={ServerBoxHandler}
-                            href="#"> Read more</a>
+                        <a onClick={ServerBoxHandler}href="#"> Read.</a>
                     </li>
 
 
@@ -386,15 +371,11 @@ const DbBoxHandler = (e)=>{
 
 {/* Desktop */}
             {(() =>{
-                        if (window.innerWidth > "1100") {
-                            return(
+        if (window.innerWidth > "1100") {
+             return(
             <aside>
             <h2>My Process</h2>
                 <ul>
-                    
-
-                {myProcess.map((myProcess)=>{
-            return(
                     <li 
                     className="stage1"                    
                     style={{
@@ -413,23 +394,35 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/designImg.png" alt=""/>
 
-                        <h2 style={{
-                            display: designBox ? "block" : "none",
-                            transition: "1.5s "}}>{myProcess.title}</h2>
-                        <p 
-                        style={{
-                            height: designBox ? "auto" : "60px",
-                            }}
-                        
-                        >{myProcess.summary}</p>
+                        {/* ul for loop */}
+                        <ul
+                        className="loop-container"
+                        style={{height: designBox ? "97%" : "60px",}}
+                        >
+                        {myProcess.map((myProcess)=>{
+                        return(
+                            <div>
+                            {(() =>{
+                                if (myProcess.category === "Design") {
+                                    return(     
+                                <li>  
+                                    <h2 style={{
+                                    display: designBox ? "block" : "none",
+                                    transition: "1.5s "}}>{myProcess.title}</h2>
+                                    <p
+                                    style={{display: designBox ? "block" : "none",}}
+                                    >{myProcess.summary}</p>
+                                </li>
+                            )}})()} 
+                            </div>
 
+                        );})}
+                        </ul>
+
+                        <a onClick={DesignBoxHandler} href="#"> Read.</a>
+                      
                      
-                        <a 
-                            onClick={DesignBoxHandler}
-                            href="#"> Read more</a>
                     </li>
-
-                    );})}
 
                     <li
                     className="stage2"                    
@@ -449,40 +442,37 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/uiDevelopmentImg.png" alt=""/>
 
-                        <p 
-                        style={{
-                            height: uiDevelopmentBox ? "auto" : "60px",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? </p>
+                         {/* ul for loop */}
+                         <ul
+                        className="loop-container"
+                        style={{height: uiDevelopmentBox ? "97%" : "60px",}}
+                        >
+                        {myProcess.map((myProcess)=>{
+                        return(
+                            <div>
+                            {(() =>{
+                                if (myProcess.category === "UIDevelopment") {
+                                    return(     
+                                <li>  
+                                    <h2 style={{
+                                    display: uiDevelopmentBox ? "block" : "none",
+                                    transition: "1.5s "}}>{myProcess.title}</h2>
+                                    <p
+                                    style={{display: uiDevelopmentBox ? "block" : "none",}}
+                                    >{myProcess.summary}</p>
+                                </li>
+                            )}})()} 
+                            </div>
 
-                        <h2 style={{
-                            display: uiDevelopmentBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: uiDevelopmentBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
+                        );})}
+                          
 
-                        <h2 style={{
-                            display: uiDevelopmentBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: uiDevelopmentBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
-
+                        </ul>
                         
                         
                         <a 
                             onClick={uiBoxHandler}
-                            href="#"> Read more</a>
+                            href="#"> Read.</a>
                     </li>
                    
                     <li 
@@ -503,42 +493,40 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/relationshipDdImg.png" alt=""/>
 
-                        <p 
-                        style={{
-                            height: dbBox ? "auto" : "60px",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? </p>
+                            {/* ul for loop */}
+                        <ul
+                        className="loop-container"
+                        style={{height: dbBox ? "97%" : "60px",}}
+                        >
+                        {myProcess.map((myProcess)=>{
+                        return(
+                            <div>
+                            {(() =>{
+                                if (myProcess.category === "DataBase") {
+                                    return(     
+                                <li>  
+                                    <h2 style={{
+                                    display: dbBox ? "block" : "none",
+                                    transition: "1.5s "}}>{myProcess.title}</h2>
+                                    <p
+                                    style={{display: dbBox ? "block" : "none",}}
+                                    >{myProcess.summary}</p>
+                                </li>
+                            )}})()} 
+                        </div>
 
-                        <h2 style={{
-                            display: dbBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: dbBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
+                        );})}
+                          
 
-                        <h2 style={{
-                            display: dbBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: dbBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
-
-                        
+                        </ul>
                         
                         <a 
                             onClick={DbBoxHandler}
-                            href="#"> Read more</a>
+                            href="#"> Read.</a>
                     </li>
               
+
+
                     <li 
                     className="stage4"                    
                     style={{
@@ -557,40 +545,38 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/serverDBDevelopmentImg.png" alt=""/>
 
-                        <p 
-                        style={{
-                            height: serverBox ? "auto" : "60px",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? </p>
+                              {/* ul for loop */}
+                              <ul
+                        className="loop-container"
+                        style={{height: serverBox ? "97%" : "60px",}}
+                        >
 
-                        <h2 style={{
-                            display: serverBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: serverBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
 
-                        <h2 style={{
-                            display: serverBox ? "block" : "none",
-                            transition: "1.5s "}}>Section</h2>
-                        <p 
-                        style={{
-                            display: serverBox ? "block" : "none",
-                            }}
-                        
-                        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quas distinctio recusandae labore vel quia sint nobis perspiciatis tenetur commodi, illum iste voluptatibus? Ad optio quod, quos reprehenderit voluptatibus libero.</p>
+                                            
+                                     
+                        {myProcess.map((myProcess)=>{
+                        return(
+                        <div>
+                            {(() =>{
+                                if (myProcess.category === "Server") {
+                                    return(     
+                                <li>  
+                                    <h2 style={{
+                                    display: serverBox ? "block" : "none",
+                                    transition: "1.5s "}}>{myProcess.title}</h2>
+                                    <p
+                                    style={{display: serverBox ? "block" : "none",}}
+                                    >{myProcess.summary}</p>
+                                </li>
+                            )}})()} 
+                        </div>
+                        );})}
+                          
 
-                        
-                        
+                        </ul>
                         <a 
                             onClick={ServerBoxHandler}
-                            href="#"> Read more</a>
+                            href="#"> Read.</a>
                     </li>
 
 
