@@ -34,20 +34,13 @@ const mainNavHandler =(e) =>{
    
       
     
-        <div  className="homePage-container">
-          <Router>
-            <Projects path="/"/>
-            <Dashboard path="/dashboardPP123456789"/>
-            <UpdateProject path="/update/:id/edit"/>
-          </Router>
-
-        </div>
+     
 
 
         <div className="aboutMePage-container"
         style={{ 
-          marginLeft: aboutMePage ? "0" : "-700%",
-          zIndex: aboutMePage ? "2" : "-1",
+          marginLeft: aboutMePage ? "0" : "-800%",
+          zIndex: aboutMePage ? "3" : "-1",
           transitionTimingFunction: "ease",
           transition: "smooth",
           transition: ".3s"
@@ -64,7 +57,6 @@ const mainNavHandler =(e) =>{
 
   
       <div className="mainNav-container">    
-          
             <nav> 
             <div className="tabIcon"
              style={{ 
@@ -102,7 +94,14 @@ const mainNavHandler =(e) =>{
             
             
         </div>
+        <div  className="homePage-container">
+          <Router>
+            <Projects path="/"/>
+            <Dashboard path="/dashboardPP1234567890"/>
+            <UpdateProject path="/update/:id/edit"/>
+          </Router>
 
+        </div>
 
 
     </div>
