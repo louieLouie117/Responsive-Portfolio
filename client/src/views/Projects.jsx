@@ -135,7 +135,7 @@ const [project, setProject] = useState(null)
             alert(data.easterEggMsg)
         }
         else{
-            alert(`Thank you for liking, this ${data.type} project "${data.name}" and bringing it to ${data.likeCount} likes😊😁.`)
+            alert(`Thank you adding a like to this ${data.type} project "${data.name}" and bringing it to ${data.likeCount} likes😊😁.`)
 
         }
             

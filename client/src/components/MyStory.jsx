@@ -87,6 +87,38 @@ const DbBoxHandler = (e)=>{
 
 
 
+const [likeEd, setLikeEd] = useState(false)
+
+
+ const educationLikeHandler =(data)=>{
+
+     // increases the likes
+     data.educationLikes = data.educationLikes + 1
+     
+     const fd = new FormData();
+     fd.append('educationLikes', data.educationLikes);
+
+     axios
+     .put("http://localhost:8000/api/myInfo/update/" + data._id, fd)
+     .then((res) =>{
+         console.log("submitted");
+         console.log(res);
+         // console.log(updateBoolean);
+
+     })
+     .catch((err) =>{
+         console.log("something went wrong");
+         console.log(err);
+     })
+
+     alert(`You are the ${data.educationLikes} person to like Coding Dojo 😊`)
+
+
+     setLikeEd(!likeEd)
+
+ }
+
+
 
     // get all data for My Info db
     const [myInfo, setMyInfo] = useState(null)
@@ -102,7 +134,7 @@ const DbBoxHandler = (e)=>{
         .catch((err)=> {
             console.log(err);
         })
-    }, [])
+    }, [], likeEd)
 
 
     
@@ -148,9 +180,22 @@ const DbBoxHandler = (e)=>{
                         <h3>Database[<i>{myInfo.database}</i>]</h3>
                         <h3>Version Control[<i>{myInfo.versionControl}</i>] </h3>
                         <h3>Design[<i>{myInfo.design}</i>] </h3>
-                        <h3>Education[<i>{myInfo.education}</i>] </h3>
 
+                        <div  className="likeEducation-container">
+                        <h3>Programming School[<i>{myInfo.education} </i></h3>
+                            
+                        <footer>
+                            <img id="heartIcon"src="/img/Icons/heart.png" alt=""/>
+                            <h5>{myInfo.educationLikes}</h5>
 
+                            <a 
+                            onClick={ () => educationLikeHandler(myInfo)}
+                            href="#"> like</a>
+                   <h3>]</h3>
+
+                        </footer> 
+
+                        </div>
 
                    </div>
                 </div>
@@ -276,7 +321,7 @@ const DbBoxHandler = (e)=>{
                          
 
                          transition: ".3s"}}>
-                        <h3>Relashanship and db</h3>
+                        <h3>Relationship and db</h3>
                         <img 
                             style={{
                                 height: dbBox ? "5px" : "112px",
@@ -480,13 +525,13 @@ const DbBoxHandler = (e)=>{
                     style={{
                          position: dbBox ? "absolute " : "relative",
                          width: dbBox ? "97%" : "300px",
-                         height: dbBox ? "90%" : "300px",
+                         height: dbBox ? "97%" : "300px",
                          padding: dbBox ? "30px": "30px",
                          zIndex: dbBox ? "120" : "0",
                          gridRow: dbBox ? "1/2" : "2/3",
                          gridColumn: dbBox ? "1/2" : "1/2",
                          transition: ".3s"}}>
-                        <h3>Relashanship and db</h3>
+                        <h3>Relationship and db</h3>
                         <img 
                             style={{
                                 height: dbBox ? "5px" : "112px",

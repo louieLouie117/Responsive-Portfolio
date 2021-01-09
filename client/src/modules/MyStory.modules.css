@@ -17,9 +17,8 @@
 .myStory-container aside{
     display: grid;
     z-index: 90;
-    padding-top: 20px;
+    padding-top: 0px;
     row-gap: 20px;
-    background: whitesmoke;
     z-index: 14;
 
 }
@@ -34,6 +33,7 @@
 
 .myStory-container aside h3{
     padding: 0 10px;
+    font: 1.1em sans-serif;
 }
 
 
@@ -135,7 +135,7 @@
 @media screen and (min-width: 1100px) {
     .myStory-container{
     position: relative;
-    column-gap: 30PX;
+    column-gap: 0PX;
     width: 95%;
     padding: 30PX;
     z-index: 0;
@@ -172,6 +172,12 @@
         grid-column: 2/3;
     }
     
+
+    
+.myStory-container aside h3{
+    padding: 0 10px;
+    font: 1.3em sans-serif;
+}
 
 
  
@@ -242,3 +248,31 @@
     
     
 }
+
+
+
+.likeEducation-container{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  align-content: center;
+  max-width: 400px;
+
+}
+
+
+.likeEducation-container>footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 90px;
+}
+
+
+
+#heartIcon {
+    height: 15px;
+    width: 15px;
+  }
+

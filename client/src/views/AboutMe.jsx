@@ -114,7 +114,7 @@ const AboutMe = props => {
 
     }
     
-    const apprenticeshipTabHandler=()=>{
+    const statusUpdatesHandler=()=>{
         console.log("apprenticeship tab was click");
         setMyStoryTab(false)
         setCodingTab(false)
@@ -185,8 +185,6 @@ const AboutMe = props => {
                     <source media="(min-width: 1100px)" srcSet="/img/selffy.png"/>
                     <source media="(min-width: 1000px)" srcSet="/img/ipad12.png"/>
                     <source media="(min-width: 600px)" srcSet="/img/ipad10.png"/>
-                    <source media="(min-width: 600px)" srcSet="/img/ipad10.png"/>
-                    <source media="(min-width: 5390px)" srcSet="/img/selffy.png"/>
                     <source media="(min-width: 420px)" srcSet="/img/surfaceDuoSelfy.png"/>
                     <img src="/img/selffy.png" alt=""/>
 
@@ -263,6 +261,7 @@ const AboutMe = props => {
                     style={{ 
                         display: devTitle ? "none" : "block",
                         transitionTimingFunction: "ease",
+                        marginTop: devTitle  ? "0" : "-20px",
                         transition: "smooth",
                         transition: "1500ms"
 
@@ -274,6 +273,7 @@ const AboutMe = props => {
                     style={{ 
                         fontSize: devTitle ? "0" : "1.2em",
                         paddingLeft: devTitle ?  "0" : "20px",
+                    
 
                     }}
 
@@ -346,15 +346,10 @@ const AboutMe = props => {
                                             color: projectsTab ? "#0080BF" : "white" 
                                         }} >Backstory for Projects</li>
 
-                                        <li
-                                        onClick={apprenticeshipTabHandler}
-                                        style={{ 
-                                            background: apprenticeshipTab ? "white" : "#0080BF",
-                                            color: apprenticeshipTab ? "#0080BF" : "white" 
-                                        }} >Apprenticeship</li>
+                                       
 
-<li
-                                        onClick={apprenticeshipTabHandler}
+                                        <li
+                                        onClick={statusUpdatesHandler}
                                         style={{ 
                                             background: apprenticeshipTab ? "white" : "#0080BF",
                                             color: apprenticeshipTab ? "#0080BF" : "white" 
@@ -389,7 +384,7 @@ const AboutMe = props => {
                                     }} >Backstory for Projects</li>
 
                                     <li
-                                    onClick={apprenticeshipTabHandler}
+                                    onClick={statusUpdatesHandler}
                                     style={{ 
                                         background: "white",
                                         color:  "#0080BF" 
