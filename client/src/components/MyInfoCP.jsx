@@ -85,8 +85,8 @@ const MyInfoCP = props => {
         })
     }, [])
 
-
     if(myInfo === null){return(<h2>Loading...</h2>)}
+
 
 
     return (
