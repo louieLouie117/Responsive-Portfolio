@@ -18,9 +18,43 @@
     grid-column: 1/2;
 }
 
+
+.myProcess-container>header footer{
+    display: grid;
+    row-gap: 10px;
+    padding: 20px;
+}
+
+
+.myProcess-container>header footer button{
+    padding: 20px;
+    background: gold;
+    border: none;
+    font: 1.5em sans-serif;
+    border-radius: 20px;
+}
+
+
+
 .myProcess-container>main{
     display: grid;
     background: white;
     grid-row: 1/2;
     grid-column: 2/3;
+    overflow: scroll;
 }
+
+.myProcess-container>main section{
+    align-self: flex-start;
+
+}
+
+.myProcess-container>main section aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 500px;
+    border-bottom: 2px solid gold;
+    margin-top: 40px;
+}
+
+h4{margin: 0;}

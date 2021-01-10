@@ -236,11 +236,8 @@ const [likeEd, setLikeEd] = useState(false)
                         style={{height: designBox ? "97%" : "60px",}}
                         >
                         {myProcess.map((myProcess)=>{
-                        return(
-                            <div>
-                            {(() =>{
-                                if (myProcess.category === "Design") {
-                                    return(     
+                            if (myProcess.category === "Design") 
+                             return(
                                 <li>  
                                     <h2 style={{
                                     display: designBox ? "block" : "none",
@@ -249,9 +246,6 @@ const [likeEd, setLikeEd] = useState(false)
                                     style={{display: designBox ? "block" : "none",}}
                                     >{myProcess.summary}</p>
                                 </li>
-                            )}})()} 
-                            </div>
-
                         );})}
                         </ul>
 
@@ -283,12 +277,10 @@ const [likeEd, setLikeEd] = useState(false)
                         className="loop-container"
                         style={{height: uiDevelopmentBox ? "97%" : "60px",}}
                         >
-                        {myProcess.map((myProcess)=>{
+                        {myProcess.map((myProcess)=>
+                        { if (myProcess.category === "UIDevelopment")
                         return(
-                            <div>
-                            {(() =>{
-                                if (myProcess.category === "UIDevelopment") {
-                                    return(     
+                            
                                 <li>  
                                     <h2 style={{
                                     display: uiDevelopmentBox ? "block" : "none",
@@ -297,8 +289,6 @@ const [likeEd, setLikeEd] = useState(false)
                                     style={{display: uiDevelopmentBox ? "block" : "none",}}
                                     >{myProcess.summary}</p>
                                 </li>
-                            )}})()} 
-                            </div>
 
                         );})}
                         </ul>
@@ -333,24 +323,19 @@ const [likeEd, setLikeEd] = useState(false)
                         className="loop-container"
                         style={{height: dbBox ? "97%" : "60px",}}
                         >
-                        {myProcess.map((myProcess)=>{
-                        return(
-                            <div>
-                            {(() =>{
-                                if (myProcess.category === "DataBase") {
-                                    return(     
-                                <li>  
-                                    <h2 style={{
-                                    display: dbBox ? "block" : "none",
-                                    transition: "1.5s "}}>{myProcess.title}</h2>
-                                    <p
-                                    style={{display: dbBox ? "block" : "none",}}
-                                    >{myProcess.summary}</p>
-                                </li>
-                            )}})()} 
-                            </div>
+                        {myProcess.map((myProcess)=>
+                            { if (myProcess.category === "DataBase")                       
+                            return(
+                                    <li>  
+                                        <h2 style={{
+                                        display: dbBox ? "block" : "none",
+                                        transition: "1.5s "}}>{myProcess.title}</h2>
+                                        <p
+                                        style={{display: dbBox ? "block" : "none",}}
+                                        >{myProcess.summary}</p>
+                                    </li>
 
-                        );})}
+                                );})}
                         </ul>
                         
                         
@@ -379,12 +364,10 @@ const [likeEd, setLikeEd] = useState(false)
                         className="loop-container"
                         style={{height: serverBox ? "97%" : "60px",}}
                         >
-                        {myProcess.map((myProcess)=>{
+                        {myProcess.map((myProcess)=>{ 
+                        if (myProcess.category === "Server")
                         return(
-                            <div>
-                            {(() =>{
-                                if (myProcess.category === "Server") {
-                                    return(     
+                            
                                 <li>  
                                     <h2 style={{
                                     display: serverBox ? "block" : "none",
@@ -393,8 +376,6 @@ const [likeEd, setLikeEd] = useState(false)
                                     style={{display: serverBox ? "block" : "none",}}
                                     >{myProcess.summary}</p>
                                 </li>
-                            )}})()} 
-                            </div>
 
                         );})}
                         </ul>
@@ -445,23 +426,17 @@ const [likeEd, setLikeEd] = useState(false)
                         style={{height: designBox ? "97%" : "60px",}}
                         >
                         {myProcess.map((myProcess)=>{
-                        return(
-                            <div>
-                            {(() =>{
-                                if (myProcess.category === "Design") {
-                                    return(     
-                                <li>  
-                                    <h2 style={{
-                                    display: designBox ? "block" : "none",
-                                    transition: "1.5s "}}>{myProcess.title}</h2>
-                                    <p
-                                    style={{display: designBox ? "block" : "none",}}
-                                    >{myProcess.summary}</p>
-                                </li>
-                            )}})()} 
-                            </div>
+                            if (myProcess.category === "Design")
+                                return(
+                                    <li>  
+                                        <h2 style={{
+                                            display: designBox ? "block" : "none",
+                                            transition: "1.5s "}}>{myProcess.title}</h2>
+                                        <p style={{display: designBox ? "block" : "none",}}
+                                        >{myProcess.summary}</p>
+                                    </li>
 
-                        );})}
+                                );})}
                         </ul>
 
                         <a onClick={DesignBoxHandler} href="#"> Read.</a>
@@ -492,12 +467,10 @@ const [likeEd, setLikeEd] = useState(false)
                         className="loop-container"
                         style={{height: uiDevelopmentBox ? "97%" : "60px",}}
                         >
-                        {myProcess.map((myProcess)=>{
-                        return(
-                            <div>
-                            {(() =>{
-                                if (myProcess.category === "UIDevelopment") {
-                                    return(     
+                        {myProcess.map((myProcess)=>{ 
+                            if (myProcess.category === "UIDevelopment") 
+                              return(
+                           
                                 <li>  
                                     <h2 style={{
                                     display: uiDevelopmentBox ? "block" : "none",
@@ -506,8 +479,6 @@ const [likeEd, setLikeEd] = useState(false)
                                     style={{display: uiDevelopmentBox ? "block" : "none",}}
                                     >{myProcess.summary}</p>
                                 </li>
-                            )}})()} 
-                            </div>
 
                         );})}
                           
@@ -543,12 +514,11 @@ const [likeEd, setLikeEd] = useState(false)
                         className="loop-container"
                         style={{height: dbBox ? "97%" : "60px",}}
                         >
-                        {myProcess.map((myProcess)=>{
+                        {myProcess.map((myProcess)=>{ 
+                            if(myProcess.category === "DataBase")
                         return(
                             <div>
-                            {(() =>{
-                                if (myProcess.category === "DataBase") {
-                                    return(     
+                           
                                 <li>  
                                     <h2 style={{
                                     display: dbBox ? "block" : "none",
@@ -557,8 +527,7 @@ const [likeEd, setLikeEd] = useState(false)
                                     style={{display: dbBox ? "block" : "none",}}
                                     >{myProcess.summary}</p>
                                 </li>
-                            )}})()} 
-                        </div>
+                            </div>
 
                         );})}
                           
@@ -599,12 +568,10 @@ const [likeEd, setLikeEd] = useState(false)
 
                                             
                                      
-                        {myProcess.map((myProcess)=>{
+                    {myProcess.map((myProcess)=>{ 
+                        if(myProcess.category === "Server")
                         return(
-                        <div>
-                            {(() =>{
-                                if (myProcess.category === "Server") {
-                                    return(     
+                           
                                 <li>  
                                     <h2 style={{
                                     display: serverBox ? "block" : "none",
@@ -613,8 +580,7 @@ const [likeEd, setLikeEd] = useState(false)
                                     style={{display: serverBox ? "block" : "none",}}
                                     >{myProcess.summary}</p>
                                 </li>
-                            )}})()} 
-                        </div>
+
                         );})}
                           
 
