@@ -65,20 +65,43 @@ if(myProcess === null){return(<h2>Loading...</h2>)}
 
                         <button>+ section</button>
                 </form>
+                <footer>
+                    <button>Design</button>
+                    <button>UI Development</button>
+                    <button>Database</button>
+                    <button>Server</button>
+                    <button>Status/Updates</button>
+                </footer>
 
             </header>
 
 
         
             <main>
-            {myProcess.map((myProcess)=>{
-            return(
-                <section>
-                    <h2>{myProcess.title}</h2>
-                    <h2>Likes: {myProcess.likeCount}</h2>
-                    <p>{myProcess.summary}</p>
-                </section>
-             );})}
+
+
+         
+
+                                           
+            {myProcess.map((myProcess)=>{ if(myProcess.category === "Server")
+            return(   
+            <div>
+
+               
+            
+                    <section>
+                        <aside>
+                            <h4>{myProcess.title}</h4>
+                            <h4>Likes: {myProcess.likeCount}</h4>
+                            <a href="#"> Edit</a>
+                            <a href="#"> Delete</a>
+                        </aside>
+                        <p>{myProcess.summary}</p>
+                    </section>
+                
+            </div>   
+
+            );})}
 
             </main>
             
