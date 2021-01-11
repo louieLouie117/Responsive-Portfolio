@@ -87,13 +87,17 @@ const DbBoxHandler = (e)=>{
 
 
 
-const [likeEd, setLikeEd] = useState(false)
+ const [likeEd, setLikeEd] = useState(true)
 
 
- const educationLikeHandler =(data)=>{
+ const educationLikeHandler =(data, e)=>{
 
-     // increases the likes
+    if (likeEd === true) {
+    // increases the likes
      data.educationLikes = data.educationLikes + 1
+     e.target.innerText = "undo"
+     setLikeEd(false)
+
      
      const fd = new FormData();
      fd.append('educationLikes', data.educationLikes);
@@ -112,9 +116,35 @@ const [likeEd, setLikeEd] = useState(false)
      })
 
      alert(`You are the ${data.educationLikes} person to like Coding Dojo 😊`)
+ 
+    }
 
+    if (likeEd === false) {
+        // increases the likes
+     data.educationLikes = data.educationLikes - 1
+     e.target.innerText = "like"
+     setLikeEd(true)
 
-     setLikeEd(!likeEd)
+     
+     const fd = new FormData();
+     fd.append('educationLikes', data.educationLikes);
+
+     axios
+     .put("http://localhost:8000/api/myInfo/update/" + data._id, fd)
+     .then((res) =>{
+         console.log("submitted");
+         console.log(res);
+         // console.log(updateBoolean);
+
+     })
+     .catch((err) =>{
+         console.log("something went wrong");
+         console.log(err);
+     })
+        
+    }
+
+     
 
  }
 
@@ -189,7 +219,8 @@ const [likeEd, setLikeEd] = useState(false)
                             <h5>{myInfo.educationLikes}</h5>
 
                             <a 
-                            onClick={ () => educationLikeHandler(myInfo)}
+                            value={likeEd}
+                            onClick={ (e) => educationLikeHandler(myInfo, e)}
                             href="#"> like</a>
                    <h3>]</h3>
 
