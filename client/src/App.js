@@ -31,11 +31,6 @@ const mainNavHandler =(e) =>{
 
   return (
     <div className="App">
-   
-      
-    
-     
-
 
         <div className="aboutMePage-container"
         style={{ 
