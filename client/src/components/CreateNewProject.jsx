@@ -77,7 +77,7 @@ const CreateNewProject = props => {
     return (
         <div>
             <h2>Crate new Project</h2>
-            <form encType="multipart/form-data" onSubmit= {e => {submitHandler(e)}}>
+            <form encType="multipart/form-data" >
 
             <div className="columns3-container">
                 
@@ -97,12 +97,13 @@ const CreateNewProject = props => {
                 onChange={e => {setName(e.target.value)}}
                 placeholder="Name"/>
             </div>
+
                 <input 
                 type="text"
                 onChange={e => {setUrlLink(e.target.value)}}
                 placeholder="url Link"/>
 
-                <div className="columns3-container">
+            <div className="columns3-container">
         
                 <input 
                 type="text"
@@ -118,7 +119,7 @@ const CreateNewProject = props => {
                 onChange={e => {setEasterEgg(e.target.value)}}
                 placeholder="ester egg count"/>
                      
-        </div>
+            </div>
 
             <textarea 
             placeholder="Ester egg message"
@@ -126,15 +127,18 @@ const CreateNewProject = props => {
             cols="30" rows="10"></textarea>
               
                 
-                <input 
-                type="file" 
-                onChange={onChange}/>
+            <input 
+            type="file" 
+            onChange={onChange}/>
                     
-              
+            <button
+            onClick= {e => {submitHandler(e)}}
+            >+ new Project</button>
 
-    
+            <button
+            onClick= {e => {submitHandler(e)}}
+            >Save Changes</button>
 
-               <button>+ new Project</button>
             </form>
 
             

@@ -12,14 +12,7 @@ const AllProjects = props => {
     const [details, setDetail] = useState(false)
 
     function showDetails(e) {
-            setDetail(!details);
-     
-        // if (e.target.name == e.target.name) {
-        //     console.log("success");
-        //     setDetail(!details);
-           
-        // }
-    
+            setDetail(!details);   
         console.log("I am here");
         console.log(e.target.name);
         // setDetail(e.target.name)
@@ -78,6 +71,11 @@ const [project, setProject] = useState(null)
             <div>
                 <CreateNewProject></CreateNewProject>
             </div>
+
+
+
+
+            
             <h2>List of all projects</h2>
             {project.map((project)=>{
                         return(

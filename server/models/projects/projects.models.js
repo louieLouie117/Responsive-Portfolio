@@ -5,6 +5,7 @@ const ProjectSchema = new mongoose.Schema(  {
 
     name:{
         type: String,
+        max: 250
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
@@ -12,6 +13,7 @@ const ProjectSchema = new mongoose.Schema(  {
 
     title:{
         type: String,
+        max: 250
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
@@ -19,6 +21,7 @@ const ProjectSchema = new mongoose.Schema(  {
 
     type:{
         type: String,
+        max: 250
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
@@ -26,6 +29,7 @@ const ProjectSchema = new mongoose.Schema(  {
 
     urlLink:{
         type: String,
+        max: 250
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
@@ -33,6 +37,8 @@ const ProjectSchema = new mongoose.Schema(  {
 
     linkType:{
         type: String,
+        max: 250
+
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
@@ -40,6 +46,7 @@ const ProjectSchema = new mongoose.Schema(  {
 
     color:{
         type: String,
+        max: 250
         // required: [true, "{PATH} is required"],
         // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
 
@@ -70,7 +77,9 @@ const ProjectSchema = new mongoose.Schema(  {
     },
 
     easterEggMsg: {
-        type:String
+        type:String,
+        max: 250
+
     }
 
 
