@@ -10,8 +10,6 @@ const UpdateProject = props => {
 
     // console.log("props",props);
     console.log("Props",props.id);
-
-
     const [title, setTitle] = useState();
     const [type, setType] = useState();
     const [urlLink, setUrlLink] = useState();

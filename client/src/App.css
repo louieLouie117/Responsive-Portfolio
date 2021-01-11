@@ -25,6 +25,11 @@ body  ::-webkit-scrollbar{
   display: none;
 }
 
+.columns3{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .mainNav-container{
   /* background: white; */
   height: 40px;

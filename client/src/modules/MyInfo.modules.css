@@ -1,5 +1,5 @@
 .myInfo-container{
-    height: 90vh;
+    height: 80vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
@@ -15,6 +15,7 @@
     background: white;
     row-gap: 20px;
     padding: 40px;
+    height: 85%;
 
 }
 
@@ -24,6 +25,8 @@
     width: auto;
     background: white;
     padding: 20px;
+    height: 90%;
+
 
 }
 

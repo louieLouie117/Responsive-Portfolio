@@ -3,6 +3,7 @@ import AlgosBasic from '../components/AlgosBasic'
 import MyStory from '../components/MyStory'
 import modules from "../modules/AboutMe.modules.css"
 import axios from 'axios'
+import { set } from 'mongoose'
 
 
 const AboutMe = props => {
@@ -58,6 +59,8 @@ const AboutMe = props => {
     const [codingTab, setCodingTab] = useState(false)
     const [projectsTab, setProjectTab] = useState(false)
     const [apprenticeshipTab, setApprenticeshipTab] = useState(false)
+    const [statusUpdates, setStatusUpdates] = useState(false)
+
 
     // hide and show sections/components
     const [AlgosComponent, setAlsogsComponent] = useState(false)
@@ -80,6 +83,8 @@ const AboutMe = props => {
         setAlsogsComponent(false)
         setMyStoryComponentDesktop(true)
         setMyStoryComponentMobile(true)
+        setStatusUpdates(false)
+
 
 
     }
@@ -97,6 +102,8 @@ const AboutMe = props => {
         setAlsogsComponent(true)
         setMyStoryComponentDesktop(false)
         setMyStoryComponentMobile(false)
+        setStatusUpdates(false)
+
     }
 
     
@@ -111,10 +118,12 @@ const AboutMe = props => {
 
         setMyStoryComponentDesktop(false)
         setMyStoryComponentMobile(false)
+        setStatusUpdates(false)
+
 
     }
     
-    const statusUpdatesHandler=()=>{
+    const apprenticeHandler=()=>{
         console.log("apprenticeship tab was click");
         setMyStoryTab(false)
         setCodingTab(false)
@@ -125,6 +134,24 @@ const AboutMe = props => {
 
         setMyStoryComponentDesktop(false)
         setMyStoryComponentMobile(false)
+        setStatusUpdates(false)
+
+
+    }
+
+
+    const statusUpdatesHandler=()=>{
+        console.log("apprenticeship tab was click");
+        setMyStoryTab(false)
+        setCodingTab(false)
+        setProjectTab(false)
+        setApprenticeshipTab(false)
+        setAlsogsComponent(false)
+
+
+        setMyStoryComponentDesktop(false)
+        setMyStoryComponentMobile(false)
+        setStatusUpdates(true)
 
     }
 
@@ -349,10 +376,17 @@ const AboutMe = props => {
                                        
 
                                         <li
-                                        onClick={statusUpdatesHandler}
+                                        onClick={apprenticeHandler}
                                         style={{ 
                                             background: apprenticeshipTab ? "white" : "#0080BF",
                                             color: apprenticeshipTab ? "#0080BF" : "white" 
+                                        }} >SPA Development</li>
+
+<li
+                                        onClick={statusUpdatesHandler}
+                                        style={{ 
+                                            background: statusUpdates ? "white" : "#0080BF",
+                                            color: statusUpdates ? "#0080BF" : "white" 
                                         }} >Status/Updates</li>
                                         </ul>
                         

@@ -2,9 +2,10 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {Link} from "@reach/router"
-import { get } from 'mongoose'
+import { get, set } from 'mongoose'
 import AboutMe from './AboutMe'
 import MainNav from '../components/MainNav'
+import e from 'cors'
 
 const Projects = props => {
 
@@ -39,7 +40,7 @@ const [project, setProject] = useState(null)
 
     const showDetails = (data)=> {
     // reset like to false
-   
+            setLike(true)
             data.like = false
             const fdLike = new FormData();
             fdLike.append('like', data.like)
@@ -59,11 +60,8 @@ const [project, setProject] = useState(null)
             
             
 
-        console.log(data._id);
-        console.log("before",data.details);
         // change between true or false 
         data.details = !data.details
-        console.log("after",data.details);
         setDetails(" ")
         setDetails("change")
         // const updateBoolean = {
@@ -87,59 +85,84 @@ const [project, setProject] = useState(null)
         
     }
 
-    const [like, setLike] = useState(false)
 
+    // likeHandler
+    const [like, setLike] = useState(true)
+    const projectLikeHandler =(data, e)=>{
+        if (e.target.innerText === "like") {
 
-    const projectLikeHandler =(data)=>{
-        // reset details to false in db
-        data.details = !data.details
-        const fdDetails = new FormData();
-        fdDetails.append('details', data.details);
-        axios
-        .put("http://localhost:8000/api/project/update/" + data._id, fdDetails)
-        .then((res) =>{
-            console.log("submitted");
-            console.log(res);
-            // console.log(updateBoolean);
-
-        })
-        .catch((err) =>{
-            console.log("something went wrong");
-            console.log(err);
-        })
-   
-
-        // increases the likes
-        data.like = !data.like
-        data.likeCount = data.likeCount + 1
-        
-        const fd = new FormData();
-        fd.append('likeCount', data.likeCount);
-        fd.append('like', data.like)
-
-        axios
-        .put("http://localhost:8000/api/project/update/" + data._id, fd)
-        .then((res) =>{
-            console.log("submitted");
-            console.log(res);
-            // console.log(updateBoolean);
-
-        })
-        .catch((err) =>{
-            console.log("something went wrong");
-            console.log(err);
-        })
-
-        // easterEgg
-        if (data.likeCount === data.easterEgg) {
-            alert(data.easterEggMsg)
-        }
-        else{
-            alert(`Thank you adding a like to this ${data.type} project "${data.name}" and bringing it to ${data.likeCount} likes😊😁.`)
-
-        }
+            if (like === true) {
+            e.target.innerText = "undo"
+                 // increases the likes
+            data.like = !data.like
+            data.likeCount = data.likeCount + 1
+    
             
+            const fd = new FormData();
+            fd.append('likeCount', data.likeCount);
+            fd.append('like', data.like)
+    
+            axios
+            .put("http://localhost:8000/api/project/update/" + data._id, fd)
+            .then((res) =>{
+                console.log("submitted");
+                console.log(res);
+                // console.log(updateBoolean);
+    
+            })
+            .catch((err) =>{
+                console.log("something went wrong");
+                console.log(err);
+            })
 
+
+           // easterEgg
+           if (data.likeCount === data.easterEgg) {
+            alert(data.easterEggMsg)
+            }
+            else{
+            alert(`Thank you adding a like to this ${data.type} project "${data.name}" and bringing it to ${data.likeCount} likes😊😁.`)}
+                
+
+            }
+           
+        }
+
+        if (e.target.innerText === "undo") {
+
+            if (like === false) {
+            e.target.innerText = "like"
+            // subtract the likes
+            data.like = !data.like
+            data.likeCount = data.likeCount - 1
+            
+            const fd = new FormData();
+            fd.append('likeCount', data.likeCount);
+            fd.append('like', data.like)
+    
+            axios
+            .put("http://localhost:8000/api/project/update/" + data._id, fd)
+            .then((res) =>{
+                console.log("submitted");
+                console.log(res);
+                // console.log(updateBoolean);
+    
+            })
+            .catch((err) =>{
+                console.log("something went wrong");
+                console.log(err);
+            })  
+            
+                
+            }
+
+    
+        }
+
+
+        setLike(!like)
+
+       
     }
 
 
@@ -236,28 +259,13 @@ const [project, setProject] = useState(null)
                                                     <h4>{project.likeCount}</h4>
 
                                                 </aside>
-                                {(() =>{
-                                    if (project.like === false) {
-                                        return(
-                                                <a
-                                                style={{color: `#${project.color}` }  }
-                                                onClick={ () => projectLikeHandler(project)}
-                                               >like</a>
-
-                                               )}
-                                            })()}
-                                {(() =>{
-                                    if (project.like === true) {
-                                        return(
 
                                                 <a
+                                                value={like}
                                                 style={{color: `#${project.color}` }  }
-                                                onClick={ () => projectUndoHandler(project)}
-                                               >undo</a>
-
-                                               )}
-                                            })()}
-
+                                                onClick={ (e) => projectLikeHandler(project, e)}
+                                                >like</a>
+                                
                                             
                                             </div>
                                         )}
