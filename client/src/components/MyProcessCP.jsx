@@ -9,14 +9,100 @@ const MyProcessCP = props => {
     const [title, setTitle] = useState()
     const [category, setCategory] = useState()
     const [summary, setSummary] = useState()
-
     const [filter, setFilter] = useState("Design")
 
+    const submitHandler =(e)=> {
+        e.preventDefault()
+        alert("create new section button was click")
+        const fd = new FormData();
+        fd.append('title', title);
+        fd.append('category', category);
+        fd.append('summary', summary);
+       
+
+        // 
+        axios
+        .post("http://localhost:8000/api/myProcess",  fd, {           
+            })
+            .then((res)=> {
+                console.log("res data here",res.data);
+            })
+            .catch((err)=>{
+                console.log("Errors", err);
+            }, [], submitHandler)
 
 
-const submitHandler =(e)=> {
-    e.preventDefault()
+     
+        setTitle("")
+        setCategory("")
+        setSummary("")
+
+
+    }
+
+
+    const [itemId, setItemId] = useState()
+    const [refreshPage, setRefreshPage] = useState(false)
+
+    const EditData = (EditData)=>{
+
+        setItemId(EditData._id)
+
+        setTitle(EditData.title)
+        setCategory(EditData.category)
+        setSummary(EditData.summary)
+       
+        setRefreshPage(!refreshPage)
+
+
+    }
+
+
+     // Submit Edit Handler
+     const SubmitEditHandler = (e)=>{
+
+        const fd = new FormData();
+        fd.append('title', title );
+        fd.append('category', category);
+        fd.append('summary', summary);
+       
+     
+
+        // API call the the db
+        axios
+        .put("http://localhost:8000/api/myProcess/update/" + itemId, fd)
+        .then((res) =>{
+            console.log("submitted");
+            console.log(res);
+        })
+        .catch((err) =>{
+            console.log("something went wrong");
+            console.log(err);
+        }, [], SubmitEditHandler)
+
+        // Clear input files
+        setTitle("")
+        setCategory("")
+        setSummary("")
+        setRefreshPage(!refreshPage)
+  
+    }
+
+
+
+// delete item from db
+const [deleteItem, setDeleteItem] = useState(null)
+const deleteHandler =(deleteId, e)=>{
     alert("button was click")
+    axios.delete("http://localhost:8000/api/myProcess/delete/" + deleteId)
+    .then((res)=>{
+        const filterProject = myProcess.filter((myProcess)=> {
+            return myProcess._id !== deleteId
+        });
+
+        setDeleteItem(filterProject);
+    })
+
 }
 
 
@@ -33,7 +119,7 @@ useEffect(()=>{
     .catch((err)=> {
         console.log(err);
     })
-}, [filter])
+}, [filter, deleteItem, title])
 
 
 if(myProcess === null){return(<h2>Loading...</h2>)}
@@ -42,31 +128,42 @@ if(myProcess === null){return(<h2>Loading...</h2>)}
         <div className="myProcess-container">
 
             <header>
-                <form encType="multipart/form-data" onSubmit= {e => {submitHandler(e)}}>
+                <form encType="multipart/form-data" >
                     <h1>Hello, My Process</h1>
 
                         <input 
+                        value={title}
                         type="text" 
                         onChange={e =>{setTitle(e.target.value)}}
                         placeholder="title"/>
 
-                        
-                    <select 
-                    onChange={e => {setCategory(e.target.value)}}>
-                        <option value="Design">Design</option>
-                        <option value="UIDevelopment">UI Development</option>
-                        <option value="DataBase">Data Base</option>
-                        <option value="Server">Server</option>
-                        <option value="StatusUpdates">StatusUpdates</option>
-                    </select>
+                        <input 
+                        value={category}
+                        placeholder="Design, UIDevelopment, DataBase, Server, StatusUpdates "
+                        onChange={e =>{setCategory(e.target.value)}}
+                        type="text"/>
+                   
 
                         <textarea
+                        value={summary}
                         onChange={e =>{setSummary(e.target.value)}}
                         placeholder="Summary"
                         cols="30" rows="10"></textarea>
 
-                        <button>+ section</button>
+                        <button
+                        onClick= {e => {submitHandler(e)}}
+                        style={{display: refreshPage ? "none" : "block" }}
+                        >+ new Article/Section</button>
+
+
+                        <button
+                        onClick={()=> SubmitEditHandler()}                            
+                        style={{display: refreshPage ? "block" : "none" }}
+                        >Save Changes</button>
                 </form>
+
+
+
                 <footer>
                     <button
                     onClick={()=>{setFilter("Design")}}
@@ -103,16 +200,25 @@ if(myProcess === null){return(<h2>Loading...</h2>)}
 
 
                                            
-            {myProcess.map((myProcess)=>{ if(myProcess.category === filter)
+            {myProcess.map((myProcess)=>{ 
+                if(myProcess.category === filter)
             return(   
             <div>
-
                     <section>
+
                         <aside>
+                            
                             <h4>{myProcess.title}</h4>
+                            <h4>{myProcess.category}</h4>
                             <h4>Likes: {myProcess.likeCount}</h4>
-                            <a href="#"> Edit</a>
-                            <a href="#"> Delete</a>
+                            
+                            <a 
+                            onClick={()=> EditData(myProcess)}                            
+                            href="#"> Edit</a>
+
+                            <a 
+                            onClick={()=> deleteHandler(myProcess._id)}                            
+                            href="#"> Delete</a>
                         </aside>
                         <p>{myProcess.summary}</p>
                     </section>
