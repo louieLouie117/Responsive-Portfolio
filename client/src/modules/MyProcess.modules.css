@@ -13,21 +13,28 @@
 
 .myProcess-container>header{
     background: white;
+    display: grid;
     padding: 20px;
     grid-row: 1/2;
     grid-column: 1/2;
 }
 
 
+.myProcess-container>header form{
+    display: grid;
+    grid-template-rows: repeat(3, 40px) 1fr;
+} 
+
 .myProcess-container>header footer{
     display: grid;
     row-gap: 10px;
     padding: 20px;
+    height: 200px;
 }
 
 
 .myProcess-container>header footer button{
-    padding: 20px;
+    padding: 10px;
     background: gold;
     border: none;
     font: 1.5em sans-serif;
@@ -51,9 +58,13 @@
 
 .myProcess-container>main section aside {
     display: grid;
-    grid-template-columns: 7fr 1fr 1fr 1fr;
+    grid-template-columns: 4fr 1.5fr 1fr 1fr 1fr;
     border-bottom: 2px solid gold;
     margin-top: 40px;
+}
+
+.myProcess-container>main section h3 {
+   color: gold;
 }
 
 h4{margin: 0;}
