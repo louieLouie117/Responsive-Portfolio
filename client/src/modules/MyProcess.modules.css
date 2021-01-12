@@ -51,8 +51,7 @@
 
 .myProcess-container>main section aside {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 500px;
+    grid-template-columns: 7fr 1fr 1fr 1fr;
     border-bottom: 2px solid gold;
     margin-top: 40px;
 }
