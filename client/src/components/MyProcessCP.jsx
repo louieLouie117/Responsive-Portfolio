@@ -10,6 +10,8 @@ const MyProcessCP = props => {
     const [category, setCategory] = useState()
     const [summary, setSummary] = useState()
 
+    const [filter, setFilter] = useState("Design")
+
 
 
 const submitHandler =(e)=> {
@@ -31,7 +33,7 @@ useEffect(()=>{
     .catch((err)=> {
         console.log(err);
     })
-}, [])
+}, [filter])
 
 
 if(myProcess === null){return(<h2>Loading...</h2>)}
@@ -66,11 +68,31 @@ if(myProcess === null){return(<h2>Loading...</h2>)}
                         <button>+ section</button>
                 </form>
                 <footer>
-                    <button>Design</button>
-                    <button>UI Development</button>
-                    <button>Database</button>
-                    <button>Server</button>
-                    <button>Status/Updates</button>
+                    <button
+                    onClick={()=>{setFilter("Design")}}
+                    >Design</button>
+
+                    <button
+                    onClick={()=>{setFilter("UIDevelopment")}}
+                    >UI Development</button>
+
+                    <button
+                    onClick={()=>{setFilter("DataBase")}}
+                    >Database</button>
+
+                    <button
+                    onClick={()=>{setFilter("Server")}}
+                    >Server</button>
+
+                    <button
+                    onClick={()=>{setFilter("ProjectBackStory")}}
+                    >Project Backstory</button>
+
+                    <button
+                    onClick={()=>{setFilter("StatusUpdates")}}
+                    >Status/Updates</button>
+
+                  
                 </footer>
 
             </header>
@@ -80,15 +102,11 @@ if(myProcess === null){return(<h2>Loading...</h2>)}
             <main>
 
 
-         
-
                                            
-            {myProcess.map((myProcess)=>{ if(myProcess.category === "Server")
+            {myProcess.map((myProcess)=>{ if(myProcess.category === filter)
             return(   
             <div>
 
-               
-            
                     <section>
                         <aside>
                             <h4>{myProcess.title}</h4>

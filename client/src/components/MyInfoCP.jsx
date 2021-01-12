@@ -90,7 +90,6 @@ const MyInfoCP = props => {
 
         // set id to state to use on Axios
         setDataId(Data._id)
-
         // set state to use in the input files
         setName(Data.name)
         setSlogan(Data.slogan)
