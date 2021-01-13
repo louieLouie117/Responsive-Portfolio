@@ -212,7 +212,7 @@ const DbBoxHandler = (e)=>{
                         <h3>Design[<i>{myInfo.design}</i>] </h3>
 
                         <div  className="likeEducation-container">
-                        <h3>Programming School[<i>{myInfo.education} </i></h3>
+                        <h3>Programming School[<i><a href="https://www.codingdojo.com/" target="blank">{myInfo.education} </a></i></h3>
                             
                         <footer>
                             <img id="heartIcon"src="/img/Icons/heart.png" alt=""/>

@@ -349,15 +349,30 @@
     }
 
 
+}
 
-
-
+/* projects backstory */
+.projectBackStory-container{
+    background: whitesmoke;
+    padding: 10px;
+    z-index: 20;
+    height: 95vh;
+    overflow: scroll;
 
 }
-/* 
-@media screen and (min-width: 900){
-    .aboutMe-container{
-    background: red;
-    grid-template-columns: 330px 1fr;
-    }
-} */
+
+.projectBackStory-container main {
+    max-width: 1300px;
+}
+
+.projectBackStory-container p {
+    padding-bottom: 20px;
+    font: 1.3em sans-serif;
+
+}
+
+.projectBackStory-container h2{
+    color: #0080BF;
+    font: 1.3em sans-serif;
+
+}

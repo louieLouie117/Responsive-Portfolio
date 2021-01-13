@@ -4,6 +4,8 @@ import MyStory from '../components/MyStory'
 import modules from "../modules/AboutMe.modules.css"
 import axios from 'axios'
 import { set } from 'mongoose'
+import ProjectsBackstory from '../components/ProjectsBackstory'
+import StatusUpdates from '../components/StatusUpdates'
 
 
 const AboutMe = props => {
@@ -159,6 +161,7 @@ const AboutMe = props => {
         console.log("section button was click");
         setMyStoryComponentMobile(false)
         setAlsogsComponent(false)
+        setProjectTab(false)
 
         
     }
@@ -371,10 +374,9 @@ const AboutMe = props => {
                                         style={{ 
                                             background: projectsTab ? "white" : "#0080BF",
                                             color: projectsTab ? "#0080BF" : "white" 
-                                        }} >Backstory for Projects</li>
+                                        }} >Projects Backstory</li>
 
-                                       
-
+                                    
                                         <li
                                         onClick={apprenticeHandler}
                                         style={{ 
@@ -382,7 +384,7 @@ const AboutMe = props => {
                                             color: apprenticeshipTab ? "#0080BF" : "white" 
                                         }} >SPA Development</li>
 
-<li
+                                        <li
                                         onClick={statusUpdatesHandler}
                                         style={{ 
                                             background: statusUpdates ? "white" : "#0080BF",
@@ -415,7 +417,7 @@ const AboutMe = props => {
                                     style={{ 
                                         background: "white",
                                         color:  "#0080BF"  
-                                    }} >Backstory for Projects</li>
+                                    }} >Projects Backstory</li>
 
                                     <li
                                     onClick={statusUpdatesHandler}
@@ -461,9 +463,7 @@ const AboutMe = props => {
             {(() =>{if (window.innerWidth > "1100") {
                     return(
                         <section style={{ 
-                        display: MyStoryComponentDesktop ? "grid" : "none",
-                        // zIndex: MyStoryComponentMobile ? "40": "0"
-                    }}> 
+                        display: MyStoryComponentDesktop ? "grid" : "none",}}> 
                             <MyStory></MyStory>
                         </section>
                 )}
@@ -471,19 +471,11 @@ const AboutMe = props => {
 
 
 
-                <section
-            
-                style={{ 
-                    display: AlgosComponent ? "grid" : "none",
-
-                    
-                    }}>
+                <section style={{ display: AlgosComponent ? "grid" : "none"}}>
 
 
             {(() =>{if (window.innerWidth < "1100") {
                     return(
-
-
                         <button
                         onClick={hideSectionHandler}                        
 
@@ -498,6 +490,51 @@ const AboutMe = props => {
                 
                     </nav> */}
                     <AlgosBasic></AlgosBasic>
+
+                </section>
+
+
+
+                <section style={{ display: projectsTab ? "grid" : "none"}}>
+
+
+            {(() =>{if (window.innerWidth < "1100") {
+                    return(
+                        <button
+                        onClick={hideSectionHandler}                      
+                        >X</button>
+
+                        )}
+                    })()}
+                    {/* <nav>
+                        <button >Basic</button>
+                        <button >Sorting</button>
+                        <button >Data Structure</button>
+                
+                    </nav> */}
+                    <ProjectsBackstory></ProjectsBackstory>
+
+                </section>
+
+
+            <section style={{ display: statusUpdates ? "grid" : "none"}}>
+
+
+            {(() =>{if (window.innerWidth < "1100") {
+                    return(
+                        <button
+                        onClick={hideSectionHandler}                      
+                        >X</button>
+
+                        )}
+                    })()}
+                    {/* <nav>
+                        <button >Basic</button>
+                        <button >Sorting</button>
+                        <button >Data Structure</button>
+                
+                    </nav> */}
+                    <StatusUpdates></StatusUpdates>
 
                 </section>
             </main>
