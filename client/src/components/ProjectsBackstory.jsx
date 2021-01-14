@@ -34,20 +34,22 @@ const ProjectsBackstory = props => {
 
             <main>
 
-            {myProcess.map((myProcess)=>{ 
-                if(myProcess.category === "ProjectBackStory")
-            return(   
+          
             <div>
                     <ul>
+                    {myProcess.map((myProcess)=>{ 
+                if(myProcess.category === "ProjectBackStory")
+            return( 
                         <li>
                             <h2>{myProcess.title}</h2>
                             <p>{myProcess.summary}</p>
                         </li>
+            );})}
+
                     </ul>
                 
             </div>   
 
-            );})}
 
             </main>
             

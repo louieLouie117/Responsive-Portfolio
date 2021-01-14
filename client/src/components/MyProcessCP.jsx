@@ -139,7 +139,7 @@ if(myProcess === null){return(<h2>Loading...</h2>)}
 
                         <input 
                         value={category}
-                        placeholder="Design, UIDevelopment, DataBase, Server, StatusUpdates "
+                        placeholder="Design, UIDevelopment, DataBase, Server, StatusUpdates CoffeeMsg"
                         onChange={e =>{setCategory(e.target.value)}}
                         type="text"/>
                    
@@ -188,6 +188,9 @@ if(myProcess === null){return(<h2>Loading...</h2>)}
                     <button
                     onClick={()=>{setFilter("StatusUpdates")}}
                     >Status/Updates</button>
+                     <button
+                    onClick={()=>{setFilter("CoffeeMsg")}}
+                    >Coffee Message</button>
 
                   
                 </footer>
