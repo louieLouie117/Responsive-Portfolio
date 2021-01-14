@@ -1,65 +1,18 @@
 
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import {Link} from "@reach/router"
-import { get, set } from 'mongoose'
-import AboutMe from './AboutMe'
-import MainNav from '../components/MainNav'
-import e from 'cors'
 
 const Projects = props => {
 
     // Effects
 
-const [details, setDetails] = useState("")
+const [details, setDetails] = useState(true)
 const [projectsPage, setProjectsPage] = useState(true)
 
-
-
-
-
-
-
-
-const [project, setProject] = useState(null)
-
-    const apiGetAllProjects = 'http://localhost:8000/api/project'
-
-    useEffect(()=>{
-        axios
-        .get(apiGetAllProjects)
-        .then((res) =>{
-            setProject(res.data.Project)
-            // console.log(res.data.Project);
-        })
-        .catch((err)=> {
-            console.log(err);
-        })
-    })
     
 
-    const showDetails = (data)=> {
-    // reset like to false
-            setLike(true)
-            data.like = false
-            const fdLike = new FormData();
-            fdLike.append('like', data.like)
-    
-            axios
-            .put("http://localhost:8000/api/project/update/" + data._id, fdLike)
-            .then((res) =>{
-                console.log("submitted");
-                console.log(res);
-                // console.log(updateBoolean);
-    
-            })
-            .catch((err) =>{
-                console.log("something went wrong");
-                console.log(err);
-            })
-            
-            
-
+    const showDetails = (data, e)=> {
+         
         // change between true or false 
         data.details = !data.details
         setDetails(" ")
@@ -73,15 +26,19 @@ const [project, setProject] = useState(null)
         axios
         .put("http://localhost:8000/api/project/update/" + data._id, fd)
         .then((res) =>{
-            console.log("submitted");
-            console.log(res);
-            // console.log(updateBoolean);
+            console.log("show detail");
 
         })
         .catch((err) =>{
             console.log("something went wrong");
             console.log(err);
         })
+
+        setDetails(!details)
+
+        console.log(`${like}`);
+
+     
         
     }
 
@@ -89,11 +46,11 @@ const [project, setProject] = useState(null)
     // likeHandler
     const [like, setLike] = useState(true)
     const projectLikeHandler =(data, e)=>{
-        if (e.target.innerText === "like") {
 
-            if (like === true) {
+        if (like === true) {
+        if (e.target.innerText === "like") {
             e.target.innerText = "undo"
-                 // increases the likes
+            // increases the likes
             data.like = !data.like
             data.likeCount = data.likeCount + 1
     
@@ -105,9 +62,8 @@ const [project, setProject] = useState(null)
             axios
             .put("http://localhost:8000/api/project/update/" + data._id, fd)
             .then((res) =>{
-                console.log("submitted");
-                console.log(res);
-                // console.log(updateBoolean);
+                console.log("Like");
+                console.log(`${like}`);
     
             })
             .catch((err) =>{
@@ -119,19 +75,16 @@ const [project, setProject] = useState(null)
            // easterEgg
            if (data.likeCount === data.easterEgg) {
             alert(data.easterEggMsg)
-            }
-            else{
-            alert(`Thank you adding a like to this ${data.type} project "${data.name}" and bringing it to ${data.likeCount} likes😊😁.`)}
-                
+            }               
 
             }
            
         }
 
+        if (like === false) {
         if (e.target.innerText === "undo") {
-
-            if (like === false) {
             e.target.innerText = "like"
+
             // subtract the likes
             data.like = !data.like
             data.likeCount = data.likeCount - 1
@@ -143,9 +96,8 @@ const [project, setProject] = useState(null)
             axios
             .put("http://localhost:8000/api/project/update/" + data._id, fd)
             .then((res) =>{
-                console.log("submitted");
-                console.log(res);
-                // console.log(updateBoolean);
+                console.log("Unlike");
+                console.log(`${like}`);
     
             })
             .catch((err) =>{
@@ -162,40 +114,56 @@ const [project, setProject] = useState(null)
 
         setLike(!like)
 
-       
+            
     }
 
 
-    const projectUndoHandler =(data)=>{
-        setLike(false)
-        console.log(data.likeCount);
-        console.log(data._id);
+    // const projectUndoHandler =(data)=>{
+    //     setLike(false)
+    //     console.log(data.likeCount);
+    //     console.log(data._id);
         
-        data.like = !data.like
-        data.likeCount = data.likeCount - 1
+    //     data.like = !data.like
+    //     data.likeCount = data.likeCount - 1
 
         
-        const fd = new FormData();
-        fd.append('likeCount', data.likeCount);
-        fd.append('like', data.like)
+    //     const fd = new FormData();
+    //     fd.append('likeCount', data.likeCount);
+    //     fd.append('like', data.like)
 
+    //     axios
+    //     .put("http://localhost:8000/api/project/update/" + data._id, fd)
+    //     .then((res) =>{
+    //         console.log("submitted");
+    //         console.log(res);
+    //         // console.log(updateBoolean);
+
+    //     })
+    //     .catch((err) =>{
+    //         console.log("something went wrong");
+    //         console.log(err);
+    //     })
+
+    // }
+
+        
+
+
+    const [project, setProject] = useState(null)
+
+    const apiGetAllProjects = 'http://localhost:8000/api/project'
+
+    useEffect(()=>{
         axios
-        .put("http://localhost:8000/api/project/update/" + data._id, fd)
+        .get(apiGetAllProjects)
         .then((res) =>{
-            console.log("submitted");
-            console.log(res);
-            // console.log(updateBoolean);
-
+            setProject(res.data.Project)
+            console.log(res.data.Project);
         })
-        .catch((err) =>{
-            console.log("something went wrong");
+        .catch((err)=> {
             console.log(err);
         })
-
-    }
-
-        
-
+    }, [details])
 
  
     if(project === null){return(<h2>Loading...</h2>)}
@@ -212,11 +180,7 @@ const [project, setProject] = useState(null)
                 <div className="slogan-container"> 
                     <p>Dream it.</p>
                     <p>Design it.</p>
-                    <p>Code it.</p>
-
-                                 
-                  
-                    
+                    <p>Code it.</p> 
                 </div>
            
                 <img src="/img/portfolioImg.png" alt=""/>
@@ -235,7 +199,9 @@ const [project, setProject] = useState(null)
                     <ul>
                     {project.map((project)=>{
                         return(
-                        <li className="project1-container">
+                        <li 
+                        
+                        className="project1-container">
                             {/* <h2>{project.title}</h2> */}
                             {(() =>{
                                     if (project.details === false) {
@@ -261,7 +227,7 @@ const [project, setProject] = useState(null)
                                                 </aside>
 
                                                 <a
-                                                value={like}
+                                                // value={like}
                                                 style={{color: `#${project.color}` }  }
                                                 onClick={ (e) => projectLikeHandler(project, e)}
                                                 >like</a>
@@ -389,18 +355,39 @@ const [project, setProject] = useState(null)
 
                             </div>
 
+                            <footer>                                     
+                            {(() =>{
+                                    if (project.details === false) {
+                                        return(
+                                           
+                                            <a  
+                                            name={project._id}
+                                            onClick={ (e) =>showDetails(project, e)}
+                                            onMouseEnter={ (e) =>showDetails(project, e)} 
+                                            style={{color: `#${project.color}` }  }
+                                            >Details</a>
+                                        )}
+                                })()}
                             
-                            <footer>                       
-                                <a  
-                                name={project._id}
-                                onClick={ () =>showDetails(project)}
-                                onMouseEnter={ () =>showDetails(project)} 
-                                // onMouseLeave={ () =>showDetails(project)} 
-                                style={{color: `#${project.color}` }  }
-                                >Details</a>
+
+                            {(() =>{
+                                    if (project.details === true) {
+                                        return(
+                                            <a  
+                                            name={project._id}
+                                            onClick={ (e) =>showDetails(project, e)}
+                                            onMouseEnter={ (e) =>showDetails(project, e)} 
+                                            style={{color: `#${project.color}` }  }
+                                            >Close</a>
+                                          
+                                        )}
+                                })()}
+
+                                                  
+                             
 
 
-                                <a href={project.urlLink}> 
+                                <a href={project.urlLink} target="blank"> 
                                 <button style={{background: `#${project.color}`} }>{project.linkType }</button> 
                                </a>
 

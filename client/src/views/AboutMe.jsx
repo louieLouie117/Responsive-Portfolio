@@ -6,6 +6,7 @@ import axios from 'axios'
 import { set } from 'mongoose'
 import ProjectsBackstory from '../components/ProjectsBackstory'
 import StatusUpdates from '../components/StatusUpdates'
+import Coffee from '../components/Coffee'
 
 
 const AboutMe = props => {
@@ -162,6 +163,8 @@ const AboutMe = props => {
         setMyStoryComponentMobile(false)
         setAlsogsComponent(false)
         setProjectTab(false)
+        setStatusUpdates(false)
+        setApprenticeshipTab(false)
 
         
     }
@@ -420,11 +423,19 @@ const AboutMe = props => {
                                     }} >Projects Backstory</li>
 
                                     <li
+                                    onClick={apprenticeHandler}
+                                    style={{ 
+                                        background: "white",
+                                        color:  "#0080BF" 
+                                    }} >SPA Development</li>
+
+
+<li
                                     onClick={statusUpdatesHandler}
                                     style={{ 
                                         background: "white",
                                         color:  "#0080BF" 
-                                    }} >Apprenticeship</li>
+                                    }} >Status/Updates</li>
                                 </ul>
                         
                                         )}
@@ -536,6 +547,26 @@ const AboutMe = props => {
                     </nav> */}
                     <StatusUpdates></StatusUpdates>
 
+                </section>
+
+            <section style={{ display: apprenticeshipTab ? "grid" : "none"}}>
+
+
+            {(() =>{if (window.innerWidth < "1100") {
+                    return(
+                        <button
+                        onClick={hideSectionHandler}                      
+                        >X</button>
+
+                        )}
+                    })()}
+                    {/* <nav>
+                        <button >Basic</button>
+                        <button >Sorting</button>
+                        <button >Data Structure</button>
+                
+                    </nav> */}
+                    <Coffee></Coffee>
                 </section>
             </main>
         );})}

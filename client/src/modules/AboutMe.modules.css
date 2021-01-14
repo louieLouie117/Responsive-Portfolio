@@ -354,15 +354,14 @@
 /* projects backstory */
 .projectBackStory-container{
     background: whitesmoke;
-    padding: 10px;
     z-index: 20;
     height: 95vh;
     overflow: scroll;
 
 }
 
-.projectBackStory-container main {
-    max-width: 1300px;
+.projectBackStory-container>main {
+    max-width: 1100px;
 }
 
 .projectBackStory-container p {
@@ -372,7 +371,106 @@
 }
 
 .projectBackStory-container h2{
+    color: #0073bf;
+    font: 1.3em sans-serif;
+
+}
+
+
+.projectBackStory-container ul{
+    background: white;
+    padding: 10px;
+
+}
+
+
+@media screen and (min-width: 1200px){
+.projectBackStory-container>main ul {
+    margin: 10px;
+    padding: 60px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.268);
+}
+
+
+}
+
+
+.statusUpdates-container{
+    background: whitesmoke;
+    z-index: 20;
+    height: 95vh;
+    overflow: scroll;
+
+}
+
+.statusUpdates-container>main {
+    max-width: 1100px;
+    padding: 10px;
+
+}
+
+.statusUpdates-container p {
+    font: 1.3em sans-serif;
+
+}
+
+.statusUpdates-container h2{
     color: #0080BF;
     font: 1.3em sans-serif;
 
 }
+
+
+.statusUpdates-container>main>ul>li{
+    display: grid;
+    row-gap: 20px;
+    background: white;
+    padding: 10px;
+    border: solid 1px rgb(202, 202, 202);
+
+}
+
+
+@media screen and (min-width: 1200px){
+.statusUpdates-container>main ul li {
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.207);
+    }
+}
+
+
+.coffee-container{
+    background: whitesmoke;
+    display: grid;
+    row-gap: 30px;
+    grid-template-rows: 200px;
+    height: 90vh;
+    align-content: center;
+    z-index: 20;
+    max-width: 1000px;
+    overflow: scroll;
+    padding: 20px;
+    padding-bottom: 50px;
+
+
+}
+
+
+
+.coffee-container>header{
+    background: whitesmoke;
+    align-self: center;
+
+}
+
+.coffee-container>header h1{
+    display: none;
+}
+
+
+.coffee-container>main{
+    background: whitesmoke;
+}
+
+
+
