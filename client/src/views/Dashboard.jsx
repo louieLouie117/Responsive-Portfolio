@@ -1,3 +1,4 @@
+import e from 'cors'
 import React, {useState} from 'react'
 import AllProjects from '../components/AllProjects'
 import CreateNewProject from '../components/CreateNewProject'
@@ -10,6 +11,8 @@ const Dashboard = props => {
     const [projects, setProjects] = useState(true)
     const [myInfo, setMyInfo] = useState()
     const [myProcess, setMyProcess] = useState()
+
+
 
 
 
@@ -38,8 +41,12 @@ const Dashboard = props => {
 
 
     return (
-        <div className="dashboard-container">
 
+    <div >
+    {(() =>{
+        if ("cardona-luis@outlook.com" === "cardona-luis@outlook.com") {
+             return(
+        <div className="dashboard-container">
         <header>
             <nav>
                 <ul>
@@ -55,6 +62,7 @@ const Dashboard = props => {
                 </ul>
             </nav>
         </header>
+
         <main>
             <section
                 style={{display: projects ? "grid" : "none"}}
@@ -75,11 +83,18 @@ const Dashboard = props => {
             <MyProcessCP></MyProcessCP>
 
             </section>
-        </main>
-            
+        </main>      
+</div>
+
+)}
+})()}
+       
         </div>
+     
+            
     )
 }
+
 
 Dashboard.propTypes = {
 

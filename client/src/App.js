@@ -92,7 +92,7 @@ const mainNavHandler =(e) =>{
         <div  className="homePage-container">
           <Router>
             <Projects path="/"/>
-            <Dashboard path="/dashboardPP1234567890"/>
+            <Dashboard path="/dashboard"/>
             <UpdateProject path="/update/:id/edit"/>
           </Router>
 
