@@ -9,6 +9,8 @@ import AboutMe from './views/AboutMe';
 import CodeChallenges from './views/CodeChallenges';
 import Dashboard from './views/Dashboard';
 import UpdateProject from './components/UpdateProject';
+import Registration from './components/Registration';
+import SignIn from './components/SignIn';
 
 
 
@@ -93,8 +95,12 @@ const mainNavHandler =(e) =>{
           <Router>
             <Projects path="/"/>
             <Dashboard path="/dashboard"/>
-            <UpdateProject path="/update/:id/edit"/>
+            <Registration path="/reg"/>
+            <SignIn path="/signin"/>
+            {/* <UpdateProject path="/update/:id/edit"/> */}
           </Router>
+
+        
 
         </div>
 

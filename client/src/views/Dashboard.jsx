@@ -1,22 +1,63 @@
-import e from 'cors'
-import React, {useState} from 'react'
+import React, { useState, useEffect } from "react";
+import { navigate } from "@reach/router";
+import axios from "axios";
 import AllProjects from '../components/AllProjects'
 import CreateNewProject from '../components/CreateNewProject'
 import MyInfoCP from '../components/MyInfoCP'
 import MyProcessCP from '../components/MyProcessCP'
 import UpdateProject from '../components/UpdateProject'
+import { set } from "mongoose";
 
 const Dashboard = props => {
+
+    const logout = () => {
+        axios
+          .post(
+            "http://localhost:8000/api/logout",
+            {},
+            {
+              // need to send the cookie in request so server can clear it
+              withCredentials: true,
+            }
+          )
+          .then((res) => {
+            console.log(res);
+          })
+          .catch(console.log);
+    
+        navigate("/");
+      };
+    
+  
+      const [users, setUsers] = useState([]);
+      const [email, setEmail] = useState();
+
+  
+   
+    
+      useEffect(() => {
+        axios
+          .get("http://localhost:8000/api/users", {
+            withCredentials: true,
+          })
+          .then((res) => {
+            setUsers(res.data);
+            // setEmail(res.data[0].email)
+            console.log(res);
+            // console.log("get email",res.data[0].email);
+
+          })
+          .catch((err) => {
+            console.log("Not Authorized!!!");
+            console.log(err.response);
+          // not authorized redirect to homepage
+            navigate("/");
+          });
+      }, []);
 
     const [projects, setProjects] = useState(true)
     const [myInfo, setMyInfo] = useState()
     const [myProcess, setMyProcess] = useState()
-
-
-
-
-
- 
 
     const projectHandler =()=> {
         setProjects(true)
@@ -43,9 +84,12 @@ const Dashboard = props => {
     return (
 
     <div >
-    {(() =>{
-        if ("cardona-luis@outlook.com" === "cardona-luis@outlook.com") {
-             return(
+
+
+          
+    {/* {(() =>{
+        if ("cardona-luis@outlook.com" === email) {
+             return( */}
         <div className="dashboard-container">
         <header>
             <nav>
@@ -59,6 +103,28 @@ const Dashboard = props => {
                     <li
                     onClick={myProcessHandler}
                     >My Process Blog</li>
+
+
+                    <li>
+                    {users.map((user) => (
+
+                    <div key={user._id}>
+                        
+                    <ul>
+                        <li>
+                        {user.email}
+
+                        </li>
+                        </ul>
+                    </div>
+                    ))}
+           
+                    </li>
+                  
+                    <li>
+
+                    { <button onClick={logout}>Logout</button>}
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -85,10 +151,10 @@ const Dashboard = props => {
             </section>
         </main>      
 </div>
-
+{/* 
 )}
 })()}
-       
+        */}
         </div>
      
             
