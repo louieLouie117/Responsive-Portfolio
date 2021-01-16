@@ -31,12 +31,12 @@ const Dashboard = props => {
   
       const [users, setUsers] = useState([]);
       const [email, setEmail] = useState();
-      const [filter, setFilter] = useState();
+      const [filter, setFilter] = useState(false);
 
-
-  
-   
-    
+      const  backButton =() => {
+          setFilter(true)
+      }
+      
       useEffect(() => {
         axios
           .get("http://localhost:8000/api/users", {
@@ -47,7 +47,6 @@ const Dashboard = props => {
             // setEmail(res.data[0].email)
 
           
-            setFilter(res.data);
             console.log("get email",res.data);
 
           })
@@ -90,12 +89,17 @@ const Dashboard = props => {
     <div >
 
 
-  
+  <a className="backButtonIcon"
+  onClick={backButton}
+  >Back</a>
           
     {/* {(() =>{
-        if (filter === "cardona-luis@outlook.com") {
+        if (filter === false) {
              return( */}
-        <div className="dashboard-container">
+        <div 
+        className="dashboard-container"
+        style={{display: filter ? "grid" : "none"}}
+        >
         <header>
             <nav>
                 <ul>
@@ -157,7 +161,9 @@ const Dashboard = props => {
         </main>      
 </div>
 
-{/* )}
+
+{/* 
+)}
 })()} */}
        
         </div>
