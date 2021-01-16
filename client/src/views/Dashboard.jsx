@@ -85,7 +85,6 @@ const Dashboard = props => {
 
     <div >
 
-
           
     {/* {(() =>{
         if ("cardona-luis@outlook.com" === email) {
@@ -104,23 +103,6 @@ const Dashboard = props => {
                     onClick={myProcessHandler}
                     >My Process Blog</li>
 
-
-                    <li>
-                    {users.map((user) => (
-
-                    <div key={user._id}>
-                        
-                    <ul>
-                        <li>
-                        {user.email}
-
-                        </li>
-                        </ul>
-                    </div>
-                    ))}
-           
-                    </li>
-                  
                     <li>
 
                     { <button onClick={logout}>Logout</button>}
@@ -155,6 +137,8 @@ const Dashboard = props => {
 )}
 })()}
         */}
+
+
         </div>
      
             
