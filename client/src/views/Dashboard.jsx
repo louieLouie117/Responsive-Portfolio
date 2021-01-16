@@ -31,6 +31,8 @@ const Dashboard = props => {
   
       const [users, setUsers] = useState([]);
       const [email, setEmail] = useState();
+      const [filter, setFilter] = useState();
+
 
   
    
@@ -43,8 +45,10 @@ const Dashboard = props => {
           .then((res) => {
             setUsers(res.data);
             // setEmail(res.data[0].email)
-            console.log(res);
-            // console.log("get email",res.data[0].email);
+
+          
+            setFilter(res.data);
+            console.log("get email",res.data);
 
           })
           .catch((err) => {
@@ -85,9 +89,11 @@ const Dashboard = props => {
 
     <div >
 
+
+  
           
     {/* {(() =>{
-        if ("cardona-luis@outlook.com" === email) {
+        if (filter === "cardona-luis@outlook.com") {
              return( */}
         <div className="dashboard-container">
         <header>
@@ -103,6 +109,23 @@ const Dashboard = props => {
                     onClick={myProcessHandler}
                     >My Process Blog</li>
 
+                    {/* <li>
+                    {users.map((user) => (
+
+                    <div key={user._id}>
+                        
+                    <ul>
+                        <li>
+                        {user.email}
+
+                        </li>
+                        </ul>
+                    </div>
+                    ))}
+           
+                    </li> */}
+
+                    {/* <li>{filter}</li> */}
                     <li>
 
                     { <button onClick={logout}>Logout</button>}
@@ -133,12 +156,10 @@ const Dashboard = props => {
             </section>
         </main>      
 </div>
-{/* 
-)}
-})()}
-        */}
 
-
+{/* )}
+})()} */}
+       
         </div>
      
             
