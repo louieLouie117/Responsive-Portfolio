@@ -89,9 +89,9 @@ const Dashboard = props => {
     <div >
 
 
-  <a className="backButtonIcon"
+  <button className="backButtonIcon"
   onClick={backButton}
-  >Back</a>
+  >Back</button>
           
     {/* {(() =>{
         if (filter === false) {
