@@ -309,6 +309,17 @@ const [projectsPage, setProjectsPage] = useState(true)
                              )}
                             })()}
 
+                               {(() =>{
+                                    if (project.name === "Luie Design") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/luieDesign.png"/>
+
+                             )}
+                            })()}
+
 
 
       
