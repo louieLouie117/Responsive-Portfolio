@@ -147,7 +147,7 @@ const [projectsPage, setProjectsPage] = useState(true)
     // }
 
         
-
+    const baseUrl = "../../server/uploads/";
 
     const [project, setProject] = useState(null)
 
@@ -206,9 +206,9 @@ const [projectsPage, setProjectsPage] = useState(true)
                             {(() =>{
                                     if (project.details === false) {
                                         return(
-                                            <div>
+                                            <aside>
                                                 <h2>{project.title}</h2>
-                                            </div>
+                                            </aside>
                                         )}
                                 })()}
                             
@@ -237,10 +237,80 @@ const [projectsPage, setProjectsPage] = useState(true)
                                         )}
                                 })()}
                             
-                            <img 
+                            {/* <img 
                             src={"/uploads/" + project.file}
                             style={{ filter: project.details ? "blur(5px)" : "blur(0px)" }}
-                             />
+                             /> */}
+                             {(() =>{
+                                    if (project.name === "Progressly Page") {
+                                        return(
+
+                             <img 
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                             src="img/projects/progresslyPage.png"/>
+
+                             )}
+                            })()}
+
+                            {(() =>{
+                                    if (project.name === "Garage Sally") {
+                                        return(
+
+                             <img 
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                             src="img/projects/garageSally.png"/>
+
+                             )}
+                            })()}
+
+
+                            {(() =>{
+                                    if (project.name === "Budget Box") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/budgetBox.png"/>
+
+                             )}
+                            })()}
+
+                            {(() =>{
+                                    if (project.name === "Delta Sports Bar") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/deltaSportsBar.png"/>
+
+                             )}
+                            })()}
+
+                            {(() =>{
+                                    if (project.name === "Pace Builders") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/paceBuilders.png"/>
+
+                             )}
+                            })()}
+
+                            
+                            {(() =>{
+                                    if (project.name === "JR Landscaping") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/jrLandscaping.png"/>
+
+                             )}
+                            })()}
+
+
+
       
                             <div  
                             style={ { display: project.details ? "grid" : "none" }} 
@@ -327,7 +397,7 @@ const [projectsPage, setProjectsPage] = useState(true)
 
 
                         {(() =>{
-                                    if (project.type === "MEARN") {
+                                    if (project.type === "MERN") {
                                         return(     
                                             <div id="icon-container">
                                             <div><img src="/img/Icons/iconXD.png" alt=""/></div>
@@ -378,7 +448,7 @@ const [projectsPage, setProjectsPage] = useState(true)
                                             onClick={ (e) =>showDetails(project, e)}
                                             onMouseEnter={ (e) =>showDetails(project, e)} 
                                             style={{color: `#${project.color}` }  }
-                                            >Close</a>
+                                            >Image</a>
                                           
                                         )}
                                 })()}

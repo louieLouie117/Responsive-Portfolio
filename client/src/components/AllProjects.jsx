@@ -29,7 +29,7 @@ const AllProjects = props => {
       };
 
     const submitHandler = (e)=>{
-        // e.preventDefault();
+        e.preventDefault();
         console.log("button was click");
         console.log(title);
         console.log(type);
@@ -64,6 +64,15 @@ const AllProjects = props => {
             .catch((err)=>{
                 console.log("Errors", err);
             }, [])
+        setRefreshPage(!refreshPage)
+        setTitle("")
+        setName("")
+        setType("")
+        setUrlLink("")
+        setLinkType("")
+        setColor("")
+        setEasterEgg("")
+        setEasterEggMsg("")
 
 
     }
@@ -126,7 +135,7 @@ const AllProjects = props => {
         setColor("")
         setEasterEgg("")
         setEasterEggMsg("")
-        setRefreshPage(!refreshPage)
+        setRefreshPage(false)
   
     }
    
@@ -269,6 +278,7 @@ const AllProjects = props => {
 
                             <aside>
                                 <h2>{project.title}</h2>
+                                <p>{project.name}</p>
                                 <p>{project._id}</p>
                                 <p>{project.type}</p>
                                 <p>{project.urlLink}</p>
