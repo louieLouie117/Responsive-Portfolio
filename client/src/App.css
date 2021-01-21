@@ -282,6 +282,10 @@ body  ::-webkit-scrollbar{
   
 }
 
+.project1-container>aside{
+  align-self: center;
+}
+
 
 .project2-container footer button {
   background: #0080BF;

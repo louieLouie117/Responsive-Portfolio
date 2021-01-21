@@ -27,7 +27,7 @@ app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
-
+// app.use(express.static(path.join(__dirname, 'uploads ')));
 
 require("./router/projects/projects.routes")(app);
 require("./router/myProcess/myProcess.rotes")(app);

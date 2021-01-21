@@ -46,6 +46,8 @@ module.exports = {
         // Use the mv() method to place the file on your server
         const fileData = req.files.file
         const path = '../client/public/uploads/' + saveName
+        // const path = 'uploads/' + saveName
+
         fileData.mv(path, function(err) {
             if (err)
             return res.status(500).send(err);
