@@ -22,13 +22,6 @@ const ProjectsBackstory = props => {
     if(myProcess === null){return(<h2>Loading...</h2>)}
 
 
-
-
-
-
-
-
-
     return (
         <div className="projectBackStory-container">
 

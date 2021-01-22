@@ -304,7 +304,7 @@ const [projectsPage, setProjectsPage] = useState(true)
 
                              <img
                              style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
-                              src="img/projects/jrLandscaping.png"/>
+                              src="img/projects/jrlandScaping.png"/>
 
                              )}
                             })()}
@@ -392,7 +392,7 @@ const [projectsPage, setProjectsPage] = useState(true)
                                             <p>Logic</p>
 
                                               
-                                            <div><img src="/img/Icons/iconDjango.png" alt=""/></div>
+                                            <div><img src="/img/Icons/IconDjango.png" alt=""/></div>
                                             <p>Framework</p>
 
                                               
