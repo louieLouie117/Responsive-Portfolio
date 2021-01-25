@@ -252,7 +252,7 @@ const DbBoxHandler = (e)=>{
                          width: designBox ? "90%" : "300px",
                          height: designBox ? "100vh" : "300px",
                          padding: designBox ? "10px": "30px",
-                         zIndex: designBox ? "120" : "0",
+                         zIndex: designBox ? "120" : "0", 
                          transition: ".3s"}}>
                         <h3>Design UX Prototype</h3>
                         <img 
@@ -294,7 +294,7 @@ const DbBoxHandler = (e)=>{
                          width: uiDevelopmentBox ? "90%" : "300px",
                          height: uiDevelopmentBox ? "100vh" : "300px",
                          padding: uiDevelopmentBox ? "10px": "30px",
-                         zIndex: uiDevelopmentBox ? "120" : "0",
+                         zIndex: uiDevelopmentBox ? "120" : "0", 
                          transition: ".3s"}}>
                         <h3>UI Development</h3>
                         <img 
@@ -339,8 +339,6 @@ const DbBoxHandler = (e)=>{
                          height: dbBox ? "100vh" : "300px",
                          padding: dbBox ? "10px": "30px",
                          zIndex: dbBox ? "120" : "0",
-                         
-
                          transition: ".3s"}}>
                         <h3>Relationship and db</h3>
                         <img 
