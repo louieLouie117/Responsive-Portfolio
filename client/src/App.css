@@ -59,6 +59,7 @@ body  ::-webkit-scrollbar{
 .mainNav-container a{
   padding-top: 5px;
   cursor: pointer;
+  
 }
 
 
@@ -66,7 +67,7 @@ body  ::-webkit-scrollbar{
 .tabIcon{
   width: 90%;
   height: 40px;
-  background: #A279A4;
+  background: #0080BF;
   grid-row: 1/2;
   grid-column: 1/2;
   font: .9em sans-serif;
@@ -78,6 +79,28 @@ body  ::-webkit-scrollbar{
   text-align: center;
   justify-self: center;
 }
+
+@media screen and (min-width: 1100px) {
+
+
+.mainNav-container{
+  top: 0;
+
+}
+
+.tabIcon{
+  border-radius: 0 0 10px 10px ;
+
+}
+
+
+
+
+
+}
+
+
+
 
 #projectsTab{
   background: none;
@@ -475,13 +498,4 @@ body  ::-webkit-scrollbar{
 
 }
 
-@media screen and (min-width: 1100px) {
 
-
- 
-
-
-
-
-
-}

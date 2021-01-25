@@ -57,7 +57,7 @@ const mainNavHandler =(e) =>{
             <nav> 
             <div className="tabIcon"
              style={{ 
-              color: homePage ? "white" : "black",
+              color: homePage ? "white" : "#0080BF",
               boxShadow:  homePage ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none",
               marginLeft: homePage ? "0" : "205%",
               transition: ".3s"
@@ -66,7 +66,7 @@ const mainNavHandler =(e) =>{
 
                 <a 
                 style={{ 
-                  color: homePage ? "white" : "black",
+                  color: homePage ? "white" : "#0080BF",
                   transition: ".3s"
     
               }}
@@ -79,7 +79,7 @@ const mainNavHandler =(e) =>{
 
                 <a 
                 style={{ 
-                  color: homePage ? "black" : "white",
+                  color: homePage ? "#0080BF" : "white",
                   transition: ".5s"
     
               }}
