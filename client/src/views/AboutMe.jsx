@@ -66,102 +66,15 @@ const AboutMe = props => {
 
 
     // hide and show sections/components
-    const [AlgosComponent, setAlsogsComponent] = useState(false)
     const [MyStoryComponentDesktop, setMyStoryComponentDesktop] = useState(true)
     const [MyStoryComponentMobile, setMyStoryComponentMobile] =  useState(false)
 
 
-  
-
-
-
-    const myStoryHandler=()=>{
-        console.log("my story tab was click");
-        setMyStoryTab(true)
-
-        setCodingTab(false)
-        setProjectTab(false)
-        setApprenticeshipTab(false)
-
-        setAlsogsComponent(false)
-        setMyStoryComponentDesktop(true)
-        setMyStoryComponentMobile(true)
-        setStatusUpdates(false)
-
-
-
-    }
-
-
-
-    
-    const codingTabHandler=()=>{
-        console.log("coding tab was click");
-        setMyStoryTab(false)
-        setCodingTab(true)
-        setProjectTab(false)
-        setApprenticeshipTab(false)
-
-        setAlsogsComponent(true)
-        setMyStoryComponentDesktop(false)
-        setMyStoryComponentMobile(false)
-        setStatusUpdates(false)
-
-    }
-
-    
-    const projectsTabHandler=()=>{
-        console.log("projects tab was click");
-        setMyStoryTab(false)
-        setCodingTab(false)
-        setProjectTab(true)
-        setApprenticeshipTab(false)
-        setAlsogsComponent(false)
-
-
-        setMyStoryComponentDesktop(false)
-        setMyStoryComponentMobile(false)
-        setStatusUpdates(false)
-
-
-    }
-    
-    const apprenticeHandler=()=>{
-        console.log("apprenticeship tab was click");
-        setMyStoryTab(false)
-        setCodingTab(false)
-        setProjectTab(false)
-        setApprenticeshipTab(true)
-        setAlsogsComponent(false)
-
-
-        setMyStoryComponentDesktop(false)
-        setMyStoryComponentMobile(false)
-        setStatusUpdates(false)
-
-
-    }
-
-
-    const statusUpdatesHandler=()=>{
-        console.log("apprenticeship tab was click");
-        setMyStoryTab(false)
-        setCodingTab(false)
-        setProjectTab(false)
-        setApprenticeshipTab(false)
-        setAlsogsComponent(false)
-
-
-        setMyStoryComponentDesktop(false)
-        setMyStoryComponentMobile(false)
-        setStatusUpdates(true)
-
-    }
 
     const hideSectionHandler = ()=>{
         console.log("section button was click");
         setMyStoryComponentMobile(false)
-        setAlsogsComponent(false)
+        
         setProjectTab(false)
         setStatusUpdates(false)
         setApprenticeshipTab(false)
@@ -195,256 +108,7 @@ const AboutMe = props => {
 
         
         <div className="aboutMe-container">
-            {myInfo.map((myInfo)=>{
-        return(
-
-            <header>
-                <h1
-                style={{ display: devTitle ? "block" : "none",}}
-                >Hello, my name is {myInfo.name}</h1>
-                <h1
-                    style={{ 
-                        display: devTitle ? "none" : "block",
-                    }}>{myInfo.slogan}</h1>
-                
-                <picture 
-                style={{ 
-                filter: blurImg ? "blur(100px)" : "blur(0px)",
-                marginLeft: blurImg ? "-300px" : "0",
-                transition: "smooth",
-                transition: "1500ms"
-                }} 
-                >
-                    <source media="(min-width: 1100px)" srcSet="/img/selffy.png"/>
-                    <source media="(min-width: 1000px)" srcSet="/img/ipad12.png"/>
-                    <source media="(min-width: 600px)" srcSet="/img/ipad10.png"/>
-                    <source media="(min-width: 420px)" srcSet="/img/surfaceDuoSelfy.png"/>
-                    <img src="/img/selffy.png" alt=""/>
-
-                </picture>
-                <aside>
-                    <div className="socialIcon-container">
-                        <a href="https://www.facebook.com/luie.cardona" target="blank">
-                        <img 
-                            onMouseEnter={facebookIcon}
-                            onMouseLeave={facebookIcon}
-                            src="/img/Icons/IconFacebook.png" alt=""/>
-                        </a>
-                        <p style={{
-                             display: faceBookTitle ? "block" : "none",
-                            transition: "1500ms"
-
-                             }} >Personal Story</p>
-                    </div>
-
-                    <div className="socialIcon-container">
-                        <a href="https://www.tiktok.com/@luiedesign?lang=en" target="blank">
-                        <img 
-                        onMouseEnter={tiktokIcon}
-                        onMouseLeave={tiktokIcon}
-                        src="/img/Icons/IconTikTok.png" alt=""/>
-                        </a>
-                        <p style={{ display: tiktokTitle ? "block" : "none" }}>Just for Fun</p>
-                    </div>
-                    <div className="socialIcon-container">
-
-                    <a href="https://www.instagram.com/luiedesign/" target="blank">
-                        <img 
-                        onMouseEnter={instagramIcon}
-                        onMouseLeave={instagramIcon}
-                        src="/img/Icons/IconInstagram.png" alt=""/>
-                    </a>
-                    <p style={{ display: instagramTitle ? "block" : "none" }}>Design Art Work</p>
-                    
-                    </div>
-                    <div className="socialIcon-container">
-
-                    <a href="https://github.com/louieLouie117" target="blank">
-                        <img 
-                        onMouseEnter={githubIcon}
-                        onMouseLeave={githubIcon}
-                        src="/img/Icons/IconGithub.png" alt=""/>
-                    </a>
-
-                        <p style={{ display: githubTitle ? "block" : "none" }}>Code Repository</p>
-                    
-                    </div>
-                    <div className="socialIcon-container">
-                    <a href="https://www.linkedin.com/in/luis-cardona-3a51b2162/" target="blank">
-                        <img
-                        onMouseEnter={linkedinIcon}
-                        onMouseLeave={linkedinIcon} 
-                        src="/img/Icons/IconLinkedin.png" alt=""/>
-                    </a>
-
-                    <p style={{ display: LinkedInTitle ? "block" : "none" }}>Let's  Connect and Program Together</p>
-
-                    </div>
-                </aside>
-                <footer>
-                    <h2
-                    style={{ 
-                        display: devTitle ? "block" : "none",
-
-                    }}
-
-                    >{myInfo.title}</h2>
-
-                    <div
-                    style={{ 
-                        display: devTitle ? "none" : "block",
-                        transitionTimingFunction: "ease",
-                        marginTop: devTitle  ? "0" : "-20px",
-                        transition: "smooth",
-                        transition: "1500ms"
-
-                    }}>
-                
-
-                    
-                    <h2
-                    style={{ 
-                        fontSize: devTitle ? "0" : "1.2em",
-                        paddingLeft: devTitle ?  "0" : "20px",
-                    
-
-                    }}
-
-                    > {myInfo.specification}</h2>
-
-                    </div>
-                    <div 
-                    style={{ 
-                        transform: rotateMenu ? ` rotate(0deg)` : `rotate(180deg)`,
-                        transition: "1500ms"
-
-                    }}
-                    onClick={showAllTitles}
-                    className="menuIcon-container">
-                        <div 
-                        className="menuIcon"
-                        style={{ 
-                            transform: rotateMenu ? ` rotate(0deg)` : `rotate(180deg)`,
-                            transition: "2500ms"
-    
-                        }}
-                        
-                        ></div>
-                        <div 
-                        className="menuIcon"
-                        style={{ 
-                            transform: rotateMenu ? ` rotate(0deg)` : `rotate(180deg)`,
-                            transition: "2000ms"
-    
-                        }}
-                        ></div>
-                        <div 
-                        className="menuIcon"
-                        style={{ 
-                            transform: rotateMenu ? ` rotate(0deg)` : `rotate(180deg)`,
-                            transition: "1500ms"
-    
-                        }}
-                        
-                        ></div>
-                    </div>
-                </footer>
-
-                <nav>
-
-                    {(() =>{
-                        if (window.innerWidth > "1100") {
-                            return(
-                                        <ul>
-
-                                        <li
-                                        onClick={myStoryHandler}
-                                            style={{ 
-                                                background: myStoryTab ? "white" : "#0080BF",
-                                                color: myStoryTab ? "#0080BF" : "white",
-                                               
-                                            }} >My Story</li>
-
-                                        <li
-                                        onClick={codingTabHandler}
-                                        style={{ 
-                                            background: codingTab ? "white" : "#0080BF",
-                                            color: codingTab ? "#0080BF" : "white" 
-                                        }} >Coding Challenges</li>
-
-                                        <li
-                                        onClick={projectsTabHandler}
-                                        style={{ 
-                                            background: projectsTab ? "white" : "#0080BF",
-                                            color: projectsTab ? "#0080BF" : "white" 
-                                        }} >Projects Backstory</li>
-
-                                    
-                                        <li
-                                        onClick={apprenticeHandler}
-                                        style={{ 
-                                            background: apprenticeshipTab ? "white" : "#0080BF",
-                                            color: apprenticeshipTab ? "#0080BF" : "white" 
-                                        }} >SPA Development</li>
-
-                                        <li
-                                        onClick={statusUpdatesHandler}
-                                        style={{ 
-                                            background: statusUpdates ? "white" : "#0080BF",
-                                            color: statusUpdates ? "#0080BF" : "white" 
-                                        }} >Status/Updates</li>
-                                        </ul>
-                        
-                                        )}
-                                })()}
-                    
-                    {(() =>{
-                        if (window.innerWidth < "1100") {
-                            return(
-                                <ul>
-                                    <li
-                                    onClick={myStoryHandler}
-                                        style={{ background: "white", color:  "#0080BF" }} 
-                                        >My Story</li>
-
-                                    <li
-                                    onClick={codingTabHandler}
-                                    style={{ 
-                                        background: "white",
-                                        color:  "#0080BF" 
-                                    }} 
-                                    >Coding Challenges</li>
-
-                                    <li
-                                    onClick={projectsTabHandler}
-                                    style={{ 
-                                        background: "white",
-                                        color:  "#0080BF"  
-                                    }} >Projects Backstory</li>
-
-                                    <li
-                                    onClick={apprenticeHandler}
-                                    style={{ 
-                                        background: "white",
-                                        color:  "#0080BF" 
-                                    }} >SPA Development</li>
-
-
-<li
-                                    onClick={statusUpdatesHandler}
-                                    style={{ 
-                                        background: "white",
-                                        color:  "#0080BF" 
-                                    }} >Status/Updates</li>
-                                </ul>
-                        
-                                        )}
-                                })()}
-
-                    
-                </nav>
-            </header>
-        );})}
+        
 
 {myInfo.map((myInfo)=>{
         return(
@@ -452,57 +116,23 @@ const AboutMe = props => {
 
 
 
-            {(() =>{if (window.innerWidth < "1100") {
-                    return(
+            
                         <section 
                                               
-                        style={ { 
-                            display: MyStoryComponentMobile ? "grid" : "none", 
-                            
-
-                        }}> 
+                        // style={{display: MyStoryComponentMobile ? "grid" : "none",}}
+                        > 
                         
-                        <button
-                        onClick={hideSectionHandler}                        
-
-                        >X</button>
+                      
                             <MyStory></MyStory>
                         </section>
-                )}
-            })()}
+           
 
-            {(() =>{if (window.innerWidth > "1100") {
-                    return(
-                        <section style={{ 
-                        display: MyStoryComponentDesktop ? "grid" : "none",}}> 
-                            <MyStory></MyStory>
-                        </section>
-                )}
-            })()}
+            
+                       
 
 
 
-                <section style={{ display: AlgosComponent ? "grid" : "none"}}>
-
-
-            {(() =>{if (window.innerWidth < "1100") {
-                    return(
-                        <button
-                        onClick={hideSectionHandler}                        
-
-                        >X</button>
-
-                        )}
-                    })()}
-                    {/* <nav>
-                        <button >Basic</button>
-                        <button >Sorting</button>
-                        <button >Data Structure</button>
-                
-                    </nav> */}
-                    <AlgosBasic></AlgosBasic>
-
-                </section>
+              
 
 
 

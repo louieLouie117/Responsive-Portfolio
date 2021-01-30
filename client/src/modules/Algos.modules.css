@@ -1,9 +1,7 @@
 /* Basic Algorithms  */
 .basicAlgos-container{
     width: 100vw;
-    height: 100vh;
     justify-self: center;
-    background: s;
     z-index: 20;
     
  
@@ -14,7 +12,6 @@
     display: grid;
     row-gap: 30px;
     height: 90vh;
-    overflow: scroll;
     padding: 10px;
     width: auto;
   }
@@ -99,7 +96,6 @@
     width: 90%;
     height: 93vh;
     margin-top: 40px;
-    overflow: scroll;
     }
 
   .basicAlgos-container ul{
