@@ -237,8 +237,9 @@ const DbBoxHandler = (e)=>{
 
 {/* Mobile */}
 {(() =>{
-            if (window.innerWidth < "1100") {
-            return(
+        if (window.innerWidth < "1100") {
+             return(
+
             <aside>
             <h2>My Process</h2>
         
@@ -249,11 +250,14 @@ const DbBoxHandler = (e)=>{
                     className="stage1"                    
                     style={{
                          position: designBox ? "static " : "relative",
-                         width: designBox ? "90%" : "300px",
-                         height: designBox ? "100vh" : "300px",
+                         width: designBox ? "97%" : "300px",
+                         height: designBox ? "97%" : "300px",
                          padding: designBox ? "10px": "30px",
-                         zIndex: designBox ? "120" : "0", 
-                         transition: ".3s"}}>
+                         zIndex: designBox ? "120" : "0",
+                         transition: ".3s"}}
+                    
+
+                         >
                         <h3>Design UX Prototype</h3>
                         <img 
                             style={{
@@ -280,9 +284,9 @@ const DbBoxHandler = (e)=>{
                         );})}
                         </ul>
 
-                        <a 
+                        <button 
                             onClick={DesignBoxHandler}
-                            href="#"> Read.</a>
+                            href="#"> View</button>
                     </li>
 
               
@@ -291,8 +295,8 @@ const DbBoxHandler = (e)=>{
                     className="stage2"                    
                      style={{
                         position: designBox ? "static " : "relative",
-                         width: uiDevelopmentBox ? "90%" : "300px",
-                         height: uiDevelopmentBox ? "100vh" : "300px",
+                         width: uiDevelopmentBox ? "97%" : "300px",
+                         height: uiDevelopmentBox ? "97%" : "300px",
                          padding: uiDevelopmentBox ? "10px": "30px",
                          zIndex: uiDevelopmentBox ? "120" : "0", 
                          transition: ".3s"}}>
@@ -325,9 +329,7 @@ const DbBoxHandler = (e)=>{
                         </ul>
                         
                         
-                        <a 
-                            onClick={uiBoxHandler}
-                            href="#"> Read.</a>
+                        <button onClick={uiBoxHandler}> View</button>
                     </li>
                                   
 
@@ -368,7 +370,7 @@ const DbBoxHandler = (e)=>{
                         </ul>
                         
                         
-                        <a onClick={DbBoxHandler}href="#"> Read.</a>
+                        <button onClick={DbBoxHandler}> View</button>
                     </li>
 
                                            
@@ -410,17 +412,16 @@ const DbBoxHandler = (e)=>{
                         </ul>
                         
                         
-                        <a onClick={ServerBoxHandler}href="#"> Read.</a>
+                        <button onClick={ServerBoxHandler}> View</button>
                     </li>
 
 
-                    <li></li>
 
            
                 </ul>
             </aside>
             )}
-            })()}
+        })()}
 
 
 
@@ -449,7 +450,6 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/designImg.png" alt=""/>
 
-                        {/* ul for loop */}
                         <ul
                         className="loop-container"
                         style={{height: designBox ? "97%" : "60px",}}
@@ -468,7 +468,7 @@ const DbBoxHandler = (e)=>{
                                 );})}
                         </ul>
 
-                        <a onClick={DesignBoxHandler} href="#"> Read.</a>
+                        <button onClick={DesignBoxHandler} > View</button>
                       
                      
                     </li>
@@ -491,7 +491,6 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/uiDevelopmentImg.png" alt=""/>
 
-                         {/* ul for loop */}
                          <ul
                         className="loop-container"
                         style={{height: uiDevelopmentBox ? "97%" : "60px",}}
@@ -515,9 +514,9 @@ const DbBoxHandler = (e)=>{
                         </ul>
                         
                         
-                        <a 
+                        <button 
                             onClick={uiBoxHandler}
-                            href="#"> Read.</a>
+                            > View</button>
                     </li>
                    
                     <li 
@@ -538,7 +537,6 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/relationshipDdImg.png" alt=""/>
 
-                            {/* ul for loop */}
                         <ul
                         className="loop-container"
                         style={{height: dbBox ? "97%" : "60px",}}
@@ -563,9 +561,9 @@ const DbBoxHandler = (e)=>{
 
                         </ul>
                         
-                        <a 
+                        <button 
                             onClick={DbBoxHandler}
-                            href="#"> Read.</a>
+                            > View</button>
                     </li>
               
 
@@ -588,7 +586,6 @@ const DbBoxHandler = (e)=>{
                                 transition: "1.5s "}}
                         src="/img/serverDBDevelopmentImg.png" alt=""/>
 
-                              {/* ul for loop */}
                               <ul
                         className="loop-container"
                         style={{height: serverBox ? "97%" : "60px",}}
@@ -614,9 +611,9 @@ const DbBoxHandler = (e)=>{
                           
 
                         </ul>
-                        <a 
+                        <button 
                             onClick={ServerBoxHandler}
-                            href="#"> Read.</a>
+                            > View</button>
                     </li>
 
 
@@ -625,6 +622,10 @@ const DbBoxHandler = (e)=>{
             </aside>
             )}
             })()}
+
+
+            
+       
             
         </div>
     )

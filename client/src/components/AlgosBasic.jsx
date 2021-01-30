@@ -304,15 +304,8 @@ setTimeout(function() {
 }, 2000);
 
 
-
-
-
-
     return (
         <div  className="basicAlgos-container">
-            
-         
-
             <ul>
                 <li>
                     <h2>Print 1-250</h2>

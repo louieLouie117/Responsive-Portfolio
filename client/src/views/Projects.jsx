@@ -9,7 +9,13 @@ const Projects = props => {
 const [details, setDetails] = useState(true)
 const [projectsPage, setProjectsPage] = useState(true)
 
-    
+
+
+const [homePage, setHomePage] = useState(true)
+const [aboutMePage, setAboutMePage] = useState(false)
+
+
+
 
     const showDetails = (data, e)=> {
          
@@ -118,6 +124,28 @@ const [projectsPage, setProjectsPage] = useState(true)
     }
 
 
+    const [cSharp, setCsharp] = useState("C#")
+const [mern, setMern] = useState("MERN")
+const [python, setPython] = useState("Python")
+
+const filterWebsitesHandler =()=>{
+    setCsharp("Website")
+    setMern("Website")
+    setPython("Website")
+    setHomePage(!homePage)
+  setAboutMePage(!aboutMePage)
+}
+const filterWebAppsHandler =()=>{
+    setCsharp("C#")
+    setMern("MERN")
+    setPython("Python")
+    setHomePage(!homePage)
+  setAboutMePage(!aboutMePage)
+}
+
+
+
+
     // const projectUndoHandler =(data)=>{
     //     setLike(false)
     //     console.log(data.likeCount);
@@ -173,9 +201,11 @@ const [projectsPage, setProjectsPage] = useState(true)
     return (
         <div >
 
+
         <div 
         className="projectsPage-container"  
-        style={ { display: projectsPage ? "grid" : "none" }}  > 
+        style={ { display: projectsPage ? "grid" : "none" }} 
+         > 
             <header>      
                 <div className="slogan-container"> 
                     <p>Dream it.</p>
@@ -184,8 +214,51 @@ const [projectsPage, setProjectsPage] = useState(true)
                 </div>
            
                 <img src="/img/portfolioImg.png" alt=""/>
+                
 
             </header>
+
+            <nav>
+            <div className="mainNav-container">    
+            <nav> 
+            <div className="tabIcon"
+             style={{ 
+              color: homePage ? "white" : "#0080BF",
+              boxShadow:  homePage ? "0 0 5px  rgba(0, 0, 0, 0.508)" : "none",
+              marginLeft: homePage ? "0" : "205%",
+              transition: ".3s"
+
+          }}></div>
+
+                <a 
+                style={{ 
+                  color: homePage ? "white" : "#0080BF",
+                  transition: ".3s"
+    
+              }}
+                id="projectsTab"
+                // onClick={mainNavHandler}
+                onClick={filterWebAppsHandler}
+                
+               
+                >Web Apps</a>
+
+
+                <a 
+                style={{ 
+                  color: homePage ? "#0080BF" : "white",
+                  transition: ".5s"
+    
+              }}
+                id="aboutMeTab"
+                // onClick={mainNavHandler}
+                onClick={filterWebsitesHandler}
+                >Websites</a>
+            </nav>
+            
+            
+        </div>
+            </nav>
 
             <main>
                 <picture class="headerImage-container">
@@ -195,9 +268,12 @@ const [projectsPage, setProjectsPage] = useState(true)
                 </picture>
         
                 <div className="cardItems">
+
+                    
                             
                     <ul>
                     {project.map((project)=>{
+                        if (project.type === cSharp || project.type === mern || project.type === python)  {
                         return(
                         <li 
                         
@@ -207,7 +283,7 @@ const [projectsPage, setProjectsPage] = useState(true)
                                     if (project.details === false) {
                                         return(
                                             <aside>
-                                                <h2>{project.title}</h2>
+                                                <h2>{project.type}</h2>
                                             </aside>
                                         )}
                                 })()}
@@ -476,7 +552,7 @@ const [projectsPage, setProjectsPage] = useState(true)
                         </li>
 
 
-                        );})}
+                        )};})}
  
 
                                 <li></li>
