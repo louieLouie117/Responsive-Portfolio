@@ -116,11 +116,10 @@ const [flipCard, setFlipCard] = useState(false)
             
                 
             }
-
     
         }
 
-
+        // alert("Thank you for adding a like.")
         setLike(!like)
 
             
@@ -222,7 +221,7 @@ const filterWebAppsHandler =()=>{
             </header>
 
             <nav>
-            <div className="mainNav-container">    
+                <div className="mainNav-container">    
             <nav> 
             <div className="tabIcon"
              style={{ 
@@ -242,7 +241,6 @@ const filterWebAppsHandler =()=>{
                 id="projectsTab"
                 // onClick={mainNavHandler}
                 onClick={filterWebAppsHandler}
-                onMouseEnter={filterWebAppsHandler}
                 >Web Apps</a>
 
 
@@ -255,7 +253,6 @@ const filterWebAppsHandler =()=>{
                 id="aboutMeTab"
                 // onClick={mainNavHandler}
                 onClick={filterWebsitesHandler}
-                onMouseEnter={filterWebsitesHandler}
                 >Websites</a>
             </nav>
             
@@ -272,12 +269,22 @@ const filterWebAppsHandler =()=>{
         
                 <div className="cardItems">
 
-                    
+
+
+{/* mobile version */}
+
+                {(() =>{
+                                if (window.innerWidth < "1100") {
+                                     return(
+
+                                  
                             
                     <ul>
                     {project.map((project)=>{
                         if (project.type === cSharp || project.type === mern || project.type === python)  {
                         return(
+
+
                         <li 
 
                              style={{ 
@@ -291,6 +298,331 @@ const filterWebAppsHandler =()=>{
                                 
 
                             }}
+                           
+                             
+                            onClick={ (e) =>showDetails(project, e)}
+                            // onMouseEnter={ (e) =>showDetails(project, e)} 
+                            onMouseLeave={ (e) =>showDetails(project, e)} 
+
+                        
+                        className="project1-container">
+                            {/* <h2>{project.title}</h2> */}
+                            {(() =>{
+                                    if (project.details === false) {
+                                        return(
+                                            <aside>
+                                                <h2>{project.name}</h2>
+                                            </aside>
+                                        )}
+                                })()}
+                            
+
+                            {(() =>{
+                                    if (project.details === true) {
+                                        return(
+                                            <div className="likeProjects-container">
+                                                <h2>{project.type}</h2>
+                                                <aside
+                                                style={{background: `#${project.color}` }  }
+                                                >
+                                                    <img id="heartIcon"src="/img/Icons/heart.png" alt=""/>
+                                                    <h4>{project.likeCount}</h4>
+
+                                                </aside>
+
+                                                <a
+                                                // value={like}
+                                                style={{color: `#${project.color}` }  }
+                                                onClick={ (e) => projectLikeHandler(project, e)}
+                                                >like</a>
+                                
+                                            
+                                            </div>
+                                        )}
+                                })()}
+                            
+                            {/* <img 
+                            src={"/uploads/" + project.file}
+                            style={{ filter: project.details ? "blur(5px)" : "blur(0px)" }}
+                             /> */}
+                             {(() =>{
+                                    if (project.name === "Progressly Page") {
+                                        return(
+
+                             <img 
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                             src="img/projects/progresslyPage.png"/>
+
+                             )}
+                            })()}
+
+                            {(() =>{
+                                    if (project.name === "Garage Sally") {
+                                        return(
+
+                             <img 
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                             src="img/projects/garageSally.png"/>
+
+                             )}
+                            })()}
+
+
+                            {(() =>{
+                                    if (project.name === "Budget Box") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/budgetBox.png"/>
+
+                             )}
+                            })()}
+
+                            {(() =>{
+                                    if (project.name === "Delta Sports Bar") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/deltaSportsBar.png"/>
+
+                             )}
+                            })()}
+
+                            {(() =>{
+                                    if (project.name === "Pace Builders") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/paceBuilders.png"/>
+
+                             )}
+                            })()}
+
+                            
+                            {(() =>{
+                                    if (project.name === "JR Landscaping") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/jrcustomer.png"/>
+
+                             )}
+                            })()}
+
+                               {(() =>{
+                                    if (project.name === "Luie Design") {
+                                        return(
+
+                             <img
+                             style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
+                              src="img/projects/luieDesign.png"/>
+
+                             )}
+                            })()}
+
+
+
+      
+                            <div  
+                            style={ { display: project.details ? "grid" : "none" }} 
+                            className="tools-container">
+                        
+                           
+
+                            {(() =>{
+                                    if (project.type === "C#") {
+                                        return(     
+                                    <div id="icon-container">
+
+                                        <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                        <p>Mockup UI</p>
+
+                                        <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                        <p>Responsive Layout</p>
+
+                                        <div><img src="/img/Icons/iconCSharp.png" alt=""/></div>
+                                        <p>Logic</p>
+
+                                        <div><img src="/img/Icons/iconNet.png" alt=""/></div>
+                                        <p>Framework</p>
+                                        
+                                        <div><img src="/img/Icons/iconMySql.png" alt=""/></div>
+                                        <p>Date Base</p>   
+                                    </div>
+                                        )}
+                                          
+
+                                
+                                })()}
+
+                                           
+                           
+
+                            {(() =>{
+                                    if (project.type === "Website") {
+                                        return(     
+                                            <div id="icon-container">
+                                            <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                            <p>Mockup UI</p>
+            
+                                            <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                            <p>Responsive Layout</p>
+            
+                                            <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
+                                            <p>Behavior</p>
+                                        </div>
+                                        )}
+                                          
+
+                                
+                                })()}
+
+
+                            {(() =>{
+                                    if (project.type === "Python") {
+                                        return(     
+                                            <div id="icon-container">
+                                            <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                            <p>Mockup UI</p>
+            
+                                            <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                            <p>Responsive Layout</p>
+            
+                                            <div><img src="/img/Icons/iconPython.png" alt=""/></div>
+                                            <p>Logic</p>
+
+                                              
+                                            <div><img src="/img/Icons/newicondj.png" alt=""/></div>
+                                            <p>Framework</p>
+
+                                              
+                                            <div><img src="/img/Icons/iconJquiry.png" alt=""/></div>
+                                            <p>Behavior</p>
+
+                                        </div>
+                                        )}
+                                          
+
+                                })()}
+                        
+
+
+                        {(() =>{
+                                    if (project.type === "MERN") {
+                                        return(     
+                                            <div id="icon-container">
+                                            <div><img src="/img/Icons/iconXD.png" alt=""/></div>
+                                            <p>Mockup UI</p>
+            
+                                            <div><img src="/img/Icons/iconHtmlCss.png" alt=""/></div>
+                                            <p>Responsive Layout</p>
+            
+                                            <div><img src="/img/Icons/iconJavaScript.png" alt=""/></div>
+                                            <p>Logic</p>
+
+                                              
+                                            <div><img src="/img/Icons/iconReact.png" alt=""/></div>
+                                            <p>Framework</p>
+
+                                              
+                                            <div><img src="/img/Icons/iconMongodb.png" alt=""/></div>
+                                            <p>Date Base</p>
+
+                                        </div>
+                                        )}
+                                          
+
+                                })()}
+
+                            </div>
+
+                            <footer>                                     
+                            {(() =>{
+                                    if (project.details === false) {
+                                        return(
+                                           
+                                            <a  
+                                            name={project._id}
+                                            style={{color: `#${project.color}` }  }
+                                            >Details</a>
+                                        )}
+                                })()}
+                            
+
+                            {(() =>{
+                                    if (project.details === true) {
+                                        return(
+                                            <a  
+                                            name={project._id}
+                                            onClick={ (e) =>showDetails(project, e)}
+                                            // onMouseEnter={ (e) =>showDetails(project, e)} 
+                                            style={{color: `#${project.color}` }  }
+                                            >Image</a>
+                                          
+                                        )}
+                                })()}
+
+                                                  
+                             
+                            {(() =>{
+                                    if (project.details === true) {
+                                        return(
+
+                                <a href={project.urlLink} target="blank"> 
+                                <button style={{
+                                    background: `#${project.color}`} }>{project.linkType }</button> 
+                               </a>
+
+                            )}
+                            })()}
+
+                            </footer>
+                        </li>
+
+
+                        )};})}
+ 
+
+                                <li></li>
+                    </ul>
+      )}
+    })()}
+
+
+
+    
+{/* Desktop version */}
+
+{(() =>{
+                    if (window.innerWidth > "1100") {
+                                     return(
+
+                                  
+                            
+                    <ul>
+                    {project.map((project)=>{
+                        if (project.type === cSharp || project.type === mern || project.type === python)  {
+                        return(
+
+
+                        <li 
+
+                             style={{ 
+                                position: project.details ? `relative` : `static`,
+                                // width: project.details ? "100%" : "300px",
+                                transform: project.details ? `translateY(${0}px)` : `translateY(${110}px)`,
+                                // transform: project.details ? `[{ rotate: '180deg' }]` : `[{ rotate: '180deg' }]`,
+                                // transform: project.details ? [{ rotate: "180deg" }] : [{ rotate: "0deg" }] ,
+                                // transform: project.details ? [{ rotateY: "180deg" }]: [{ rotateY: "45deg" }],
+                                transition: ".5s"
+                                
+
+                            }}
+                           
                              
                             onClick={ (e) =>showDetails(project, e)}
                             onMouseEnter={ (e) =>showDetails(project, e)} 
@@ -551,7 +883,7 @@ const filterWebAppsHandler =()=>{
                                             <a  
                                             name={project._id}
                                             onClick={ (e) =>showDetails(project, e)}
-                                            onMouseEnter={ (e) =>showDetails(project, e)} 
+                                            // onMouseEnter={ (e) =>showDetails(project, e)} 
                                             style={{color: `#${project.color}` }  }
                                             >Image</a>
                                           
@@ -581,7 +913,8 @@ const filterWebAppsHandler =()=>{
 
                                 <li></li>
                     </ul>
-
+      )}
+    })()}
                  
                 </div>
                

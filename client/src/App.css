@@ -240,6 +240,15 @@ li ::-webkit-scrollbar {
   
 }   
 
+@media screen and (min-width: 1200px){
+  .cardItems ul li {
+    margin-left: 60px;
+  }
+}
+
+
+
+
 .cardItems ul li:last-child {
   background: none;
   box-shadow: none;
@@ -406,7 +415,10 @@ li ::-webkit-scrollbar {
 }
 
 
+nav{
+  max-width: 400px;
 
+}
 
 .mainNav-container nav{
   display: grid;
@@ -414,7 +426,6 @@ li ::-webkit-scrollbar {
   text-align: center;
   column-gap: 3px;
   margin: 0 5px;
-  
 
 }
 
