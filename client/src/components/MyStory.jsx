@@ -221,7 +221,7 @@ const DbBoxHandler = (e)=>{
 
             <aside>
                 <div>
-                    <h2>My story</h2>
+                    <h2>Thank you.</h2>
                     <p>{ myInfo.myStory }</p>
                 </div>
 
