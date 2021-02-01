@@ -98,7 +98,7 @@ const Footer = props => {
                     color: codingTab? "#0080BF":"white",
                     transition: ".3s"}}
                     onClick={codingTabHandler}
-                    onMouseEnter={codingTabHandler}
+                    // onMouseEnter={codingTabHandler}
 
 
                     >Coding Challenges</button>
@@ -110,7 +110,7 @@ const Footer = props => {
                         color: apprenticeshipTab? "#0080BF":"white",
                         transition: ".3s"}}
                         onClick={apprenticeHandler}
-                        onMouseEnter={apprenticeHandler}
+                        // onMouseEnter={apprenticeHandler}
                     
                     >SPA Development</button>
                 </li>
@@ -121,7 +121,7 @@ const Footer = props => {
                     color: projectsTab? "#0080BF":"white",
                     transition: ".3s"}}
                     onClick={projectsTabHandler}
-                    onMouseEnter={projectsTabHandler}
+                    // onMouseEnter={projectsTabHandler}
 
 
                 >App Laboratory</button>
@@ -134,7 +134,7 @@ const Footer = props => {
                         color: statusUpdates? "#0080BF":"white",
                         transition: ".3s"}}
                         onClick={statusUpdatesHandler}
-                        onMouseEnter={statusUpdatesHandler}
+                        // onMouseEnter={statusUpdatesHandler}
                 
                 >Updates</button>
                 </li>
