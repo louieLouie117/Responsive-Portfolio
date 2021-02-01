@@ -5,12 +5,36 @@ import modules from "../modules/MyStory.modules.css"
 
 const MyStory = props => {
 
+const [designButton, setDesignButton] = useState(false)
+const [uiButton, setUiButton] = useState(false)
+const [dbButton, setDbButton] = useState(false)
+const [serverButton, setServerButton] = useState(false)
+
+
+
+
+const DesignButtonHandler =()=>{
+    setDesignButton(!designButton)   
+}
+
+const UiButtonHandler =()=>{
+    setUiButton(!uiButton)
+        
+}
+
+
+const DbButtonHandler =()=>{
+    setDbButton(!dbButton)   
+}
+
+const ServerButtonHandler =()=>{
+    setServerButton(!serverButton)   
+}
 
 const [designBox, setDesignBox] = useState(false)
 const [uiDevelopmentBox, setUiDevelopmentBox] = useState(false)
 const [serverBox, setServerBox] = useState(false)
 const [dbBox, setDbBox] = useState(false)
-
 
 
 
@@ -286,7 +310,7 @@ const DbBoxHandler = (e)=>{
 
                         <button 
                             onClick={DesignBoxHandler}
-                            href="#"> View</button>
+                            > View</button>
                     </li>
 
               
@@ -423,8 +447,6 @@ const DbBoxHandler = (e)=>{
             )}
         })()}
 
-
-
 {/* Desktop */}
             {(() =>{
         if (window.innerWidth > "1100") {
@@ -468,7 +490,15 @@ const DbBoxHandler = (e)=>{
                                 );})}
                         </ul>
 
-                        <button onClick={DesignBoxHandler} > View</button>
+                        <button 
+                         style={{
+                            background: designButton ? "#0080BF" : "white",
+                            color: designButton ? "white" : "#0080BF",
+                            transition: ".3s"}}
+                        onMouseEnter={DesignButtonHandler}
+                        onMouseLeave={DesignButtonHandler}
+                        onClick={DesignBoxHandler}
+                         > View</button>
                       
                      
                     </li>
@@ -515,7 +545,13 @@ const DbBoxHandler = (e)=>{
                         
                         
                         <button 
-                            onClick={uiBoxHandler}
+                        style={{
+                            background: uiButton ? "#0080BF" : "white",
+                            color: uiButton ? "white" : "#0080BF",
+                            transition: "1s"}}
+                        onMouseEnter={UiButtonHandler}
+                        onMouseLeave={UiButtonHandler}
+                        onClick={uiBoxHandler}
                             > View</button>
                     </li>
                    
@@ -562,7 +598,13 @@ const DbBoxHandler = (e)=>{
                         </ul>
                         
                         <button 
-                            onClick={DbBoxHandler}
+                        style={{
+                            background: dbButton ? "#0080BF" : "white",
+                            color: dbButton ? "white" : "#0080BF",
+                            transition: "1s"}}
+                        onMouseEnter={DbButtonHandler}
+                        onMouseLeave={DbButtonHandler}
+                        onClick={DbBoxHandler}
                             > View</button>
                     </li>
               
@@ -612,7 +654,13 @@ const DbBoxHandler = (e)=>{
 
                         </ul>
                         <button 
-                            onClick={ServerBoxHandler}
+                        style={{
+                            background: serverButton ? "#0080BF" : "white",
+                            color: serverButton ? "white" : "#0080BF",
+                            transition: "1s"}}
+                        onMouseEnter={(e)=> ServerButtonHandler(e)}
+                        onMouseLeave={ServerButtonHandler}
+                        onClick={ServerBoxHandler}
                             > View</button>
                     </li>
 

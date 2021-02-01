@@ -15,6 +15,8 @@ const [homePage, setHomePage] = useState(true)
 const [aboutMePage, setAboutMePage] = useState(false)
 
 
+const [flipCard, setFlipCard] = useState(false)
+
 
 
     const showDetails = (data, e)=> {
@@ -43,6 +45,7 @@ const [aboutMePage, setAboutMePage] = useState(false)
         setDetails(!details)
 
         console.log(`${like}`);
+        setFlipCard(!flipCard)
 
      
         
@@ -239,8 +242,7 @@ const filterWebAppsHandler =()=>{
                 id="projectsTab"
                 // onClick={mainNavHandler}
                 onClick={filterWebAppsHandler}
-                
-               
+                onMouseEnter={filterWebAppsHandler}
                 >Web Apps</a>
 
 
@@ -253,6 +255,7 @@ const filterWebAppsHandler =()=>{
                 id="aboutMeTab"
                 // onClick={mainNavHandler}
                 onClick={filterWebsitesHandler}
+                onMouseEnter={filterWebsitesHandler}
                 >Websites</a>
             </nav>
             
@@ -276,6 +279,23 @@ const filterWebAppsHandler =()=>{
                         if (project.type === cSharp || project.type === mern || project.type === python)  {
                         return(
                         <li 
+
+                             style={{ 
+                                position: project.details ? `relative` : `static`,
+                                // width: project.details ? "100%" : "300px",
+                                transform: project.details ? `translateY(${0}px)` : `translateY(${110}px)`,
+                                // transform: project.details ? `[{ rotate: '180deg' }]` : `[{ rotate: '180deg' }]`,
+                                // transform: project.details ? [{ rotate: "180deg" }] : [{ rotate: "0deg" }] ,
+                                // transform: project.details ? [{ rotateY: "180deg" }]: [{ rotateY: "45deg" }],
+                                transition: ".5s"
+                                
+
+                            }}
+                             
+                            onClick={ (e) =>showDetails(project, e)}
+                            onMouseEnter={ (e) =>showDetails(project, e)} 
+                            onMouseLeave={ (e) =>showDetails(project, e)} 
+
                         
                         className="project1-container">
                             {/* <h2>{project.title}</h2> */}
@@ -283,7 +303,7 @@ const filterWebAppsHandler =()=>{
                                     if (project.details === false) {
                                         return(
                                             <aside>
-                                                <h2>{project.type}</h2>
+                                                <h2>{project.name}</h2>
                                             </aside>
                                         )}
                                 })()}
@@ -519,8 +539,6 @@ const filterWebAppsHandler =()=>{
                                            
                                             <a  
                                             name={project._id}
-                                            onClick={ (e) =>showDetails(project, e)}
-                                            onMouseEnter={ (e) =>showDetails(project, e)} 
                                             style={{color: `#${project.color}` }  }
                                             >Details</a>
                                         )}
@@ -542,11 +560,17 @@ const filterWebAppsHandler =()=>{
 
                                                   
                              
-
+                            {(() =>{
+                                    if (project.details === true) {
+                                        return(
 
                                 <a href={project.urlLink} target="blank"> 
-                                <button style={{background: `#${project.color}`} }>{project.linkType }</button> 
+                                <button style={{
+                                    background: `#${project.color}`} }>{project.linkType }</button> 
                                </a>
+
+                            )}
+                            })()}
 
                             </footer>
                         </li>

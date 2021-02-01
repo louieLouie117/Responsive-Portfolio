@@ -59,6 +59,18 @@
     border-radius: 20px;
 }
 
+.myStory-container aside>ul>li button{
+    background: white;
+    color: #0080BF;
+    font: 1.1em sans-serif;
+    height: 30px;
+    border-radius: 10px;
+    border: solid #0080BF 1px;
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+
+}
 
 
 
