@@ -139,7 +139,7 @@ const DbBoxHandler = (e)=>{
          console.log(err);
      })
 
-     alert(`You are the ${data.educationLikes} person to like Coding Dojo 😊`)
+    //  alert(`You are the ${data.educationLikes} person to like Coding Dojo 😊`)
  
     }
 
@@ -244,8 +244,7 @@ const DbBoxHandler = (e)=>{
 
                             <a 
                             value={likeEd}
-                            onClick={ (e) => educationLikeHandler(myInfo, e)}
-                            href="#"> like</a>
+                            onClick={ (e) => educationLikeHandler(myInfo, e)}> like</a>
                    <h3>]</h3>
 
                         </footer> 

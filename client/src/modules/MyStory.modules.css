@@ -1,4 +1,6 @@
-    
+ footer a{
+     cursor: pointer;
+ }   
 .myStory-container{
     display: grid;
     max-width: 90em;
@@ -59,7 +61,7 @@
     border-radius: 20px;
 }
 
-.myStory-container aside>ul>li button{
+.myStory-container aside>ul>li>button{
     background: white;
     color: #0080BF;
     font: 1.1em sans-serif;
