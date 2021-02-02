@@ -609,7 +609,7 @@ const filterWebAppsHandler =()=>{
                         return(
 
 
-                        <li 
+                        <li  
 
                              style={{ 
                                 position: project.details ? `relative` : `static`,

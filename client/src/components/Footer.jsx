@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import AlgosBasic from './AlgosBasic';
 import Coffee from './Coffee';
+import LinkCard from './LinkCard';
 import ProjectsBackstory from './ProjectsBackstory';
-import StatusUpdates from './StatusUpdates';
 
 
 
@@ -29,6 +29,8 @@ const Footer = props => {
   const [projectsTab, setProjectTab] = useState(false)
   const [apprenticeshipTab, setApprenticeshipTab] = useState(false)
   const [statusUpdates, setStatusUpdates] = useState(false)
+  const [linkCard, setLinkCard] = useState(false)
+
 
 
 
@@ -45,13 +47,9 @@ const Footer = props => {
     setProjectTab(false)
     setApprenticeshipTab(false)
     setStatusUpdates(false)
+    setLinkCard(false)
 
 }
-
-
-
-  
-
 
   
   const projectsTabHandler=()=>{
@@ -60,8 +58,7 @@ const Footer = props => {
       setProjectTab(true)
       setApprenticeshipTab(false)
       setStatusUpdates(false)
-
-
+      setLinkCard(false)
   }
   
   const apprenticeHandler=()=>{
@@ -70,6 +67,7 @@ const Footer = props => {
       setProjectTab(false)
       setApprenticeshipTab(true)
       setStatusUpdates(false)
+      setLinkCard(false)
 
 
   }
@@ -81,8 +79,20 @@ const Footer = props => {
       setProjectTab(false)
       setApprenticeshipTab(false)
       setStatusUpdates(true)
+      setLinkCard(false)
 
   }
+
+
+  const linkCardHandler=()=>{
+    console.log("apprenticeship tab was click");
+    setCodingTab(false)
+    setProjectTab(false)
+    setApprenticeshipTab(false)
+    setStatusUpdates(false)
+    setLinkCard(true)
+
+}
 
 
     return (
@@ -98,7 +108,6 @@ const Footer = props => {
                     color: codingTab? "#0080BF":"white",
                     transition: ".3s"}}
                     onClick={codingTabHandler}
-                    // onMouseEnter={codingTabHandler}
 
 
                     >Coding Challenges</button>
@@ -110,7 +119,6 @@ const Footer = props => {
                         color: apprenticeshipTab? "#0080BF":"white",
                         transition: ".3s"}}
                         onClick={apprenticeHandler}
-                        // onMouseEnter={apprenticeHandler}
                     
                     >SPA Development</button>
                 </li>
@@ -121,7 +129,6 @@ const Footer = props => {
                     color: projectsTab? "#0080BF":"white",
                     transition: ".3s"}}
                     onClick={projectsTabHandler}
-                    // onMouseEnter={projectsTabHandler}
 
 
                 >App Laboratory</button>
@@ -134,9 +141,19 @@ const Footer = props => {
                         color: statusUpdates? "#0080BF":"white",
                         transition: ".3s"}}
                         onClick={statusUpdatesHandler}
-                        // onMouseEnter={statusUpdatesHandler}
                 
                 >Updates</button>
+                </li>
+                
+                <li>
+                <button
+                    style={{
+                        background: linkCard? "whitesmoke" : "#0080BF",
+                        color: linkCard? "#0080BF":"white",
+                        transition: ".3s"}}
+                        onClick={linkCardHandler}
+                
+                >About Me</button>
                 </li>
             </ul>
 
@@ -168,9 +185,9 @@ const Footer = props => {
 
       
       <section 
-       style={{ display: statusUpdates ? "grid" : "none"}}
+       style={{ display: linkCard ? "grid" : "none"}}
                 >
-                  <StatusUpdates></StatusUpdates>
+                <LinkCard></LinkCard>
       </section>
 
     </div>
