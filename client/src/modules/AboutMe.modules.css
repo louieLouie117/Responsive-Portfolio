@@ -102,7 +102,6 @@
 .projectBackStory-container{
     background: whitesmoke;
     z-index: 20;
-    height: 95vh;
     overflow: scroll;
     justify-self: center;
     overflow-x: hidden;
@@ -152,7 +151,6 @@
 .statusUpdates-container{
     background: whitesmoke;
     z-index: 20;
-    height: 95vh;
     overflow: scroll;
     overflow-x: hidden;
     justify-self: center;
@@ -206,7 +204,6 @@
     display: grid;
     row-gap: 30px;
     grid-template-rows: 200px;
-    height: 90vh;
     align-content: center;
     z-index: 20;
     max-width: 60em;

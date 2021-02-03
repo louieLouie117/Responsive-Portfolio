@@ -242,7 +242,7 @@ li ::-webkit-scrollbar {
 
 @media screen and (min-width: 1200px){
   .cardItems ul li {
-    margin-left: 60px;
+    margin-left: 130px;
   }
 }
 
@@ -635,7 +635,8 @@ nav{
   display: grid;
   background: whitesmoke;
   justify-self: center;
-  height: 90vh;
+  margin-top: 40px;
+
 }
 
 
@@ -679,31 +680,68 @@ nav{
 }
 
 
-.linkCard-container main{
+.linkCard-container>main{
+  display: grid;
+  row-gap: 10px;
+  align-content: flex-start;
+  justify-self: right;
   background: #0080BF;
   max-width: 400px;
-  height: 600px;
+  height: 550px;
+  color: white;
+  padding: 20px;
+ font: 1em sans-serif;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.446);
 }
 
+.linkCard-container h1 {
+  font-weight: normal;
+
+}
+
+.linkCard-container p{
+  line-height: 25px;
+}
+
+.linkCard-container h3{
+   margin: 0;
+  font-weight: normal;
+
+}
+
+.linkCard-container button{
+  border: solid 2px white;
+  border-radius: 10px;
+  background: #0080BF;
+  color: white;
+  width: 100px;
+  font: 1em sans-serif;
+  height: 40px;
+}
+
+.tabContent-container section{
+  height: 95vh;
+}
 
 @media screen and (min-width: 1100px){
 
   .linkCard-container{
     grid-template-columns: 1fr 1fr;
     padding-top: 100px;
+    margin-top: 0;
   }
 
-  .linkCard-container header{
+  .linkCard-container>header{
     grid-row: 1/2;
     grid-column: 2/3;
     align-self: center;
   }
 
-  .linkCard-container main{
+  .linkCard-container>main{
     grid-row: 1/2;
     grid-column: 1/2;
     align-self: center;
-
+    padding: 40px;
   }
 
   

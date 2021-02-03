@@ -196,7 +196,7 @@ const filterWebAppsHandler =()=>{
     }, [details])
 
  
-    if(project === null){return(<h2>Loading...</h2>)}
+    if(project === null){return(<h2>Loading db...</h2>)}
 
     
 
@@ -289,8 +289,8 @@ const filterWebAppsHandler =()=>{
 
                              style={{ 
                                 position: project.details ? `relative` : `static`,
-                                // width: project.details ? "100%" : "300px",
                                 transform: project.details ? `translateY(${0}px)` : `translateY(${110}px)`,
+                                // width: project.details ? "100%" : "300px",
                                 // transform: project.details ? `[{ rotate: '180deg' }]` : `[{ rotate: '180deg' }]`,
                                 // transform: project.details ? [{ rotate: "180deg" }] : [{ rotate: "0deg" }] ,
                                 // transform: project.details ? [{ rotateY: "180deg" }]: [{ rotateY: "45deg" }],
@@ -302,7 +302,8 @@ const filterWebAppsHandler =()=>{
                              
                             onClick={ (e) =>showDetails(project, e)}
                             // onMouseEnter={ (e) =>showDetails(project, e)} 
-                            onMouseLeave={ (e) =>showDetails(project, e)} 
+                            // onMouseLeave={ (e) =>showDetails(project, e)} 
+                            
 
                         
                         className="project1-container">
@@ -553,7 +554,7 @@ const filterWebAppsHandler =()=>{
                                 })()}
                             
 
-                            {(() =>{
+                            {/* {(() =>{
                                     if (project.details === true) {
                                         return(
                                             <a  
@@ -564,7 +565,7 @@ const filterWebAppsHandler =()=>{
                                             >Image</a>
                                           
                                         )}
-                                })()}
+                                })()} */}
 
                                                   
                              
@@ -877,7 +878,7 @@ const filterWebAppsHandler =()=>{
                                 })()}
                             
 
-                            {(() =>{
+                            {/* {(() =>{
                                     if (project.details === true) {
                                         return(
                                             <a  
@@ -888,7 +889,7 @@ const filterWebAppsHandler =()=>{
                                             >Image</a>
                                           
                                         )}
-                                })()}
+                                })()} */}
 
                                                   
                              

@@ -208,8 +208,8 @@ const DbBoxHandler = (e)=>{
     }, [])
 
 
-    if(myInfo === null){return(<h2>Loading...</h2>)}
-    if(myProcess === null){return(<h2>Loading...</h2>)}
+    if(myInfo === null){return(<h2>Loading db...</h2>)}
+    if(myProcess === null){return(<h2>Loading db...</h2>)}
     
 
     return (

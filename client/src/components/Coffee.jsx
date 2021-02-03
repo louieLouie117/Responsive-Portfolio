@@ -19,7 +19,7 @@ const apiGetAllMyProcess = 'http://localhost:8000/api/myProcess'
     }, [])
     
     
-    if(myProcess === null){return(<h2>Loading...</h2>)}
+    if(myProcess === null){return(<h2>Loading db...</h2>)}
     return (
         <div className="coffee-container">
 

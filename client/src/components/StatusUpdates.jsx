@@ -18,7 +18,7 @@ const StatusUpdates = props => {
     }, [])
     
     
-    if(myProcess === null){return(<h2>Loading...</h2>)}
+    if(myProcess === null){return(<h2>Loading db...</h2>)}
 
 
 

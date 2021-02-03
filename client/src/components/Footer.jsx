@@ -3,6 +3,7 @@ import AlgosBasic from './AlgosBasic';
 import Coffee from './Coffee';
 import LinkCard from './LinkCard';
 import ProjectsBackstory from './ProjectsBackstory';
+import StatusUpdates from './StatusUpdates';
 
 
 
@@ -163,6 +164,8 @@ const Footer = props => {
       
 </div>
 
+<div className="tabContent-container">
+
     <section 
        style={{ display: codingTab ? "grid" : "none"}}
                 >
@@ -185,11 +188,17 @@ const Footer = props => {
 
       
       <section 
+       style={{ display: statusUpdates ? "grid" : "none"}}
+                >
+                 <StatusUpdates></StatusUpdates>
+      </section>
+      
+      <section 
        style={{ display: linkCard ? "grid" : "none"}}
                 >
                 <LinkCard></LinkCard>
       </section>
-
+</div>
     </div>
     )
 }

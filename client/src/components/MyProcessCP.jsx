@@ -122,7 +122,7 @@ useEffect(()=>{
 }, [filter, deleteItem, title])
 
 
-if(myProcess === null){return(<h2>Loading...</h2>)}
+if(myProcess === null){return(<h2>Loading db...</h2>)}
 
     return (
         <div className="myProcess-container">
