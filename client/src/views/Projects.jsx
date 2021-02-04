@@ -289,7 +289,7 @@ const filterWebAppsHandler =()=>{
 
                              style={{ 
                                 position: project.details ? `relative` : `static`,
-                                transform: project.details ? `translateY(${0}px)` : `translateY(${110}px)`,
+                                // transform: project.details ? `translateY(${0}px)` : `translateY(${110}px)`,
                                 // width: project.details ? "100%" : "300px",
                                 // transform: project.details ? `[{ rotate: '180deg' }]` : `[{ rotate: '180deg' }]`,
                                 // transform: project.details ? [{ rotate: "180deg" }] : [{ rotate: "0deg" }] ,
@@ -300,7 +300,7 @@ const filterWebAppsHandler =()=>{
                             }}
                            
                              
-                            onClick={ (e) =>showDetails(project, e)}
+                            // onClick={ (e) =>showDetails(project, e)}
                             // onMouseEnter={ (e) =>showDetails(project, e)} 
                             // onMouseLeave={ (e) =>showDetails(project, e)} 
                             
@@ -548,24 +548,24 @@ const filterWebAppsHandler =()=>{
                                            
                                             <a  
                                             name={project._id}
+                                            onClick={ (e) =>showDetails(project, e)}
                                             style={{color: `#${project.color}` }  }
                                             >Details</a>
                                         )}
                                 })()}
                             
 
-                            {/* {(() =>{
+                            {(() =>{
                                     if (project.details === true) {
                                         return(
                                             <a  
                                             name={project._id}
                                             onClick={ (e) =>showDetails(project, e)}
-                                            // onMouseEnter={ (e) =>showDetails(project, e)} 
                                             style={{color: `#${project.color}` }  }
-                                            >Image</a>
+                                            >Close</a>
                                           
                                         )}
-                                })()} */}
+                                })()}
 
                                                   
                              
