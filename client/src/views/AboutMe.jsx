@@ -7,6 +7,7 @@ import { set } from 'mongoose'
 import ProjectsBackstory from '../components/ProjectsBackstory'
 import StatusUpdates from '../components/StatusUpdates'
 import Coffee from '../components/Coffee'
+import MyHeader from '../components/MyHeader'
 
 
 const AboutMe = props => {
@@ -117,14 +118,7 @@ const AboutMe = props => {
 
 
             
-                        <section 
-                                              
-                        // style={{display: MyStoryComponentMobile ? "grid" : "none",}}
-                        > 
-                        
-                      
-                            <MyStory></MyStory>
-                        </section>
+                 
            
 
             

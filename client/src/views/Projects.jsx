@@ -22,6 +22,17 @@ const [flipCard, setFlipCard] = useState(false)
     const showDetails = (data, e)=> {
          
         // change between true or false 
+        console.log("project details", data.project)
+
+
+        // const itemID = e.target.id ;
+
+        // console.log(itemID);
+
+        // document.getElementById(itemID).style.display = "red"
+
+
+
         data.details = !data.details
         setDetails(" ")
         setDetails("change")
@@ -125,8 +136,7 @@ const [flipCard, setFlipCard] = useState(false)
             
     }
 
-
-    const [cSharp, setCsharp] = useState("C#")
+const [cSharp, setCsharp] = useState("C#")
 const [mern, setMern] = useState("MERN")
 const [python, setPython] = useState("Python")
 
@@ -208,7 +218,7 @@ const filterWebAppsHandler =()=>{
         className="projectsPage-container"  
         style={ { display: projectsPage ? "grid" : "none" }} 
          > 
-            <header>      
+            {/* <header>      
                 <div className="slogan-container"> 
                     <p>Dream it.</p>
                     <p>Design it.</p>
@@ -218,9 +228,9 @@ const filterWebAppsHandler =()=>{
                 <img src="/img/portfolioImg.png" alt=""/>
                 
 
-            </header>
+            </header> */}
 
-            <nav>
+            {/* <nav>
                 <div className="mainNav-container">    
             <nav> 
             <div className="tabIcon"
@@ -258,7 +268,7 @@ const filterWebAppsHandler =()=>{
             
             
         </div>
-            </nav>
+            </nav> */}
 
             <main>
                 <picture class="headerImage-container">
@@ -281,7 +291,8 @@ const filterWebAppsHandler =()=>{
                             
                     <ul>
                     {project.map((project)=>{
-                        if (project.type === cSharp || project.type === mern || project.type === python)  {
+                        // if (project.type === cSharp || project.type === mern || project.type === python)
+                          {
                         return(
 
 
@@ -606,11 +617,12 @@ const filterWebAppsHandler =()=>{
                             
                     <ul>
                     {project.map((project)=>{
-                        if (project.type === cSharp || project.type === mern || project.type === python)  {
+                        // if (project.type === cSharp || project.type === mern || project.type === python)  
+                        {
                         return(
 
 
-                        <li  
+                        <li  id={project._id}
 
                              style={{ 
                                 position: project.details ? `relative` : `static`,
@@ -636,7 +648,7 @@ const filterWebAppsHandler =()=>{
                                     if (project.details === false) {
                                         return(
                                             <aside>
-                                                <h2>{project.name}</h2>
+                                                <h2  id={project._id}>{project.name}</h2>
                                             </aside>
                                         )}
                                 })()}
@@ -645,7 +657,9 @@ const filterWebAppsHandler =()=>{
                             {(() =>{
                                     if (project.details === true) {
                                         return(
-                                            <div className="likeProjects-container">
+
+                                            <div id={project._id } >
+                                            <div  className="likeProjects-container">
                                                 <h2>{project.type}</h2>
                                                 <aside
                                                 style={{background: `#${project.color}` }  }
@@ -663,6 +677,7 @@ const filterWebAppsHandler =()=>{
                                 
                                             
                                             </div>
+                                            </div>
                                         )}
                                 })()}
                             
@@ -674,7 +689,7 @@ const filterWebAppsHandler =()=>{
                                     if (project.name === "Progressly Page") {
                                         return(
 
-                             <img 
+                             <img   id={project._id}
                              style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
                              src="img/projects/progresslyPage.png"/>
 
@@ -685,7 +700,7 @@ const filterWebAppsHandler =()=>{
                                     if (project.name === "Garage Sally") {
                                         return(
 
-                             <img 
+                             <img   id={project._id}
                              style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
                              src="img/projects/garageSally.png"/>
 
@@ -697,7 +712,7 @@ const filterWebAppsHandler =()=>{
                                     if (project.name === "Budget Box") {
                                         return(
 
-                             <img
+                             <img  id={project._id}
                              style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
                               src="img/projects/budgetBox.png"/>
 
@@ -708,7 +723,7 @@ const filterWebAppsHandler =()=>{
                                     if (project.name === "Delta Sports Bar") {
                                         return(
 
-                             <img
+                             <img  id={project._id}
                              style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
                               src="img/projects/deltaSportsBar.png"/>
 
@@ -719,7 +734,7 @@ const filterWebAppsHandler =()=>{
                                     if (project.name === "Pace Builders") {
                                         return(
 
-                             <img
+                             <img  id={project._id}
                              style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
                               src="img/projects/paceBuilders.png"/>
 
@@ -731,7 +746,7 @@ const filterWebAppsHandler =()=>{
                                     if (project.name === "JR Landscaping") {
                                         return(
 
-                             <img
+                             <img  id={project._id}
                              style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
                               src="img/projects/jrcustomer.png"/>
 
@@ -742,7 +757,7 @@ const filterWebAppsHandler =()=>{
                                     if (project.name === "Luie Design") {
                                         return(
 
-                             <img
+                             <img  id={project._id}
                              style={{ filter: project.details ? "blur(3px)" : "blur(0px)"}}
                               src="img/projects/luieDesign.png"/>
 
@@ -761,7 +776,7 @@ const filterWebAppsHandler =()=>{
                             {(() =>{
                                     if (project.type === "C#") {
                                         return(     
-                                    <div id="icon-container">
+                                    <div id="icon-container" >
 
                                         <div><img src="/img/Icons/iconXD.png" alt=""/></div>
                                         <p>Mockup UI</p>

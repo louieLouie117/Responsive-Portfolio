@@ -1,7 +1,9 @@
+import { set } from 'mongoose';
 import React, {useState} from 'react'
 import AlgosBasic from './AlgosBasic';
 import Coffee from './Coffee';
 import LinkCard from './LinkCard';
+import MyStory from './MyStory';
 import ProjectsBackstory from './ProjectsBackstory';
 import StatusUpdates from './StatusUpdates';
 
@@ -26,7 +28,8 @@ const Footer = props => {
 
 
   const [myStoryTab, setMyStoryTab] = useState(true)
-  const [codingTab, setCodingTab] = useState(true)
+  const [workFlow, setWorkFlow] = useState(true)
+  const [codingTab, setCodingTab] = useState(false)
   const [projectsTab, setProjectTab] = useState(false)
   const [apprenticeshipTab, setApprenticeshipTab] = useState(false)
   const [statusUpdates, setStatusUpdates] = useState(false)
@@ -37,13 +40,24 @@ const Footer = props => {
 
 
 
+ 
 
+  const workFlowTabHandler=()=>{
+setWorkFlow(true)
+    setCodingTab(false)
+    setProjectTab(false)
+    setApprenticeshipTab(false)
+    setStatusUpdates(false)
+    setLinkCard(false)
+
+}
 
 
  
 
   const codingTabHandler=()=>{
     console.log("coding tab was click");
+    setWorkFlow(false)
     setCodingTab(true)
     setProjectTab(false)
     setApprenticeshipTab(false)
@@ -55,6 +69,7 @@ const Footer = props => {
   
   const projectsTabHandler=()=>{
       console.log("projects tab was click");
+    setWorkFlow(false)
       setCodingTab(false)
       setProjectTab(true)
       setApprenticeshipTab(false)
@@ -64,6 +79,7 @@ const Footer = props => {
   
   const apprenticeHandler=()=>{
       console.log("apprenticeship tab was click");
+    setWorkFlow(false)
       setCodingTab(false)
       setProjectTab(false)
       setApprenticeshipTab(true)
@@ -76,6 +92,7 @@ const Footer = props => {
 
   const statusUpdatesHandler=()=>{
       console.log("apprenticeship tab was click");
+    setWorkFlow(false)
       setCodingTab(false)
       setProjectTab(false)
       setApprenticeshipTab(false)
@@ -87,6 +104,7 @@ const Footer = props => {
 
   const linkCardHandler=()=>{
     console.log("apprenticeship tab was click");
+    setWorkFlow(false)
     setCodingTab(false)
     setProjectTab(false)
     setApprenticeshipTab(false)
@@ -102,11 +120,23 @@ const Footer = props => {
         <footer>
             <div className="footerNav">   
             <ul>  
+
+            <li>       
+                    <button
+                    style={{
+                    background: workFlow ? "whitesmoke" : "#2862AF",
+                    color: workFlow ? "#2862AF":"white",
+                    transition: ".3s"}}
+                    onClick={workFlowTabHandler}
+
+
+                    >My Workflow</button>
+                </li>
                 <li>       
                     <button
                     style={{
-                    background: codingTab? "whitesmoke" : "#0080BF",
-                    color: codingTab? "#0080BF":"white",
+                    background: codingTab? "whitesmoke" : "#2862AF",
+                    color: codingTab? "#2862AF":"white",
                     transition: ".3s"}}
                     onClick={codingTabHandler}
 
@@ -116,8 +146,8 @@ const Footer = props => {
                 <li>
                     <button
                      style={{
-                        background: apprenticeshipTab? "whitesmoke" : "#0080BF",
-                        color: apprenticeshipTab? "#0080BF":"white",
+                        background: apprenticeshipTab? "whitesmoke" : "#2862AF",
+                        color: apprenticeshipTab? "#2862AF":"white",
                         transition: ".3s"}}
                         onClick={apprenticeHandler}
                     
@@ -126,8 +156,8 @@ const Footer = props => {
                 <li>
                 <button
                 style={{
-                    background: projectsTab? "whitesmoke" : "#0080BF",
-                    color: projectsTab? "#0080BF":"white",
+                    background: projectsTab? "whitesmoke" : "#2862AF",
+                    color: projectsTab? "#2862AF":"white",
                     transition: ".3s"}}
                     onClick={projectsTabHandler}
 
@@ -138,8 +168,8 @@ const Footer = props => {
                 <li>
                 <button
                     style={{
-                        background: statusUpdates? "whitesmoke" : "#0080BF",
-                        color: statusUpdates? "#0080BF":"white",
+                        background: statusUpdates? "whitesmoke" : "#2862AF",
+                        color: statusUpdates? "#2862AF":"white",
                         transition: ".3s"}}
                         onClick={statusUpdatesHandler}
                 
@@ -149,8 +179,8 @@ const Footer = props => {
                 <li>
                 <button
                     style={{
-                        background: linkCard? "whitesmoke" : "#0080BF",
-                        color: linkCard? "#0080BF":"white",
+                        background: linkCard? "whitesmoke" : "#2862AF",
+                        color: linkCard? "#2862AF":"white",
                         transition: ".3s"}}
                         onClick={linkCardHandler}
                 
@@ -165,6 +195,12 @@ const Footer = props => {
 </div>
 
 <div className="tabContent-container">
+
+<section 
+       style={{ display: workFlow ? "grid" : "none"}}
+                >
+                   <MyStory></MyStory>
+      </section>
 
     <section 
        style={{ display: codingTab ? "grid" : "none"}}

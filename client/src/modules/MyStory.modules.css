@@ -5,7 +5,7 @@
     display: grid;
     max-width: 90em;
     background: whitesmoke;
-    justify-items: center;
+    /* justify-items: center; */
     justify-self: center;
     margin-top: 0px;
     z-index: 13;
@@ -19,6 +19,7 @@
     padding-top: 0px;
     row-gap: 20px;
     z-index: 14;
+    align-self: center;
 
 }
 
@@ -28,6 +29,8 @@
 
 .myStory-container aside h2{
     padding: 0 10px;
+    color: #2862AF;
+
 }
 
 .myStory-container aside h3{
@@ -110,10 +113,10 @@
 
 .myStory-container aside ul li h3{
     font: 1.3em sans-serif;
-    color: #0080BF;
+    color: black;
     padding: 0;
     margin: 0;
-    font-weight: bold;
+    /* font-weight: bold; */
 
 }
 
@@ -143,7 +146,7 @@
 
 
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 750px) {
     .myStory-container{
     position: relative;
     column-gap: 0PX;
@@ -156,7 +159,7 @@
 
 
     .stage1{
-        background: white;
+        background: red;
         grid-row: 1/2;
         grid-column: 1/2;
     }
@@ -186,6 +189,7 @@
 .myStory-container aside h3{
     padding: 0 10px;
     font: 1.3em sans-serif;
+    
 }
 
 
@@ -274,9 +278,10 @@
 .likeEducation-container>footer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-items: center;
+    /* justify-items: center; */
     align-items: center;
     width: 90px;
+
 }
 
 
