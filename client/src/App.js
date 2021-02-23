@@ -9,6 +9,7 @@ import Dashboard from './views/Dashboard';
 import Registration from './components/Registration';
 import SignIn from './components/SignIn';
 import Footer from './components/Footer';
+import MyHeader from './components/MyHeader';
 
 
 
@@ -37,13 +38,19 @@ function App() {
         
 
         </div>
+
+
+        <div>
+          <MyHeader></MyHeader>
+        </div>
+
         <div className="aboutMePage-container"
   
         className="homePage-container">
 
           <AboutMe></AboutMe>
         </div>
-
+    
 
         
 
