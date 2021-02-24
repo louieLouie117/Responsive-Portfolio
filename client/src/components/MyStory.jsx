@@ -251,7 +251,7 @@ const DbBoxHandler = (e)=>{
     className="stage1"                    
     style={{
          position: designBox ? "fixed" : "static",
-         width: designBox ? "99%" : "300px",
+         width: designBox ? "" : "300px",
          top: designBox ? 0 : 0,
          left: designBox ? 0 : 0,
          height: designBox ? "95%" : "300px",
@@ -304,7 +304,7 @@ const DbBoxHandler = (e)=>{
     className="stage3"                    
     style={{
          position: dbBox ? "fixed" : "relative",
-         width: dbBox ? "99%" : "300px",
+         width: dbBox ? "" : "300px",
          top: designBox ? 0 : 0,
          left: designBox ? 0 : 0,
          height: dbBox ? "95%" : "300px",
@@ -361,7 +361,7 @@ const DbBoxHandler = (e)=>{
     className="stage2"                    
      style={{
          position: uiDevelopmentBox ? "fixed" : "relative",
-         width: uiDevelopmentBox ? "99%" : "300px",
+         width: uiDevelopmentBox ? "" : "300px",
          top: designBox ? 0 : 0,
          left: designBox ? 0 : 0,
          height: uiDevelopmentBox ? "95%" : "300px",
@@ -416,7 +416,7 @@ const DbBoxHandler = (e)=>{
     className="stage4"                    
     style={{
          position: serverBox ? "fixed" : "relative",
-         width: serverBox ? "99%" : "300px",
+         width: serverBox ? "" : "300px",
          top: designBox ? 0 : 0,
          left: designBox ? 0 : 0,
          height: serverBox ? "95%" : "300px",
