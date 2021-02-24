@@ -4,11 +4,13 @@
 .myStory-container{
     display: grid;
     max-width: 90em;
-    background: whitesmoke;
+    background: none;
     /* justify-items: center; */
     justify-self: center;
     margin-top: 0px;
     z-index: 13;
+    margin-top: 50px;
+    height: auto;
 
 
 }
@@ -27,11 +29,6 @@
     padding: 0 10px;
 }
 
-.myStory-container aside h2{
-    padding: 0 10px;
-    color: #2862AF;
-
-}
 
 .myStory-container aside h3{
     padding: 0 10px;
@@ -125,9 +122,6 @@
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.275);
-
-
-
 }
 
 
@@ -144,9 +138,13 @@
 }
 
 
+.myStory-container aside h2{
+    padding: 0 10px;
+    color: #2862AF;
 
+}
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1500px) {
     .myStory-container{
     position: relative;
     column-gap: 0PX;
@@ -157,31 +155,34 @@
     }
 
 
-
     .stage1{
-        background: red;
-        grid-row: 1/2;
+        grid-row: 2/3;
         grid-column: 1/2;
     }
     
     
     .stage2{
         background: white;
-        grid-row: 1/2;
-        grid-column: 2/3;
+        grid-row: 2/3;
+        grid-column: 3/4;
     }
     
     
+    #phase2{
+          grid-row: 1/2;
+        grid-column: 3/4;
+    }
+    
     .stage3{
         background: white;
-        grid-row: 2/3;
+        grid-row: 3/4;
         grid-column: 1/2;
     }
     
     .stage4{
         background: white;
-        grid-row: 2/3;
-        grid-column: 2/3;
+        grid-row: 3/4;
+        grid-column: 3/4;
     }
     
 
@@ -192,8 +193,19 @@
     
 }
 
+.myStory-container aside{
+    display: grid;
+    justify-items: center;
+
+}
+
+
 
  
+}
+
+#lineBrake{
+    display: none;
 }
 
 
@@ -205,23 +217,33 @@
         column-gap: 20px;
     }
 
+    #lineBrake{
+        display: block;
+        grid-row: 1/4;
+        grid-column: 2/3;
+        height: 100%;
+        width: 5px;
+        background: white;
+    }
+
 
     .myStory-container aside {
     row-gap: 0;
 
     }
-.myStory-container aside>ul {
-    grid-template-columns: 360px 360px;
-    grid-template-rows: 360px 360px;
-    background: #007fbf19;
-    padding: 20px;
-    border-radius: 500px;
-    justify-self: center;
-    border: solid 5px white;
-    width: auto;
-    height: auto;
+    .myStory-container aside>ul {
+        grid-template-columns: 360px 10px 360px;
+        grid-template-rows: 30px 360px 360px;
+        background: #007fbf19;
+        padding: 20px;
+        border-radius: 500px;
+        justify-self: center;
+        border: solid 5px white;
+        width: auto;
+        height: auto;
 
-}
+    }
+
 
 
 
@@ -289,6 +311,13 @@
 #heartIcon {
     height: 15px;
     width: 15px;
+  }
+
+
+  .stages-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
   }
 
 
