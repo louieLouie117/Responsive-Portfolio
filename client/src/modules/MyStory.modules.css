@@ -15,10 +15,8 @@
 
 .myStory-container aside{
     display: grid;
-    z-index: 90;
     padding-top: 0px;
     row-gap: 20px;
-    z-index: 14;
     align-self: center;
 
 }
@@ -35,10 +33,11 @@
 
 
 .myStory-container aside ul {
-    /* background: red; */
     display: grid;
     row-gap: 20px;
     column-gap: 20px;
+    height: 100vw;
+    padding-bottom: 15px;
     /* z-index: 140; */
    
 }

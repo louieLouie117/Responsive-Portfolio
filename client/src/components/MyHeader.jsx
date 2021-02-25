@@ -1,14 +1,64 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
+import axios from 'axios'
+
 
 const MyHeader = props => {
+
+// get all data for My Info db
+const [myInfo, setMyInfo] = useState(null)
+const apiGetAllMyInfo = 'http://localhost:8000/api/myInfo'
+
+useEffect(()=>{
+    axios
+    .get(apiGetAllMyInfo)
+    .then((res) =>{
+        setMyInfo(res.data.MyInfo)
+        // console.log(res.data.Project);
+    })
+    .catch((err)=> {
+        console.log(err);
+    })
+}, [])
+
+
+
+const [myProcess, setMyProcess] = useState(null)
+const apiGetAllMyProcess = 'http://localhost:8000/api/myProcess'
+
+useEffect(()=>{
+    axios
+    .get(apiGetAllMyProcess)
+    .then((res) =>{
+        setMyProcess(res.data.MyProcess)
+        // console.log(res.data.Project);
+    })
+    .catch((err)=> {
+        console.log(err);
+    })
+}, [])
+
+
+if(myInfo === null){return(<h2>Loading db...</h2>)}
+if(myProcess === null){return(<h2>Loading db...</h2>)}
+
+
     return (
+               
         <div className="myHeader-container">
             <header>
             <div className="name-container">
             <div>
             <h3>Hello, my name is </h3>
-            <h1>Luis Cardona</h1>
-            <p>I am a creative developer.</p>
+            
+        {myInfo.map((myInfo)=>{
+            return(
+                <div>
+            <h1>{myInfo.name}</h1>
+
+            <p>{myInfo.slogan}</p>
+            </div>
+            );})}
+
             </div>
             <img src="/img/portfolioImg.png" alt=""/>
             <button>Resume</button>
@@ -19,36 +69,20 @@ const MyHeader = props => {
               <h1>My Skills</h1>
 
           <ul>
-              <li>skill1</li>
-              <li>skill2</li>
-              <li>skill3</li>
-              <li>skill4</li>
-              <li>skill5</li>
-              {/* <li>skill6</li>
-              <li>skill7</li>
-              <li>skill8</li>
-              <li>skill9</li>
-              <li>skill10</li>
-              <li>skill11</li>
-              <li>skill12</li>
-              <li>skill13</li>
-              <li>skill14</li>
-              <li>skill15</li>
-              <li>skill16</li>
-              <li>skill17</li>
-              <li>skill18</li>
-              <li>skill19</li>
-              <li>skill20</li>
-              <li>skill20</li>
-              <li>skill20</li>
-              <li>skill20</li>
-              <li>skill20</li>
-              <li>skill20</li> */}
+            {myProcess.map((myProcess)=>{ 
+            if(myProcess.category === "MySkills")
+            return(  
+                    
+                    <li>{myProcess.title}</li>
+            );})}
 
-              <button>View More</button>
+          
+
 
           </ul>
-
+              <button>View More</button>
+                                  
+         
           
             </div>
             </header>
@@ -56,19 +90,17 @@ const MyHeader = props => {
             <div className="myFocus-container">
             <h1>My Focus</h1>
 
-                <ul>
+                <ul>  
+                    {myProcess.map((myProcess)=>{ 
+                if(myProcess.category === "MyFocus")
+            return(  
+                    
                     <li>
-                    <h3>Section 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quo quis libero ullam natus quod obcaecati. Ex pariatur autem magnam deserunt laboriosam dolorum veritatis soluta sunt, animi quasi, magni repellendus.</p>
+                    <h2>{myProcess.title}</h2>
+                    <p>{myProcess.summary}</p>
                     </li>
-                    <li>
-                    <h3>Section 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quo quis libero ullam natus quod obcaecati. Ex pariatur autem magnam deserunt laboriosam dolorum veritatis soluta sunt, animi quasi, magni repellendus.</p>
-                    </li>
-                    <li>
-                    <h3>Section 1</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quo quis libero ullam natus quod obcaecati. Ex pariatur autem magnam deserunt laboriosam dolorum veritatis soluta sunt, animi quasi, magni repellendus.</p>
-                    </li>
+            );})}
+
                 
                 </ul>
             </div>

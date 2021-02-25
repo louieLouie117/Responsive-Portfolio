@@ -13,7 +13,6 @@ const MyProcessCP = props => {
 
     const submitHandler =(e)=> {
         e.preventDefault()
-        alert("create new section button was click")
         const fd = new FormData();
         fd.append('title', title);
         fd.append('category', category);
@@ -60,6 +59,7 @@ const MyProcessCP = props => {
 
      // Submit Edit Handler
      const SubmitEditHandler = (e)=>{
+         
 
         const fd = new FormData();
         fd.append('title', title );
@@ -93,7 +93,7 @@ const MyProcessCP = props => {
 // delete item from db
 const [deleteItem, setDeleteItem] = useState(null)
 const deleteHandler =(deleteId, e)=>{
-    alert("button was click")
+    // alert("button was click")
     axios.delete("http://localhost:8000/api/myProcess/delete/" + deleteId)
     .then((res)=>{
         const filterProject = myProcess.filter((myProcess)=> {
@@ -160,11 +160,19 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
                         onClick={()=> SubmitEditHandler()}                            
                         style={{display: refreshPage ? "block" : "none" }}
                         >Save Changes</button>
+
                 </form>
 
 
 
                 <footer>
+                <button
+                    onClick={()=>{setFilter("MyFocus")}}
+                    >MyFocus</button>
+
+                    <button
+                    onClick={()=>{setFilter("MySkills")}}
+                    >MySkills</button>
                     <button
                     onClick={()=>{setFilter("Design")}}
                     >Design</button>
@@ -191,6 +199,8 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
                      <button
                     onClick={()=>{setFilter("CoffeeMsg")}}
                     >Coffee Message</button>
+                    
+                
 
                   
                 </footer>

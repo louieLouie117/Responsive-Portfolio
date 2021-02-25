@@ -98,7 +98,7 @@ const Dashboard = props => {
              return( */}
         <div 
         className="dashboard-container"
-        style={{display: filter ? "grid" : "none"}}
+        // style={{display: filter ? "grid" : "none"}}
         >
         <header>
             <nav>

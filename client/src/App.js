@@ -18,9 +18,6 @@ import AboutMe from './views/AboutMe';
 
 function App() {
 
-
-
-
   return (
     <div className="App">
 
