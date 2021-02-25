@@ -254,12 +254,12 @@ const DbBoxHandler = (e)=>{
          width: designBox ? "" : "300px",
          top: designBox ? 0 : 0,
          left: designBox ? 0 : 0,
-         height: designBox ? "95%" : "auto",
+         height: designBox ? "95%" : "300px",
          padding: designBox ? "20px": "30px",
          zIndex: designBox ? "120" : "0",
          gridRow: designBox ? "1/2" : "",
          gridColumn: designBox ? "1/2" : "",
-         transition: ".3s"}}>
+         transition: "2s"}}>
         <h3>Design UX Prototype</h3>
         <img 
             style={{
@@ -287,8 +287,8 @@ const DbBoxHandler = (e)=>{
 
         <button 
          style={{
-            background: designButton ? "#0080BF" : "white",
-            color: designButton ? "white" : "#0080BF",
+            background: designButton ? "#2862AF" : "white",
+            color: designButton ? "white" : "#2862AF",
             transition: ".3s"}}
         onMouseEnter={DesignButtonHandler}
         onMouseLeave={DesignButtonHandler}
@@ -307,12 +307,12 @@ const DbBoxHandler = (e)=>{
          width: dbBox ? "" : "300px",
          top: dbBox ? 0 : 0,
          left: dbBox ? 0 : 0,
-         height: dbBox ? "95%" : "auto",
+         height: dbBox ? "95%" : "300px",
          padding: dbBox ? "20px": "30px",
          zIndex: dbBox ? "120" : "0",
          gridRow: dbBox ? "1/2" : "",
          gridColumn: dbBox ? "1/2" : "",
-         transition: ".3s"}}>
+         transition: "2s"}}>
         <h3>Relationship and db</h3>
         <img 
             style={{
@@ -346,8 +346,8 @@ const DbBoxHandler = (e)=>{
         
         <button 
         style={{
-            background: dbButton ? "#0080BF" : "white",
-            color: dbButton ? "white" : "#0080BF",
+            background: dbButton ? "#2862AF" : "white",
+            color: dbButton ? "white" : "#2862AF",
             transition: "1s"}}
         onMouseEnter={DbButtonHandler}
         onMouseLeave={DbButtonHandler}
@@ -364,12 +364,12 @@ const DbBoxHandler = (e)=>{
          width: uiDevelopmentBox ? "" : "300px",
          top: uiDevelopmentBox ? 0 : 0,
          left: uiDevelopmentBox ? 0 : 0,
-         height: uiDevelopmentBox ? "95%" : "auto",
+         height: uiDevelopmentBox ? "95%" : "300px",
          padding: uiDevelopmentBox ? "20px": "30px",
          zIndex: uiDevelopmentBox ? "120" : "0",
          gridRow: uiDevelopmentBox ? "1/2" : "",
          gridColumn: uiDevelopmentBox ? "1/2" : "",
-         transition: ".3s"}}>
+         transition: "2s"}}>
         <h3>UI Development</h3>
         <img 
             style={{
@@ -402,8 +402,8 @@ const DbBoxHandler = (e)=>{
         
         <button 
         style={{
-            background: uiButton ? "#0080BF" : "white",
-            color: uiButton ? "white" : "#0080BF",
+            background: uiButton ? "#2862AF" : "white",
+            color: uiButton ? "white" : "#2862AF",
             transition: "1s"}}
         onMouseEnter={UiButtonHandler}
         onMouseLeave={UiButtonHandler}
@@ -419,12 +419,12 @@ const DbBoxHandler = (e)=>{
          width: serverBox ? "" : "300px",
          top: serverBox ? 0 : 0,
          left: serverBox ? 0 : 0,
-         height: serverBox ? "95%" : "auto",
+         height: serverBox ? "95%" : "300px",
          padding: serverBox ? "20px": "30px",
          zIndex: serverBox ? "120" : "0",
          gridRow: serverBox ? "1/2" : "",
          gridColumn: serverBox ? "1/2" : "",
-         transition: ".3s"}}>
+         transition: "2s"}}>
         <h3>Server Development</h3>
         <img 
             style={{
@@ -459,8 +459,8 @@ const DbBoxHandler = (e)=>{
         </ul>
         <button 
         style={{
-            background: serverButton ? "#0080BF" : "white",
-            color: serverButton ? "white" : "#0080BF",
+            background: serverButton ? "#2862AF" : "white",
+            color: serverButton ? "white" : "#2862AF",
             transition: "1s"}}
         onMouseEnter={(e)=> ServerButtonHandler(e)}
         onMouseLeave={ServerButtonHandler}
