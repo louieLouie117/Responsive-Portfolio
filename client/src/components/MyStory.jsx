@@ -312,8 +312,8 @@ const DbBoxHandler = (e)=>{
          zIndex: dbBox ? "120" : "0",
          gridRow: dbBox ? "1/2" : "",
          gridColumn: dbBox ? "1/2" : "",
-         transition: "2s"}}>
-        <h3>Relationship and db</h3>
+         transition: "1s"}}>
+        <h3>Planning</h3>
         <img 
             style={{
                 height: dbBox ? "5px" : "112px",
@@ -369,7 +369,7 @@ const DbBoxHandler = (e)=>{
          zIndex: uiDevelopmentBox ? "120" : "0",
          gridRow: uiDevelopmentBox ? "1/2" : "",
          gridColumn: uiDevelopmentBox ? "1/2" : "",
-         transition: "2s"}}>
+         transition: "1s"}}>
         <h3>UI Development</h3>
         <img 
             style={{
@@ -424,7 +424,7 @@ const DbBoxHandler = (e)=>{
          zIndex: serverBox ? "120" : "0",
          gridRow: serverBox ? "1/2" : "",
          gridColumn: serverBox ? "1/2" : "",
-         transition: "2s"}}>
+         transition: "1s"}}>
         <h3>Server Development</h3>
         <img 
             style={{
