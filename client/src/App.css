@@ -780,6 +780,96 @@ nav{
 
 }
 
+.myHeader-container aside{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  justify-self: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 45em;
+  z-index: 20;
+  background: white;
+  justify-items: center;
+  justify-content: center;
+
+  }
+  .myHeader-container aside header{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+
+.myHeader-container aside header h4{
+  padding: 10px 20px;
+  /* padding-top: 20px; */
+  font: 1.3em sans-serif;
+  color: #2862AF;
+  /* border: solid 2px white; */
+}
+
+
+.myHeader-container aside form{
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  background: white;
+  row-gap: 10px;
+  padding:  20px ;
+  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.364) ;
+}
+
+
+.myHeader-container aside form input,
+.myHeader-container aside form textarea{
+  font: 1em sans-serif;
+}
+
+.myHeader-container aside form textarea{
+  display: none;
+}
+
+.myHeader-container aside button{
+  background: #2862AF;
+  color: white;
+  border: solid white 2px;
+  font: 1.3em sans-serif;
+  width: 100px;
+  padding: 5px;
+  border-radius: 20px;
+  outline: none;
+
+
+}
+
+button:focus{outline: none;}
+
+.myHeader-container aside form p{
+  color: #2862AF;
+  text-decoration: underline;
+  cursor: pointer;
+  width: 120px;
+}
+
+
+
+@media screen and (min-width: 1100px){
+  .myHeader-container aside{
+    position: absolute;
+    box-shadow: none;
+  
+    }
+
+  .myHeader-container aside form{
+    padding:  40px 150px ;
+
+  }
+
+}
+
 .myHeader-container main{
   background: whitesmoke;
   width: 100%;
@@ -866,8 +956,6 @@ h1, h3{
   font-family: Arial, Helvetica, sans-serif;
 
 
-
-
 }
 
 .mySkills-container button{
@@ -907,11 +995,12 @@ h1, h3{
 
 .myFocus-container ul li{
   display: grid;
+  grid-template-rows: 30px;
   background: white;
   padding: 20px;
   height: auto;
   width: 300px;
-  align-items: center;
+  align-items: flex-start;
   max-width: 350px;
   box-shadow:  0 0 5px rgba(128, 128, 128, 0.562);
   /* z-index: 1; */
@@ -938,7 +1027,7 @@ h1, h3{
 }
 
 
-@media screen and (min-width: 1100px){
+@media screen and (min-width: 750px){
   
 
   .mySkills-container ul {
@@ -946,17 +1035,29 @@ h1, h3{
     grid-template-columns: repeat(5, 1fr);
     row-gap: 10px;
     column-gap: 10px;
+    width: 65em;
   }
 
+
+
+  
   
 .myFocus-container ul{
   grid-template-columns: repeat(3,1fr);
   column-gap: 20px;
 
+
+
 }
 
+.myFocus-container ul li:first-of-type{
+  background: white;
+  grid-row: 1/5;
+ }
+
 .myFocus-container ul li p {
-  display: block;
+  display: none;
+  width: 300px;
 }
 }
 
@@ -1038,7 +1139,7 @@ h1, h3{
 
 
 
-@media screen and (min-width: 1100px){
+@media screen and (min-width: 500px){
   .devTools-container{
     margin:  50px 0;
 
