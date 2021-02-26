@@ -123,10 +123,67 @@ const FocusItem = (e) =>{
 
     document.getElementById(lastItemID).style.display ="none";
     document.getElementById(itemID).style.display ="block";
+    document.getElementById(itemID).style.display ="block";
+
 
 
     
 }
+
+const MoveItem = (e) =>{
+
+    var allCookies = document.cookie;
+    console.log(allCookies);
+
+    function getCookie() {
+        var item = "lastItem=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(item) == 0) {
+            console.log("get item from cookies",c);
+
+            return c.substring(item.length, c.length);
+          }
+          
+        }
+
+        return "";
+      }
+
+      var getItem = getCookie("lastItem");
+      console.log("getting item from cookies",getItem);
+      
+    const ItemSelected = e.target.id
+    console.log("Current Item:",ItemSelected);
+
+    const lastItemID = getItem + "text"
+    document.cookie = "lastItem" + "=" + ItemSelected +";";
+
+    const lastItemIDList = getItem + "list"
+    document.cookie = "lastItem" + "=" + ItemSelected +";";
+
+
+    const itemIDText = e.target.id + "text"
+    const itemID = e.target.id + "list"
+
+
+    document.getElementById(lastItemID).style.display ="none";
+    document.getElementById(itemIDText).style.display ="block";
+    document.getElementById(itemID).style.gridColumn ="1/2";
+    document.getElementById(itemID).style.gridRow ="1/5";
+    document.getElementById(lastItemIDList).style.gridColumn ="auto";
+    document.getElementById(lastItemIDList).style.gridRow ="auto";
+
+
+}
+
+
+
 
 // get all data for My Info db
 const [myInfo, setMyInfo] = useState(null)
@@ -259,12 +316,18 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
 
 
           </ul>
-        {/* <button>View More</button> */}
-                                  
-         
-          
             </div>
             </header>
+
+
+
+
+        
+        {/* Mobile version */}
+
+        {(() =>{
+                    if (window.innerWidth < "750") {
+                                     return(
             <main>
             <div className="myFocus-container">
             <h1>My Specializations</h1>
@@ -286,7 +349,42 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
                 </ul>
             </div>
 
+            </main>    
+
+)}
+})()}
+
+        {/* Desktop version */}
+
+            {(() =>{
+                    if (window.innerWidth > "750") {
+                                     return(
+            <main>
+            <div className="myFocus-container">
+            <h1>My Specializations</h1>
+
+                <ul>  
+                {myProcess.map((myProcess)=>{ 
+                if(myProcess.category === "MyFocus")
+                return(       
+                    <li  id={myProcess._id +"list"}>
+                    <h2 id={myProcess._id} onClick={(e)=>MoveItem(e)}>{myProcess.title}</h2>
+                    <p onChange={firstItem}  id={myProcess._id +"text"}>{myProcess.summary}</p>
+
+                        {/* <p   id={myProcess._id +"text"}>{myProcess.summary}</p> */}
+                    {/* <p onChange={e => setShowFocusItem(e)}>{myProcess.summary}</p> */}
+                    </li>
+                );})}
+
+                
+                </ul>
+            </div>
+
             </main>
+
+
+)}
+})()}
         </div>
        
     )
