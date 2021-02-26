@@ -59,8 +59,6 @@ const MyProcessCP = props => {
 
      // Submit Edit Handler
      const SubmitEditHandler = (e)=>{
-         
-
         const fd = new FormData();
         fd.append('title', title );
         fd.append('category', category);
@@ -200,7 +198,9 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
                     onClick={()=>{setFilter("CoffeeMsg")}}
                     >Coffee Message</button>
                     
-                
+                    <button
+                    onClick={()=>{setFilter("Resume")}}
+                    >Resume</button>
 
                   
                 </footer>

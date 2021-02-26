@@ -4,7 +4,81 @@ import axios from 'axios'
 
 const MyHeader = props => {
 
+
+
+    const [title, setTitle] = useState()
+    const [category, setCategory] = useState("Resume")
+    const [summary, setSummary] = useState()
+    const [filter, setFilter] = useState("Design")
+
+    const submitHandler =(e)=> {
+
+        e.preventDefault()
+        const fd = new FormData();
+        fd.append('title', title);
+        fd.append('category', category);
+        fd.append('summary', summary);
+       
+        console.log(fd);
+
+        // 
+        axios
+        .post("http://localhost:8000/api/myProcess",  fd, {           
+            })
+            .then((res)=> {
+                console.log("res data here",res.data);
+            })
+            .catch((err)=>{
+                console.log("Errors", err);
+            }, [], submitHandler)
+
+
+     
+        setTitle("")
+        setSummary("")
+
+
+    }
+
 const [firstItem, setFirstItem] = useState("")
+
+
+const [resume, setResume] = useState(false)
+const [resumeButton, setResumeButton] = useState("Resume")
+
+const ResumeHandler =(e)=>{
+
+    if(resumeButton === "Resume"){
+        setResumeButton("Close")
+        setResume(true)
+    }
+
+    if(resumeButton === "Close"){
+        setResumeButton("Resume")
+        setResume(false)
+        setResumeMsg(false)
+        setResumeMsgText("add a massage")
+    }
+
+
+}
+
+
+const [resumeMsg, setResumeMsg] = useState(false)
+const [resumeMsgText, setResumeMsgText] = useState("add a message")
+
+const ResumeMsgHandler =()=>{
+    setResumeMsg(!resumeMsg)
+
+    if(resumeMsg === false){
+        setResumeMsgText("just email")
+
+    }
+    if(resumeMsg === true){
+        setResumeMsgText("add a message")
+
+    }
+}
 
 
 var Cookies = document.cookie;
@@ -111,9 +185,64 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
 
             </div>
             <img src="/img/portfolioImg.png" alt=""/>
-            <button>Resume</button>
+            <button
+            onClick={ResumeHandler}
+            >{resumeButton}</button>
 
             </div>
+
+            <aside
+                style={{
+                    top: resume ?  "190px" : "-300px",
+                    transition: "smooth",
+                    transition: "1s"}}
+            >
+                <header>
+        <h4>Where should I send my resume to?</h4>
+        </header>
+            <form 
+                  style={{
+                    gridTemplateColumns: resumeMsg ? "1fr":"1fr 100px",
+                    paddingTop: resumeMsg ? "20px":"20px",
+                    paddingBottom: resumeMsg ? "60px":"40px",
+                    transition: "smooth",
+                    transition: "1s"}}
+            
+            encType="multipart/form-data" >
+
+
+                        <input 
+                        value={title}
+                        type="email" 
+                        onChange={e =>{setTitle(e.target.value)}}
+                        placeholder="email"/>
+
+                        <input 
+                        value={category}
+                        // onChange={e =>{setCategory(e.target.value)}}
+                        type="hidden"/>
+                   
+
+                        <textarea
+                        style={{display: resumeMsg ? "block":"none"}}
+                        value={summary}
+                        onChange={e =>{setSummary(e.target.value)}}
+                        placeholder="Message"
+                        cols="30" rows="10"></textarea>
+
+                        <button
+                           style={{
+                            gridColumn: resumeMsg ? "1/2":"2/3"
+                        }}
+                        onClick= {e => {submitHandler(e)}}
+                        >Send</button>
+                        <p
+                        onClick={ResumeMsgHandler}
+                        >{resumeMsgText}</p>
+
+
+                </form>
+            </aside>
 
             <div className="mySkills-container">
               <h1>My Skills</h1>
@@ -130,7 +259,7 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
 
 
           </ul>
-        <button>View More</button>
+        {/* <button>View More</button> */}
                                   
          
           
@@ -138,7 +267,7 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
             </header>
             <main>
             <div className="myFocus-container">
-            <h1>My Focus</h1>
+            <h1>My Specializations</h1>
 
                 <ul>  
                 {myProcess.map((myProcess)=>{ 

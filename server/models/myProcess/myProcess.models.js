@@ -5,15 +5,16 @@ const MyProcessSchema = new mongoose.Schema(  {
 
     title:{
         type: String,
-        // required: [true, "{PATH} is required"],
-        // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
+        required: [true, "{PATH} is required"],
+        minlength: [3, "{PATH} must be at least {MINLENGTH}"],
+        maxlength: [2250, "{PATH} must be at least {MINLENGTH}"]
 
     },
 
     summary:{
         type: String,
         // required: [true, "{PATH} is required"],
-        // minlength: [3, "{PATH} must be at least {MINLENGTH}"]
+        maxlength: [2250, "{PATH} must be at least {MINLENGTH}"]
 
     },
 
