@@ -1007,6 +1007,9 @@ h1, h3{
 
 }
 
+
+
+
 .myFocus-container ul li h2 {
   color: #2862AF;
   cursor: pointer;
@@ -1052,7 +1055,9 @@ h1, h3{
 
 .myFocus-container ul li:first-of-type{
   background: white;
+  grid-column: 1/2;
   grid-row: 1/5;
+  
  }
 
 .myFocus-container ul li p {
