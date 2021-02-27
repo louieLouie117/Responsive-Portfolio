@@ -123,8 +123,6 @@ const FocusItem = (e) =>{
 
     document.getElementById(lastItemID).style.display ="none";
     document.getElementById(itemID).style.display ="block";
-    document.getElementById(itemID).style.display ="block";
-
 
 
     
