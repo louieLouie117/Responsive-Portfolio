@@ -115,14 +115,18 @@ const FocusItem = (e) =>{
     const ItemSelected = e.target.id
     console.log("Current Item:",ItemSelected);
 
-    const lastItemID = getItem + "text"
+    const lastItemID = getItem + "list"
     document.cookie = "lastItem" + "=" + ItemSelected +";";
 
 
-    const itemID = e.target.id + "text"
+    const itemID = e.target.id + "list"
 
-    document.getElementById(lastItemID).style.display ="none";
-    document.getElementById(itemID).style.display ="block";
+    document.getElementById(lastItemID).style.height ="20px";
+    document.getElementById(itemID).style.height ="250px";
+    document.getElementById(itemID).style.transform ="smooth";
+    document.getElementById(itemID).style.transition =".5s";
+
+
 
 
     
@@ -159,21 +163,23 @@ const MoveItem = (e) =>{
     const ItemSelected = e.target.id
     console.log("Current Item:",ItemSelected);
 
-    const lastItemID = getItem + "text"
+    const lastItemID = getItem + "list"
     document.cookie = "lastItem" + "=" + ItemSelected +";";
 
     const lastItemIDList = getItem + "list"
     document.cookie = "lastItem" + "=" + ItemSelected +";";
 
 
-    const itemIDText = e.target.id + "text"
+    const itemIDText = e.target.id;
     const itemID = e.target.id + "list"
 
 
-    document.getElementById(lastItemID).style.display ="none";
-    document.getElementById(itemIDText).style.display ="block";
+    document.getElementById(lastItemID).style.height ="20px";
+     document.getElementById(itemID).style.height ="auto";
+    // document.getElementById(itemID).style.transform ="smooth";
+    // document.getElementById(itemID).style.transition =".5s";
     document.getElementById(itemID).style.gridColumn ="1/2";
-    document.getElementById(itemID).style.gridRow ="1/5";
+    document.getElementById(itemID).style.gridRow ="1/4";
     document.getElementById(lastItemIDList).style.gridColumn ="auto";
     document.getElementById(lastItemIDList).style.gridRow ="auto";
 
@@ -334,7 +340,7 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
                 {myProcess.map((myProcess)=>{ 
                 if(myProcess.category === "MyFocus")
                 return(       
-                    <li>
+                    <li  id={myProcess._id +"list"}>
                     <h2 id={myProcess._id} onClick={(e)=>FocusItem(e)}>{myProcess.title}</h2>
                     <p onChange={firstItem}  id={myProcess._id +"text"}>{myProcess.summary}</p>
 

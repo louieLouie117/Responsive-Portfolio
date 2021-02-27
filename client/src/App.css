@@ -856,7 +856,7 @@ button:focus{outline: none;}
 
 
 
-@media screen and (min-width: 1100px){
+@media screen and (min-width: 750px){
   .myHeader-container aside{
     position: absolute;
     box-shadow: none;
@@ -995,10 +995,11 @@ h1, h3{
 
 .myFocus-container ul li{
   display: grid;
-  grid-template-rows: 30px;
+  grid-template-rows: 35px;
   background: white;
   padding: 20px;
-  height: auto;
+  height: 20px;
+  overflow-y: hidden;
   width: 300px;
   align-items: flex-start;
   max-width: 350px;
@@ -1017,12 +1018,12 @@ h1, h3{
 }
 
 
-.myFocus-container ul li:first-of-type p{
-  display: block;
+.myFocus-container ul li:first-of-type{
+  height: auto;
+
 }
 
 .myFocus-container ul li p {
-  display: none;
   font: 1em;
   line-height: 25px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -1054,16 +1055,12 @@ h1, h3{
 }
 
 .myFocus-container ul li:first-of-type{
-  background: white;
   grid-column: 1/2;
-  grid-row: 1/5;
+  grid-row: 1/4;
   
  }
 
-.myFocus-container ul li p {
-  display: none;
-  width: 300px;
-}
+
 }
 
 
