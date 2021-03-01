@@ -162,7 +162,7 @@ setWorkFlow(true)
                     onClick={projectsTabHandler}
 
 
-                >App Laboratory</button>
+                >Dev Laboratory</button>
                 </li>
 
                 <li>
@@ -175,7 +175,7 @@ setWorkFlow(true)
                 
                 >Updates</button>
                 </li>
-                
+{/*                 
                 <li>
                 <button
                     style={{
@@ -185,7 +185,7 @@ setWorkFlow(true)
                         onClick={linkCardHandler}
                 
                 >About Me</button>
-                </li>
+                </li> */}
             </ul>
 
             </div>
@@ -229,11 +229,11 @@ setWorkFlow(true)
                  <StatusUpdates></StatusUpdates>
       </section>
       
-      <section 
+      {/* <section 
        style={{ display: linkCard ? "grid" : "none"}}
                 >
                 <LinkCard></LinkCard>
-      </section>
+      </section> */}
 </div>
     </div>
     )

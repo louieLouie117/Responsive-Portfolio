@@ -10,8 +10,11 @@ const MyHeader = props => {
     const [category, setCategory] = useState("Resume")
     const [summary, setSummary] = useState()
     const [filter, setFilter] = useState("Design")
+    const [errors, setErrors] = useState(null);
+
 
     const submitHandler =(e)=> {
+        alert("button was click")
 
         e.preventDefault()
         const fd = new FormData();
@@ -58,8 +61,16 @@ const ResumeHandler =(e)=>{
         setResume(false)
         setResumeMsg(false)
         setResumeMsgText("add a massage")
+        setDisabled(false)
     }
 
+
+}
+
+
+const [resumeBTN, setResumeBTN] = useState(false)
+const ResumeFade =()=>{
+setResumeBTN(!resumeBTN)
 
 }
 
@@ -82,7 +93,7 @@ const ResumeMsgHandler =()=>{
 
 
 var Cookies = document.cookie;
-console.log("hello cookies",Cookies);
+// console.log("hello cookies",Cookies);
 
 const FocusItem = (e) =>{
 
@@ -110,7 +121,7 @@ const FocusItem = (e) =>{
       }
 
       var getItem = getCookie("lastItem");
-      console.log("getting item from cookies",getItem);
+    //   console.log("getting item from cookies",getItem);
       
     const ItemSelected = e.target.id
     console.log("Current Item:",ItemSelected);
@@ -186,6 +197,21 @@ const MoveItem = (e) =>{
 
 }
 
+const [disabled, setDisabled] = useState(false)
+const [disabledText, setDisabledText] = useState(0)
+
+const emailHandler =(e)=>{
+    
+    let textFromUser = e.target.value.length
+    
+    if (textFromUser === disabledText) {
+    setDisabled(false)
+        
+    } else {
+    setDisabled(true)
+    }
+    setTitle(e.target.value)
+}
 
 
 
@@ -232,7 +258,7 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
         <div className="myHeader-container">
             <header>
             <div className="name-container">
-            <div>
+            <header>
             <h3>Hello, my name is </h3>
             
         {myInfo.map((myInfo)=>{
@@ -244,38 +270,48 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
             </div>
             );})}
 
-            </div>
+            </header>
+            {/* <div className="photo-container"> */}
             <img src="/img/portfolioImg.png" alt=""/>
+
             <button
+            style={{
+                background: resumeBTN ? "#3c78c7":"#2862AF",
+                transition: ".5s",
+                transform: "smooth"
+        }}
             onClick={ResumeHandler}
+            onMouseEnter={ResumeFade}
+            onMouseLeave={ResumeFade}
             >{resumeButton}</button>
-
+            {/* </div> */}
             </div>
-
             <aside
                 style={{
                     top: resume ?  "190px" : "-300px",
+                    paddingTop: resume ? "170px":"20px",
+                
                     transition: "smooth",
                     transition: "1s"}}
             >
                 <header>
         <h4>Where should I send my resume to?</h4>
         </header>
-            <form 
+            <form onSubmit={(e)=> {submitHandler(e);}}
                   style={{
                     gridTemplateColumns: resumeMsg ? "1fr":"1fr 100px",
                     paddingTop: resumeMsg ? "20px":"20px",
-                    paddingBottom: resumeMsg ? "60px":"40px",
+                    paddingBottom: resumeMsg ? "120px":"110px",
+                    paddingBottom: resume ? "200px":"20px",
                     transition: "smooth",
                     transition: "1s"}}
-            
-            encType="multipart/form-data" >
-
+                    >
+   
 
                         <input 
                         value={title}
                         type="email" 
-                        onChange={e =>{setTitle(e.target.value)}}
+                        onChange={(e) =>emailHandler(e)}
                         placeholder="email"/>
 
                         <input 
@@ -291,11 +327,19 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
                         placeholder="Message"
                         cols="30" rows="10"></textarea>
 
+                
                         <button
+                        disabled={!disabled}
+                        type="submit"
                            style={{
-                            gridColumn: resumeMsg ? "1/2":"2/3"
+                            gridColumn: resumeMsg ? "1/2":"2/3",
+                            background: disabled ? "#2862AF":"#7093c2",
+                            cursor: disabled ? "pointer":"default",
+                            // color: disabled ? "white":"white",
+                            transition: ".5s",
                         }}
-                        onClick= {e => {submitHandler(e)}}
+
+                        // onClick= {e => {submitHandler(e)}}
                         >Send</button>
                         <p
                         onClick={ResumeMsgHandler}
