@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios'
+import { set } from 'mongoose'
 
 
 const MyHeader = props => {
@@ -11,10 +12,12 @@ const MyHeader = props => {
     const [summary, setSummary] = useState()
     const [filter, setFilter] = useState("Design")
     const [errors, setErrors] = useState(null);
+    const [resumeEndMsg, setResumeEndMsg] = useState("Where should I send my resume to?");
+    const [displayForm, setDisplayForm] = useState(true)
+
 
 
     const submitHandler =(e)=> {
-        alert("button was click")
 
         e.preventDefault()
         const fd = new FormData();
@@ -39,9 +42,19 @@ const MyHeader = props => {
      
         setTitle("")
         setSummary("")
+        setResumeEndMsg("Thank you for your interest I will send you a copy of my resume soon.")
+        setDisplayForm(false)
 
-
+        
     }
+
+
+const OtherEmailHandler =()=>{
+    setDisplayForm(true);
+    setResumeEndMsg("What other email would you like me to send my resume to.")
+
+
+}
 
 const [firstItem, setFirstItem] = useState("")
 
@@ -294,10 +307,13 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
                     transition: "1s"}}
             >
                 <header>
-        <h4>Where should I send my resume to?</h4>
+        <h4>{resumeEndMsg}</h4>
+
         </header>
+        
             <form onSubmit={(e)=> {submitHandler(e);}}
                   style={{
+                    display: displayForm ? "grid":"none",
                     gridTemplateColumns: resumeMsg ? "1fr":"1fr 100px",
                     paddingTop: resumeMsg ? "20px":"20px",
                     transition: "smooth",
@@ -344,6 +360,12 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
 
 
                 </form>
+                <button
+                style={{
+                    display: displayForm ? "none":"block"
+                }}
+                onClick={()=> OtherEmailHandler()}
+                >send to other email.</button>
             </aside>
 
             <div className="mySkills-container">
@@ -354,7 +376,7 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
             if(myProcess.category === "MySkills")
             return(  
                     
-                    <li>{myProcess.title}</li>
+                    <li><p>{myProcess.title}</p></li>
             );})}
 
           
