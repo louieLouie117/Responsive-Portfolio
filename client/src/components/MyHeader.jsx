@@ -257,22 +257,22 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
 
         <div className="myHeader-container">
             <header>
-            <div className="name-container">
-            <header>
-            <h3>Hello, my name is </h3>
+                <div   div className="name-container">
+                <header>
+                <h3>Hello, my name is </h3>
             
-        {myInfo.map((myInfo)=>{
-            return(
-                <div>
-            <h1>{myInfo.name}</h1>
+                {myInfo.map((myInfo)=>{
+                return(
+                    <div>
+                <h1>{myInfo.name}</h1>
 
-            <p>{myInfo.slogan}</p>
-            </div>
-            );})}
+                <p>{myInfo.title}</p>
+                </div>
+                );})}
 
             </header>
-            {/* <div className="photo-container"> */}
             <img src="/img/portfolioImg.png" alt=""/>
+            <div className="photo-container">
 
             <button
             style={{
@@ -284,13 +284,12 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
             onMouseEnter={ResumeFade}
             onMouseLeave={ResumeFade}
             >{resumeButton}</button>
-            {/* </div> */}
+            <a href="https://www.linkedin.com/in/luis-cardona-3a51b2162/" target="blank">LinkedIn</a>
+            </div>
             </div>
             <aside
                 style={{
-                    top: resume ?  "190px" : "-300px",
-                    paddingTop: resume ? "170px":"20px",
-                
+                    top: resume ?  "190px" : "-600px",                
                     transition: "smooth",
                     transition: "1s"}}
             >
@@ -301,8 +300,6 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
                   style={{
                     gridTemplateColumns: resumeMsg ? "1fr":"1fr 100px",
                     paddingTop: resumeMsg ? "20px":"20px",
-                    paddingBottom: resumeMsg ? "120px":"110px",
-                    paddingBottom: resume ? "200px":"20px",
                     transition: "smooth",
                     transition: "1s"}}
                     >
@@ -333,7 +330,7 @@ if(myProcess === null){return(<h2>Loading db...</h2>)}
                         type="submit"
                            style={{
                             gridColumn: resumeMsg ? "1/2":"2/3",
-                            background: disabled ? "#2862AF":"#7093c2",
+                            background: disabled ? "#2862AF":"#517eb9",
                             cursor: disabled ? "pointer":"default",
                             // color: disabled ? "white":"white",
                             transition: ".5s",
