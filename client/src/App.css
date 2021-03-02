@@ -5,7 +5,6 @@ html{
 .App {
   display: grid;
   margin: 0 auto;
-  width: auto;
   background: whitesmoke;
 
 }
@@ -788,12 +787,15 @@ nav{
   transform: translate(-50%, 0);
   justify-self: center;
   margin: 0 auto;
-  width: 100%;
+  width: 103%;
   max-width: 45em;
   z-index: 20;
   background: white;
   justify-items: center;
   justify-content: center;
+  padding: 40px 0;
+  box-shadow: 0 7px 17px rgba(0, 0, 0, 0.364) ;
+
 
   }
   .myHeader-container aside header{
@@ -820,7 +822,6 @@ nav{
   background: white;
   row-gap: 10px;
   padding:  20px ;
-  box-shadow: 0 7px 7px rgba(0, 0, 0, 0.364) ;
   column-gap: 5px;
 }
 
@@ -866,9 +867,12 @@ button:focus{outline: none;}
 @media screen and (min-width: 750px){
   .myHeader-container aside{
     position: absolute;
-    box-shadow: none;
+    padding: 200px 0;
+
   
     }
+
+    
 
   .myHeader-container aside form{
     padding:  40px 150px ;
@@ -895,10 +899,10 @@ h1, h3{
   grid-template-columns: 2fr 1fr ;
   grid-template-rows: 90px;
   /* justify-items: left; */
-  row-gap: 3px;
-  max-width: 400px;
+  row-gap: 5px;
+  width: 350px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
   color: whitesmoke;
 
 
@@ -907,16 +911,21 @@ h1, h3{
 
 .photo-container{
   display: grid;
-  align-items: flex-end;
-}
-
-.photo-container img,
-.photo-container button{
-  grid-row: 1/2;
-  grid-column: 1/2;
-  margin: 0 auto;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 10px;
+  width: 230px;
 
 }
+
+
+.photo-container a {
+  color: whitesmoke;
+  font: 1em sans-serif;
+
+}
+
+
 
 
 .name-container header{
@@ -925,8 +934,10 @@ h1, h3{
 
 }
 .name-container h1{
-  font: 2.2em sans-serif;
+  font: 1.7em sans-serif;
   color: whitesmoke;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 
 
 }
@@ -938,9 +949,9 @@ h1, h3{
 }
 
 .name-container p{
-  font: 1.1em sans-serif;
+  font: 1.07em sans-serif;
   color: whitesmoke;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
 
   
 }
@@ -952,7 +963,7 @@ h1, h3{
 
 
 .name-container button{
-  background: #2862AF;
+  background: #7b99c0;
   border: solid 1px whitesmoke;
   height: 30px;
   border-radius: 10px;
@@ -976,7 +987,7 @@ h1, h3{
   display: flex;
   column-gap: 10px;
   overflow: scroll;
-  padding: 10px;
+  padding: 20px 10px;
   /* border: solid 1px white; */
   background: rgba(255, 255, 255, 0.24);
   width: auto;
@@ -1030,7 +1041,7 @@ h1, h3{
   margin: 0 auto;
   padding: 20px;
   height: auto;
-  margin-top: -180px;
+  margin-top: -200px;
   justify-content: center;
 
 }
@@ -1092,9 +1103,15 @@ h1, h3{
   .mySkills-container ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    row-gap: 10px;
-    column-gap: 10px;
-    width: 65em;
+    row-gap: 3px;
+    column-gap: 35px;
+    padding: 35px;
+    width: 62em;
+  }
+
+  .mySkills-container ul li{
+    min-width: 120px;
+    font-weight: normal;
   }
 
 
@@ -1114,6 +1131,10 @@ h1, h3{
   grid-row: 1/4;
   
  }
+
+.mySkills-container h1{
+  padding: 0;
+}
 
 
 }
