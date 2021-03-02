@@ -796,8 +796,19 @@ nav{
   padding: 40px 0;
   box-shadow: 0 7px 17px rgba(0, 0, 0, 0.364) ;
 
-
   }
+
+.myHeader-container aside> button{
+  background: #2862AF;
+  margin: 0 auto;
+  color: white;
+  border: none;
+  height: 30px;
+  padding: 0 20px;
+  font: 1em sans-serif;
+  cursor: pointer;
+}
+
   .myHeader-container aside header{
     display: grid;
     justify-items: center;
@@ -865,6 +876,11 @@ button:focus{outline: none;}
 
 
 @media screen and (min-width: 750px){
+
+  .myHeader-container{
+  row-gap: 40px;
+
+  }
   .myHeader-container aside{
     position: absolute;
     padding: 200px 0;
@@ -1017,8 +1033,7 @@ h1, h3{
   padding: 0 10px;
   background: #2862AF;
   border-radius: 10px;
-  font: 1.1em sans-serif;
-  font-family: Arial, Helvetica, sans-serif;
+  font: 1em sans-serif;
   cursor: default;
   color: whitesmoke;
 
@@ -1049,7 +1064,7 @@ h1, h3{
 .myFocus-container ul{
   display: grid;
   row-gap: 20px;
-
+  
 
 }
 
