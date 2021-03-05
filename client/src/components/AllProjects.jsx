@@ -109,6 +109,7 @@ const AllProjects = props => {
         fd.append('name', name );
         fd.append('type', type);
         fd.append('urlLink', urlLink);
+        fd.append('linkType', linkType);
         fd.append('color', color);
         fd.append('easterEgg', easterEgg);
         fd.append('easterEggMsg', easterEggMsg);
